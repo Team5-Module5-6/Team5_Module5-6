@@ -1725,7 +1725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ffde4f04cbe274084f05bd430b44ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveID: 6
+  waveID: 0
 --- !u!4 &1095559256
 Transform:
   m_ObjectHideFlags: 0
