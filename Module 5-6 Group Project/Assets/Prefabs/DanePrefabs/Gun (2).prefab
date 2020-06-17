@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2654218044266840152}
   - component: {fileID: 1574440405101590523}
   - component: {fileID: 2074290115241823845}
-  - component: {fileID: 2518709177318327825}
   m_Layer: 0
   m_Name: Gun (2)
   m_TagString: Untagged
@@ -61,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 61bcea22404bda2469670dd9255037db, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -799,25 +798,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &2518709177318327825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5527603044255722811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d5b35b7fc9184948a69da1fd125d239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAmmo: 5
-  currentAmmo: 0
-  firePoint: {fileID: 0}
-  fireForce: 60
-  projectilePrefab: {fileID: 9054518175198977293, guid: 58e607e29a9e6d2478382717239d7e91,
-    type: 3}
