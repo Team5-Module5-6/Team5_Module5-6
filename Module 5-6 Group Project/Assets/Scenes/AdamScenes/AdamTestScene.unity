@@ -2710,6 +2710,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4071,7 +4072,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578628166}
   serializedVersion: 6
-  lengthInSec: 10
+  lengthInSec: 9
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -4691,13 +4692,13 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 18.51
+    angle: 35.74
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: -0.00000030469806, y: 0, z: 0.0000007243151}
-    m_Rotation: {x: 270, y: 0.00030594392, z: 0}
+    m_Rotation: {x: 270, y: 0, z: 0}
     m_Scale: {x: 0.48431814, y: 1, z: 0.99999994}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -4895,7 +4896,7 @@ ParticleSystem:
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 20
       minScalar: 15
       maxCurve:
@@ -14166,6 +14167,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -25423,6 +25425,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
