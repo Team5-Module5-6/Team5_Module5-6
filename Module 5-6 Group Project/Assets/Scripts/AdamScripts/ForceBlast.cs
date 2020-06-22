@@ -18,7 +18,7 @@ public class ForceBlast : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !onCooldown)
+        if(Input.GetKeyDown(KeyCode.F) && !onCooldown)
         {
             Yeet();
             blast.Play();
