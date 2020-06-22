@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponSwitch : MonoBehaviour
 {
     public Transform[] weapons;
+    //set default weapon here
     public int currentWeapon = 0;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class WeaponSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //change weapon on corresponding button press 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             currentWeapon = 0;

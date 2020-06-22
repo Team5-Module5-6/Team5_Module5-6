@@ -57,9 +57,16 @@ public class Weapon : MonoBehaviour
 
     public void AmmoUp(int collectedAmmo)
     {
-        if(currentAmmo < 100)
+        //increase ammo by selected value if current ammo is lower than the maxinum
+        if(currentAmmo < maxAmmo)
         {
             currentAmmo += collectedAmmo;
+            //don't allow current ammo to go over the set max value
+            if (currentAmmo > maxAmmo)
+            {
+                currentAmmo = maxAmmo;
+            }
+
         }
         
     }
