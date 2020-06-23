@@ -6,14 +6,13 @@ using TMPro;
 public class HealingStation : MonoBehaviour
 {
     public GameObject playerAtachment;
-    //public GameObject circle;
-    public float playerHealth = 100f;
+    public PlayerStats playerStats;
     public float healingPerSecond = 10f;
     public float radius = 5f;
     public float durationTime = 10f;
     public float cooldownTime = 60f;
     public TextMeshProUGUI cooldownUI;
-    public TextMeshProUGUI healthUI;
+
 
     private Rigidbody rigidbody;
     private bool deployed = false;
@@ -21,13 +20,13 @@ public class HealingStation : MonoBehaviour
     private float activeCooldown;
     private float activeDuration;
     private float distance;
+    private float playerHealth;
 
     void Start()
     {
         transform.parent = playerAtachment.transform;
         rigidbody = gameObject.GetComponent<Rigidbody>();
         rigidbody.useGravity = false;
-        healthUI.text = "Health: " + Mathf.Round(playerHealth).ToString();
     }
 
     private void Update()
@@ -49,7 +48,7 @@ public class HealingStation : MonoBehaviour
             if (deployed && playerHealth < 100 && distance < radius)
             {
                 playerHealth += healingPerSecond * Time.deltaTime;
-                healthUI.text = "Health: " + Mathf.Round(playerHealth).ToString();
+                playerStats.Health = playerHealth;
             }
         }
 
@@ -72,10 +71,10 @@ public class HealingStation : MonoBehaviour
 
     void Deploy()
     {
+        playerHealth = playerStats.Health;
         transform.parent = null;
         rigidbody.useGravity = true;
         deployed = true;
         gameObject.GetComponentInChildren<ParticleSystem>().Play();
-        //circle.SetActive(true);
     }
 }
