@@ -134,6 +134,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 303318488738965463, guid: b1b6d4ddd7f8c644d90d62993798137c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6071635440492446755, guid: b1b6d4ddd7f8c644d90d62993798137c,
         type: 3}
       propertyPath: m_Name
@@ -437,7 +442,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16776
+  m_Name: pb_Mesh-56976
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1006,7 +1011,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16756
+  m_Name: pb_Mesh-56956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1547,17 +1552,17 @@ PrefabInstance:
     - target: {fileID: 1972853201557100084, guid: 331c3e520c6b7c34b9b866ca033243ab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.61
       objectReference: {fileID: 0}
     - target: {fileID: 1972853201557100084, guid: 331c3e520c6b7c34b9b866ca033243ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 94.52
       objectReference: {fileID: 0}
     - target: {fileID: 1972853201557100084, guid: 331c3e520c6b7c34b9b866ca033243ab,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41.58
+      value: 96.01
       objectReference: {fileID: 0}
     - target: {fileID: 1972853201557100084, guid: 331c3e520c6b7c34b9b866ca033243ab,
         type: 3}
@@ -1599,6 +1604,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6546323126494744183, guid: 331c3e520c6b7c34b9b866ca033243ab,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 331c3e520c6b7c34b9b866ca033243ab, type: 3}
 --- !u!1001 &1658619592
@@ -1621,7 +1631,7 @@ PrefabInstance:
     - target: {fileID: 6415156527720606674, guid: e4fc10d44a3832742aab748328bb357c,
         type: 3}
       propertyPath: m_Constraints
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8640459307714902667, guid: e4fc10d44a3832742aab748328bb357c,
         type: 3}

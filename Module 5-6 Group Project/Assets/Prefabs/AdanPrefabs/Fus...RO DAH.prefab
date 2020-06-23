@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4905083774030976379}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.004683896, y: 0, z: -2.0999432}
+  m_LocalPosition: {x: -0, y: 0, z: -2.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4905083774487983809}
@@ -4920,8 +4920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blast: {fileID: 4905083774030976374}
-  power: 15
+  power: 30
   radius: 25
-  upForce: 1
+  upForce: 2
   cooldownTime: 10
   cooldownUI: {fileID: 0}
