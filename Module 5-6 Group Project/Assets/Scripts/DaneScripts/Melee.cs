@@ -5,7 +5,10 @@ using UnityEngine;
 public class Melee : MonoBehaviour
 {
     public int meleeDamage = 1;
+
+    
     public Animator animator;
+    public WeaponSwitch weaponSwitch;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +20,8 @@ public class Melee : MonoBehaviour
     {
         //play idle melee weapon animation
         animator.SetBool("meleeAnim", false);
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            //play melee attack animation
-            animator.SetBool("meleeAnim", true);
-
-        }
-    }
+       
+    } 
 
     void OnTriggerEnter(Collider other)
     {

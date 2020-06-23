@@ -7,6 +7,10 @@ public class WeaponSwitch : MonoBehaviour
     public Transform[] weapons;
     //set default weapon here
     public int currentWeapon = 0;
+    private int previousWeapon = 0;
+
+    public float attackTime = 1f;
+    public bool isAttacking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,25 +20,49 @@ public class WeaponSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isAttacking)
+        {
+            return;
+        }
+        else
+        {
+            currentWeapon = previousWeapon;
+            SwitchWeapon();
+        }
+            
+
         //change weapon on corresponding button press 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            currentWeapon = 0;
+            currentWeapon = 1;
+            previousWeapon = 1;
             SwitchWeapon();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            currentWeapon = 1;
+            currentWeapon = 2;
+            previousWeapon = 2;
             SwitchWeapon();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetMouseButtonDown(1))
         {
-            currentWeapon = 2;
+            currentWeapon = 0;
             SwitchWeapon();
+            StartCoroutine(Attacking());
+            return;
         }
     }
 
-    void SwitchWeapon()
+    IEnumerator Attacking()
+    {
+        isAttacking = true;
+
+        yield return new WaitForSeconds(attackTime);
+       
+        isAttacking = false;
+    }
+
+    public void SwitchWeapon()
     {
         int i = 0;
         foreach(Transform weapon in weapons)
