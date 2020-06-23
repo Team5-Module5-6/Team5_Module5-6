@@ -48,7 +48,7 @@ public class HealingStation : MonoBehaviour
             if (deployed && playerHealth < 100 && distance < radius)
             {
                 playerHealth += healingPerSecond * Time.deltaTime;
-                playerStats.Health = playerHealth;
+                playerStats.currentHealth = playerHealth;
             }
         }
 
@@ -71,7 +71,7 @@ public class HealingStation : MonoBehaviour
 
     void Deploy()
     {
-        playerHealth = playerStats.Health;
+        playerHealth = playerStats.currentHealth;
         transform.parent = null;
         rigidbody.useGravity = true;
         deployed = true;
