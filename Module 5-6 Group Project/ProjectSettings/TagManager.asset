@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ladder
+  - Enemy
+  - target
+  - ammo
+  - Melee
+  - StarStone
   layers:
   - Default
   - TransparentFX
