@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
     public int maxAmmo = 5;
     public int currentAmmo;
     public int range;
-    public int damage = 1;
+    public int damage = 0;
     public float fireRate;
 
     void Start()
