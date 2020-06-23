@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float Health = 100;
+    public float maxHealth;
+    public float currentHealth;
 
-    public TextMeshProUGUI healthUI;
+    public Slider healthUI;
 
     private void Start()
     {
-        healthUI.text = "Health: " + Mathf.Round(Health).ToString();
+        healthUI.maxValue = maxHealth;
     }
 
     private void Update()
     {
-        healthUI.text = "Health: " + Mathf.Round(Health).ToString();
+        healthUI.value = currentHealth;
     }
 }
