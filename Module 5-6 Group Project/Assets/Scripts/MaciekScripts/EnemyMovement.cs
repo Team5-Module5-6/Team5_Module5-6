@@ -46,11 +46,11 @@ public class EnemyMovement : MonoBehaviour
 
     void MoveTowardsPlayer()
     {
-        //Debug.Log("mvment script" + enemyShootingScript.playerInSight);
+        //Debug.Log("mvment script.PlayerInSight: " + enemyShootingScript.playerInSight);
 
         if (Vector3.Distance(transform.position, playerTransform.position) <= triggerDistance || enemyShootingScript.playerInSight == false) //Checks if the player is within trigger distance or if anything is blocking enemies view of the player
         {
-            navigationAgent.SetDestination(playerTransform.position); //
+            navigationAgent.SetDestination(playerTransform.position); 
         }
         else
         {
@@ -60,6 +60,8 @@ public class EnemyMovement : MonoBehaviour
 
     void RotateTowardsPlayer()
     {
-        transform.LookAt(playerTransform); //Too difficult to explain
+        transform.LookAt(playerTransform.position); //Too difficult to explain
+        
+        
     }
 }

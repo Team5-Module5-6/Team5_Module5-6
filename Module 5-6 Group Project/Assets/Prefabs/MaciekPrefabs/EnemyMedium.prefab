@@ -108,7 +108,7 @@ MonoBehaviour:
   triggerDistance: 0
   ammunition: 0
   rateOfFire: 1
-  rangedAttackRange: 100
+  rangedAttackRange: 1000
   rangedDamage: 0
   chanceToHit: 50
   meleeDamage: 0

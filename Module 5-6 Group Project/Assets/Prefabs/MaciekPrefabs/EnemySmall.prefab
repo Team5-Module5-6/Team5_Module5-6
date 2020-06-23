@@ -107,13 +107,13 @@ MonoBehaviour:
   triggerDistance: 0
   ammunition: 0
   rateOfFire: 1
-  rangedAttackRange: 100
+  rangedAttackRange: 1000
   rangedDamage: 0
   chanceToHit: 50
   meleeDamage: 0
   meleeAttackRange: 0
   meleeAttackRate: 0
-  yRayOffset: 0.5
+  yRayOffset: 0
 --- !u!114 &2447784372948705450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +255,6 @@ GameObject:
   - component: {fileID: 6553730830594510117}
   - component: {fileID: 6873897533487229492}
   - component: {fileID: 7493524972626810173}
-  - component: {fileID: 7207989373361609627}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -324,16 +323,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7207989373361609627
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6477068512075111949}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

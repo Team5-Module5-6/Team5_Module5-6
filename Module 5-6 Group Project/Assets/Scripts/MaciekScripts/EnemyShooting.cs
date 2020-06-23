@@ -54,14 +54,13 @@ public class EnemyShooting : MonoBehaviour
 
         Ray sight = new Ray(rayOrigin, transform.forward); //Creates a ray that shoots in the direction the enemy is facing
         RaycastHit objHit; //Gets information on what got hit by the raycast
-
+        //Debug.DrawRay(rayOrigin, transform.forward, Color.blue);
         if (Physics.Raycast(sight, out objHit, range)) 
         {
-            if (objHit.transform.gameObject.name == "Player") {
+            if (objHit.transform.gameObject.tag == "Player") {
 
                 //Debug.Log("I can see you");
                 playerInSight = true;
-
                 if (isLoaded)
                 {
                     //Play animation/effects

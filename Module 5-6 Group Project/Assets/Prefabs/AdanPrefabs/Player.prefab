@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001628450755543381}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8.293, y: 94.27, z: 96.975}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2001628451770651863}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 2001628451770651864}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 2001628452113440594}
   m_Layer: 0
   m_Name: Raycast
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 2001628452682828024}
   m_Layer: 0
   m_Name: Station atachment
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -368,6 +368,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GunPoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172950442878351081, guid: 79f51f82be0c0f440982767ccc69f34e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3172950442878351086, guid: 79f51f82be0c0f440982767ccc69f34e,
         type: 3}
@@ -429,6 +434,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3172950443130578043, guid: 79f51f82be0c0f440982767ccc69f34e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3172950443130578044, guid: 79f51f82be0c0f440982767ccc69f34e,
         type: 3}
       propertyPath: m_Mesh
@@ -449,10 +459,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2001628452586328932}
     m_Modifications:
+    - target: {fileID: 4905083774030976379, guid: 6e5d877e669aa1e4cad873af8a5838b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4905083774487983808, guid: 6e5d877e669aa1e4cad873af8a5838b7,
         type: 3}
       propertyPath: m_Name
       value: Fus...RO DAH
+      objectReference: {fileID: 0}
+    - target: {fileID: 4905083774487983808, guid: 6e5d877e669aa1e4cad873af8a5838b7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4905083774487983809, guid: 6e5d877e669aa1e4cad873af8a5838b7,
         type: 3}
@@ -534,6 +554,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 4471153791775802513, guid: ebdd1b9eff9647943a1cf03584a423f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4471153791775802514, guid: ebdd1b9eff9647943a1cf03584a423f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -588,6 +613,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471153791849696586, guid: ebdd1b9eff9647943a1cf03584a423f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4471153791849696588, guid: ebdd1b9eff9647943a1cf03584a423f3,
         type: 3}

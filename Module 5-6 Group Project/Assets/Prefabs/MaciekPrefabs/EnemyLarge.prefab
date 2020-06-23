@@ -207,7 +207,7 @@ MonoBehaviour:
   meleeDamage: 0
   meleeAttackRange: 0
   meleeAttackRate: 0
-  yRayOffset: -1
+  yRayOffset: 0
 --- !u!114 &2484954371630581933
 MonoBehaviour:
   m_ObjectHideFlags: 0
