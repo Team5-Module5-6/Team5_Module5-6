@@ -6377,13 +6377,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAtachment: {fileID: 119718487}
-  playerHealth: 10
+  playerStats: {fileID: 1925368826}
   healingPerSecond: 10
   radius: 5
   durationTime: 10
-  cooldownTime: 20
+  cooldownTime: 60
   cooldownUI: {fileID: 1374751448}
-  healthUI: {fileID: 246629275}
 --- !u!54 &1377231635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11482,6 +11481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1925368824}
   - component: {fileID: 1925368823}
+  - component: {fileID: 1925368826}
   - component: {fileID: 1925368822}
   - component: {fileID: 1925368825}
   m_Layer: 0
@@ -11556,6 +11556,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bcd29a193bddd4ebe267b81728294c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1925368826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925368821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99a778ae5f871640b0a0f7d741a3fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 50
+  healthUI: {fileID: 246629275}
 --- !u!1 &1941331038
 GameObject:
   m_ObjectHideFlags: 0
