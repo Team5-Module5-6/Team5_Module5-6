@@ -7,8 +7,8 @@ public class Weapon : MonoBehaviour
     public int maxAmmo = 5;
     public int currentAmmo;
     public int range;
+    public int damage = 1;
     public float fireRate;
-    public float damage = 1f;
 
     void Start()
     {
@@ -47,7 +47,7 @@ public class Weapon : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
             
-            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+            EnemyStats target = hit.transform.GetComponent<EnemyStats>();
             if (target != null) 
             {
                 target.TakeDamage(damage);
