@@ -30,7 +30,8 @@ public class SpawnerV2 : MonoBehaviour
 
     private Vector3 spawnOrigin;
     private int waveID;
-    private bool isSpawnerOn = false;
+    [HideInInspector]
+    public bool isSpawnerOn = false;
 
     //Custom 2D array
     public TwoDArray[] numberOfWaves;
