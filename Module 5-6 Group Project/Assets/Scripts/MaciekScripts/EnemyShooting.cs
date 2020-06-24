@@ -13,6 +13,7 @@ public class EnemyShooting : MonoBehaviour
 {
     //Script references    
     private EnemyStats enemyStatsScript;
+    private PlayerStats playerStatsScript;
 
     //Script variables
     [HideInInspector]
@@ -23,6 +24,7 @@ public class EnemyShooting : MonoBehaviour
     private float rateOfFire;
     private float yRayOffset;
     private bool isLoaded = true;
+    private float rangedDamage;
     
     //Coroutines
     private IEnumerator reloadCorutine;
@@ -31,6 +33,7 @@ public class EnemyShooting : MonoBehaviour
     {   
         //Script references
         enemyStatsScript = GetComponent<EnemyStats>();
+        playerStatsScript = FindObjectOfType<PlayerStats>();
 
         //Corutines
         reloadCorutine = Reload();
@@ -39,6 +42,7 @@ public class EnemyShooting : MonoBehaviour
         range = enemyStatsScript.rangedAttackRange;
         hitChance = enemyStatsScript.chanceToHit;
         rateOfFire = enemyStatsScript.rateOfFire;
+        rangedDamage = enemyStatsScript.rangedDamage;
         yRayOffset = enemyStatsScript.yRayOffset;
     }
 
@@ -68,7 +72,7 @@ public class EnemyShooting : MonoBehaviour
 
                     if (hitChanceRNG <= hitChance)
                     {
-                        //player.TakeDamage(value);
+                        playerStatsScript.TakeDamage(rangedDamage);
                         //Debug.Log("I shot you");
                     }
                     else
