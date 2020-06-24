@@ -19,4 +19,9 @@ public class PlayerStats : MonoBehaviour
     {
         healthUI.value = currentHealth;
     }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+    }
 }
