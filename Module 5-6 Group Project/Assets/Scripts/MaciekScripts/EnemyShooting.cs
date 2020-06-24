@@ -94,8 +94,7 @@ public class EnemyShooting : MonoBehaviour
     IEnumerator Reload()
     {
         yield return new WaitForSeconds(1 / rateOfFire); //Very bad way of determing rate of fire lmao
-        isLoaded = true;
-        StopCoroutine(reloadCorutine); //Not sure if it's needed, I think once it runs the code the coroutine stops itself but I'll leave it in for now
+        isLoaded = true; 
 
     }
 }

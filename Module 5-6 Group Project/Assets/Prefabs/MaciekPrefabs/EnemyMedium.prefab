@@ -110,7 +110,7 @@ MonoBehaviour:
   ammunition: 0
   rateOfFire: 1
   rangedAttackRange: 1000
-  rangedDamage: 0
+  rangedDamage: 1
   chanceToHit: 50
   meleeDamage: 0
   meleeAttackRange: 0
