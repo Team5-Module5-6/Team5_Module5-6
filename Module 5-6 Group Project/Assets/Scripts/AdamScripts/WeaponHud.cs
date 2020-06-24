@@ -10,11 +10,10 @@ public class WeaponHud : MonoBehaviour
     public TextMeshProUGUI equippedWeapon;
     public TextMeshProUGUI ammo;
 
-    void Start()
+    private void Start()
     {
         
     }
-
     void Update()
     {
         ammo.text = weapons[0].currentAmmo.ToString() + "/" + weapons[0].maxAmmo.ToString();
