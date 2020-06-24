@@ -614,7 +614,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4796
+  m_Name: pb_Mesh-13210
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1060,6 +1060,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &689309892 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5063834011500414583, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2001628452596959904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &784090207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1108,7 @@ MonoBehaviour:
   - {x: 28, y: 88, z: 105}
   - {x: -30, y: 88, z: 105}
   spawnChance: []
+  isSpawnerOn: 0
   numberOfWaves:
   - elementName: Wave 1
     enemySpawnRatio: 010000000100000001000000
@@ -1137,7 +1144,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4786
+  m_Name: pb_Mesh-13202
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1694,7 +1701,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4818
+  m_Name: pb_Mesh-13230
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2646,6 +2653,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4fc10d44a3832742aab748328bb357c, type: 3}
+--- !u!4 &1750019104 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2929486681791674835, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2001628452596959904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1827866861 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1701424966773226885, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2001628452596959904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1925368826 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2001628450755543386, guid: 20f43a7d19854a24394d8855933c6cc4,
@@ -5861,6 +5880,31 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1214385543}
+    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: weapons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1827866861}
+    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1750019104}
+    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 689309892}
+    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: currentWeapon
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f43a7d19854a24394d8855933c6cc4, type: 3}
 --- !u!1 &2010616257639839646
