@@ -8,6 +8,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
+//Get rid of functions in fixed update and figure out a way to only call movement when needed
+
 public class EnemyMovement : MonoBehaviour
 {
     //Transform variables
@@ -60,8 +62,6 @@ public class EnemyMovement : MonoBehaviour
 
     void RotateTowardsPlayer()
     {
-        transform.LookAt(playerTransform.position); //Too difficult to explain
-        
-        
+        transform.LookAt(playerTransform.position); //Too difficult to explain                
     }
 }

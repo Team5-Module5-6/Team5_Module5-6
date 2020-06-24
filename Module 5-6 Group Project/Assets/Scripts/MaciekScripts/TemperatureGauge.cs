@@ -57,9 +57,10 @@ public class TemperatureGauge : MonoBehaviour
 
     public void ChangeGeneratorTemperature(float value) //Changes generators temperature by given value
     {
-        if (currentTemp < maxTemp && currentTemp >= 0) //Makes sure that the temperature stays within the limit
-        {
-            currentTemp += value;
+        currentTemp += value;
+
+        if (currentTemp < maxTemp && currentTemp > 0) //Makes sure that the temperature stays within the limit
+        {            
 
             if (currentTemp > maxTemp)
             { 
@@ -94,7 +95,5 @@ public class TemperatureGauge : MonoBehaviour
         {
             waveHandlerScript.AdvanceToNextWave();
         }
-
     }
-
 }
