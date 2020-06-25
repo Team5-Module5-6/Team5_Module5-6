@@ -121,18 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: b8a605058d22905468f50f49f3fad9bc, type: 2}
---- !u!114 &43886943 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5063834011500414577, guid: 20f43a7d19854a24394d8855933c6cc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2001628452596959904}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9403eefa7bec18428b8020c8d5a6cf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &48329733
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +396,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1676
+  m_Name: pb_Mesh-2290
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -764,7 +752,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1666
+  m_Name: pb_Mesh-2280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1531,7 +1519,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1698
+  m_Name: pb_Mesh-2312
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1700,7 +1688,6 @@ GameObject:
   - component: {fileID: 1235625806}
   - component: {fileID: 1235625805}
   - component: {fileID: 1235625804}
-  - component: {fileID: 1235625808}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1796,25 +1783,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1235625808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235625803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37cef40da992e52458cd221430fd0fa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 0}
-  - {fileID: 43886943}
-  - {fileID: 2098313887}
-  weaponSwitch: {fileID: 1404098619}
-  weapon: {fileID: 1551974614}
-  ammo: {fileID: 1108108978}
 --- !u!1 &1326622876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,18 +2169,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374751446}
   m_CullTransparentMesh: 0
---- !u!114 &1404098619 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2001628452596959904}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ceff1a083b729743aa9cc511471e7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1417591445
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,18 +2767,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094192410}
   m_CullTransparentMesh: 0
---- !u!114 &2098313887 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1701424966773226887, guid: 20f43a7d19854a24394d8855933c6cc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2001628452596959904}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9403eefa7bec18428b8020c8d5a6cf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &4317886562909983
 Transform:
   m_ObjectHideFlags: 0
