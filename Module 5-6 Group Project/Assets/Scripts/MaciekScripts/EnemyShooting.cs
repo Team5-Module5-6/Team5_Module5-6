@@ -11,7 +11,7 @@ using UnityEngine;
 //Change raycast origin to enemy weapon
 public class EnemyShooting : MonoBehaviour
 {
-    //Script references    
+    //Script references
     private EnemyStats enemyStatsScript;
     private PlayerStats playerStatsScript;
 
@@ -25,18 +25,12 @@ public class EnemyShooting : MonoBehaviour
     private float yRayOffset;
     private bool isLoaded = true;
     private float rangedDamage;
-    
-    //Coroutines
-    private IEnumerator reloadCorutine;
 
     void Start()
     {   
         //Script references
         enemyStatsScript = GetComponent<EnemyStats>();
         playerStatsScript = FindObjectOfType<PlayerStats>();
-
-        //Corutines
-        reloadCorutine = Reload();
 
         //Script variables
         range = enemyStatsScript.rangedAttackRange;
@@ -65,22 +59,23 @@ public class EnemyShooting : MonoBehaviour
 
                 //Debug.Log("I can see you");
                 playerInSight = true;
+                Debug.Log("Is loaded: " + isLoaded);
                 if (isLoaded)
                 {
                     //Play animation/effects
                     float hitChanceRNG = UnityEngine.Random.Range(0, 100); //Determines if the player got hit
-
+                    Debug.Log(hitChanceRNG);
                     if (hitChanceRNG <= hitChance)
                     {
                         playerStatsScript.TakeDamage(rangedDamage);
-                        //Debug.Log("I shot you");
+                        Debug.Log("I shot you");
                     }
                     else
                     {
-                        //Debug.Log("I missed");
+                        Debug.Log("I missed");
                     }
                     isLoaded = false;
-                    StartCoroutine(reloadCorutine); //Starts a coroutine to reload the gun
+                    StartCoroutine(Reload()); //Starts a coroutine to reload the gun
                 }
             }
             else
@@ -95,7 +90,6 @@ public class EnemyShooting : MonoBehaviour
     {
         yield return new WaitForSeconds(1 / rateOfFire); //Very bad way of determing rate of fire lmao
         isLoaded = true;
-        StopCoroutine(reloadCorutine); //Not sure if it's needed, I think once it runs the code the coroutine stops itself but I'll leave it in for now
-
+        Debug.Log("Coroutine completed");
     }
 }

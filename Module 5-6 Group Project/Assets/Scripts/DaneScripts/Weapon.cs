@@ -10,6 +10,8 @@ public class Weapon : MonoBehaviour
     public int damage = 0;
     public float fireRate;
 
+    public ParticleSystem muzzleFlash;
+
     void Start()
     {
         currentAmmo = maxAmmo;
@@ -39,6 +41,7 @@ public class Weapon : MonoBehaviour
     }
     void Shoot()
     {
+        muzzleFlash.Play();
         //Reduce ammo by one each shot
         currentAmmo = currentAmmo - 1;
 

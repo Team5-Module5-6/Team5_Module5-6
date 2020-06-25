@@ -6,8 +6,8 @@ public class WeaponSwitch : MonoBehaviour
 {
     public Transform[] weapons;
     //set default weapon here
-    public int currentWeapon = 0;
-    private int previousWeapon = 0;
+    public int currentWeapon = 1;
+    private int previousWeapon = 1;
 
     public float attackTime = 1f;
     public bool isAttacking = false;
@@ -26,11 +26,11 @@ public class WeaponSwitch : MonoBehaviour
         }
         else
         {
+            //when not melee attacking, revert back to the previous weapon
             currentWeapon = previousWeapon;
             SwitchWeapon();
         }
             
-
         //change weapon on corresponding button press 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
