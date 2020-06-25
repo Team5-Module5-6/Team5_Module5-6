@@ -11,6 +11,7 @@ public class WaveHandler : MonoBehaviour
     //Script variables
     [Tooltip("Current wave\n 0 = wave 1\n 1 = wave 2\n 2 = wave 3...")]
     public int waveID = 0;
+    public int starStoneID = 0;
 
     public void KillAllEnemies() //Just deletes them for now, will make the enemies take damage 
     {

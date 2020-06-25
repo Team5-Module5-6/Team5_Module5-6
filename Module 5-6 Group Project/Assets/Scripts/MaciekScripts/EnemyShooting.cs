@@ -14,23 +14,38 @@ public class EnemyShooting : MonoBehaviour
     //Script references
     private EnemyStats enemyStatsScript;
     private PlayerStats playerStatsScript;
+    private PlayerMovement playerMovementScript;
 
     //Script variables
     [HideInInspector]
     public bool playerInSight;
-
+    public int starStoneID = 0;
     private float range;
     private int hitChance;
     private float rateOfFire;
     private float yRayOffset;
     private bool isLoaded = true;
     private float rangedDamage;
+    private float tempSpeed;
+
+    //Fire SS variables
+    private float damageOverTime;
+    private float damageOverTimeInterval;
+    private int ticksOfDamageOverTime;
+
+    //Ice SS variables
+    private float slowPercentage;
+    private float slowDuration;
+
+    //Electric SS variables
+    private float stunDuration;
 
     void Start()
     {   
         //Script references
         enemyStatsScript = GetComponent<EnemyStats>();
         playerStatsScript = FindObjectOfType<PlayerStats>();
+        playerMovementScript = FindObjectOfType<PlayerMovement>();
 
         //Script variables
         range = enemyStatsScript.rangedAttackRange;
@@ -38,6 +53,20 @@ public class EnemyShooting : MonoBehaviour
         rateOfFire = enemyStatsScript.rateOfFire;
         rangedDamage = enemyStatsScript.rangedDamage;
         yRayOffset = enemyStatsScript.yRayOffset;
+
+        tempSpeed = playerMovementScript.speed;
+
+        //Fire StarStone
+        damageOverTime = enemyStatsScript.damageOverTime;
+        damageOverTimeInterval = enemyStatsScript.damageOverTimeInterval;
+        ticksOfDamageOverTime = enemyStatsScript.ticksOfDamageOverTime;
+
+        //Ice StarStone
+        slowPercentage = enemyStatsScript.slowPercentage;
+        slowDuration = enemyStatsScript.slowDuration;
+
+        //Electric StarStone
+        stunDuration = enemyStatsScript.stunDuration;
     }
 
     void FixedUpdate()
@@ -59,20 +88,35 @@ public class EnemyShooting : MonoBehaviour
 
                 //Debug.Log("I can see you");
                 playerInSight = true;
-                Debug.Log("Is loaded: " + isLoaded);
+                //Debug.Log("Is loaded: " + isLoaded);
                 if (isLoaded)
                 {
                     //Play animation/effects
                     float hitChanceRNG = UnityEngine.Random.Range(0, 100); //Determines if the player got hit
-                    Debug.Log(hitChanceRNG);
+                    //Debug.Log(hitChanceRNG);
                     if (hitChanceRNG <= hitChance)
                     {
                         playerStatsScript.TakeDamage(rangedDamage);
-                        Debug.Log("I shot you");
+                        switch (starStoneID)
+                        {
+                            case 1: // Fire starstone
+                                StartCoroutine(DamageOverTime(ticksOfDamageOverTime, damageOverTimeInterval, damageOverTime));
+                                break;
+
+                            case 2: //Ice starstone
+                                StartCoroutine(PlayerSlow(slowPercentage, slowDuration));
+                                break;
+
+                            case 4: //Electric starstone
+                                StartCoroutine(StunPlayer(stunDuration));
+                                break;
+                                 
+                        }
+                        //Debug.Log("I shot you");
                     }
                     else
                     {
-                        Debug.Log("I missed");
+                        //Debug.Log("I missed");
                     }
                     isLoaded = false;
                     StartCoroutine(Reload()); //Starts a coroutine to reload the gun
@@ -86,10 +130,34 @@ public class EnemyShooting : MonoBehaviour
         }
     }
 
+    IEnumerator DamageOverTime( int numberOfDamageTicks, float timeInterval, float damagePerTick)
+    {
+        for(int i = 0; i < numberOfDamageTicks; i++)
+        {
+            yield return new WaitForSeconds(timeInterval);
+            playerStatsScript.TakeDamage(damagePerTick);
+        }
+
+    }
+
+    IEnumerator PlayerSlow(float xslowPercentage, float xslowDuration)
+    {
+        playerMovementScript.speed *= xslowPercentage;
+        yield return new WaitForSeconds(xslowDuration);
+        playerMovementScript.speed = tempSpeed;
+    }
+
+    IEnumerator StunPlayer(float stunDuration)
+    {
+        playerMovementScript.speed = 0;
+        yield return new WaitForSeconds(stunDuration);
+        playerMovementScript.speed = tempSpeed;
+    }
+
     IEnumerator Reload()
     {
         yield return new WaitForSeconds(1 / rateOfFire); //Very bad way of determing rate of fire lmao
         isLoaded = true;
-        Debug.Log("Coroutine completed");
+        //Debug.Log("Coroutine completed");
     }
 }
