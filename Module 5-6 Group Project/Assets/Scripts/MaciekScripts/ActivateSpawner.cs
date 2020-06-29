@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: Maciej Dowbor
+//Module: MED5192 & MED5201
+//Last Accessed: 24/06/2020
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
@@ -33,7 +37,7 @@ public class ActivateSpawner : MonoBehaviour
         DetectGenerator();
     }
 
-    void DetectGenerator()
+    void DetectGenerator() //Casts a raycast and if the generator is hit displays a pop up with information how to activate it, I'm going to work with either Adam or Dane to implement this into one of their raycasts as I knjow they are also using them
     {
 
         if (Physics.Raycast(raycast.transform.position, raycast.transform.TransformDirection(Vector3.forward), range, generatorLayerMask))

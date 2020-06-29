@@ -14,10 +14,8 @@ public class TemperatureGauge : MonoBehaviour
 
     //Script variables
     public float maxTemp;
-
     [HideInInspector]
     public float currentTemp;
-
     private float initialTempImageHeight;
     private float newTempImageHeight;
 

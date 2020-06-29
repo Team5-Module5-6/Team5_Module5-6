@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+//First version of the spawner, won't be used
+
 public class SpawnerV1 : MonoBehaviour
 {
     [Tooltip("Time (in seconds) between enemy spawn")]

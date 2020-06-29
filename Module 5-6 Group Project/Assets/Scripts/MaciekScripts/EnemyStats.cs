@@ -85,8 +85,9 @@ public class EnemyStats : MonoBehaviour
 
         //Set variables
         starStoneID = waveHandlerScript.starStoneID;
-        //enemySizeY = enemyMeshRenderer.bounds.size.y; //Doesn't work for some reason
-        switch (enemyID)
+        //enemySizeY = enemyMeshRenderer.bounds.size.y; //Doesn't work for some reason will look into it later
+
+        switch (enemyID) //Used to adjust the spawn points of poison puddles to make sure theu are spawn below the enemy instead of inside of them
         {
             case 0:
                 enemySizeY = 0.5f;
@@ -105,9 +106,7 @@ public class EnemyStats : MonoBehaviour
         //Call functions
         GetTemperature();
 
-
-
-        if(starStoneID == 3)
+        if(starStoneID == 3) //The way I think this is supposed to work is that the starstone type is chosen once every wave at random and the same starstone is used until the wave is finished
         {
             StartCoroutine(SpawnPoisonPuddles());
         }

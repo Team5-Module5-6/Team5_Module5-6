@@ -1,6 +1,6 @@
 ﻿//Author: Maciej Dowbor
 //Module: MED5192 & MED5201
-//Last Accessed: 17/06/2020
+//Last Accessed: 25/06/2020
 
 using System;
 using System.Collections;
@@ -53,7 +53,6 @@ public class EnemyShooting : MonoBehaviour
         rateOfFire = enemyStatsScript.rateOfFire;
         rangedDamage = enemyStatsScript.rangedDamage;
         yRayOffset = enemyStatsScript.yRayOffset;
-
         tempSpeed = playerMovementScript.speed;
 
         //Fire StarStone
@@ -130,7 +129,7 @@ public class EnemyShooting : MonoBehaviour
         }
     }
 
-    IEnumerator DamageOverTime( int numberOfDamageTicks, float timeInterval, float damagePerTick)
+    IEnumerator DamageOverTime( int numberOfDamageTicks, float timeInterval, float damagePerTick) //Deals damage over time to the player
     {
         for(int i = 0; i < numberOfDamageTicks; i++)
         {
@@ -140,14 +139,14 @@ public class EnemyShooting : MonoBehaviour
 
     }
 
-    IEnumerator PlayerSlow(float xslowPercentage, float xslowDuration)
+    IEnumerator PlayerSlow(float xslowPercentage, float xslowDuration) //Slows player
     {
         playerMovementScript.speed *= xslowPercentage;
         yield return new WaitForSeconds(xslowDuration);
         playerMovementScript.speed = tempSpeed;
     }
 
-    IEnumerator StunPlayer(float stunDuration)
+    IEnumerator StunPlayer(float stunDuration) //Stuns the player (Only disables movement for now)
     {
         playerMovementScript.speed = 0;
         yield return new WaitForSeconds(stunDuration);
