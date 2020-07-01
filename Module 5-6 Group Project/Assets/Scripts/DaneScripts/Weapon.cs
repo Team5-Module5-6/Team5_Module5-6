@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
             }           
         }
         //Stop shooting
-        else if (Input.GetMouseButtonUp(0) && (currentAmmo > 0))
+        else if (Input.GetMouseButtonUp(0) || currentAmmo <= 0)
         {
             CancelInvoke("Shoot");
         }          

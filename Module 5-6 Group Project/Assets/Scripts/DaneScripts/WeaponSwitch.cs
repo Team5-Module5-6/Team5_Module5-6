@@ -44,6 +44,13 @@ public class WeaponSwitch : MonoBehaviour
             previousWeapon = 2;
             SwitchWeapon();
         }
+        //temporary
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            currentWeapon = 3;
+            previousWeapon = 3;
+            SwitchWeapon();
+        }
         if (Input.GetMouseButtonDown(1))
         {
             currentWeapon = 0;
