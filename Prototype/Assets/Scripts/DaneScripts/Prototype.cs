@@ -4,25 +4,35 @@ using UnityEngine;
 
 public class Prototype : MonoBehaviour
 {
-    public LineRenderer laser;
-
+    public LineRenderer laserBeam;
     public int damage = 1;
     // Start is called before the first frame update
     void Start()
     {
-        laser = GetComponent<LineRenderer>();
+        laserBeam = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        laserBeam.enabled = false;
+
+        if (Input.GetMouseButton(0))
+        {
+            laserBeam.enabled = true;
+            LaserFire();
+        }
+              
+    }
+    public void LaserFire()
+    {        
         RaycastHit hit;
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit))
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
             if (hit.collider)
             {
-                laser.SetPosition(1, new Vector3(0, 0, hit.distance));
+                laserBeam.SetPosition(1, new Vector3(0, 0, hit.distance));
 
             }
 
@@ -34,8 +44,7 @@ public class Prototype : MonoBehaviour
         }
         else
         {
-            laser.SetPosition(1, new Vector3(0, 0, 5000));
+            laserBeam.SetPosition(1, new Vector3(0, 0, 5000));
         }
-        
     }
 }
