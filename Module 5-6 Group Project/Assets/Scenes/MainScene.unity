@@ -408,7 +408,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1676
+  m_Name: pb_Mesh-17816
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -764,7 +764,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1666
+  m_Name: pb_Mesh-17808
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1433,6 +1433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveID: 0
+  starStoneID: 0
 --- !u!4 &1167322676
 Transform:
   m_ObjectHideFlags: 0
@@ -1531,7 +1532,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1698
+  m_Name: pb_Mesh-17836
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5875,56 +5876,8 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1214385543}
-    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
-        type: 3}
-      propertyPath: weapons.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
-        type: 3}
-      propertyPath: weapons.Array.data[2]
-      value: 
-      objectReference: {fileID: 2001628452596959907}
-    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
-        type: 3}
-      propertyPath: weapons.Array.data[1]
-      value: 
-      objectReference: {fileID: 2001628452596959906}
-    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
-        type: 3}
-      propertyPath: weapons.Array.data[0]
-      value: 
-      objectReference: {fileID: 2001628452596959905}
-    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
-        type: 3}
-      propertyPath: currentWeapon
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
-        type: 3}
-      propertyPath: attackTime
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f43a7d19854a24394d8855933c6cc4, type: 3}
---- !u!4 &2001628452596959905 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2929486681791674835, guid: 20f43a7d19854a24394d8855933c6cc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2001628452596959904}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2001628452596959906 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5063834011500414583, guid: 20f43a7d19854a24394d8855933c6cc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2001628452596959904}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2001628452596959907 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1701424966773226885, guid: 20f43a7d19854a24394d8855933c6cc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2001628452596959904}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2010616257639839646
 GameObject:
   m_ObjectHideFlags: 0

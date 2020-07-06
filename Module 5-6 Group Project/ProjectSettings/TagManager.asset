@@ -9,8 +9,11 @@ TagManager:
   - target
   - ammo
   - Melee
-  - StarStone
   - Generator
+  - FireStarStone
+  - IceStarStone
+  - LightningStarStone
+  - PoisonStarStone
   layers:
   - Default
   - TransparentFX
