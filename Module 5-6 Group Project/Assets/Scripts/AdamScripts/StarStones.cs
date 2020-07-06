@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class StarStones : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform raycastTransform;
+
+    enum starStones
+    {
+        Fire,
+        Ice,
+        Lightning,
+        Poison
+    }
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        RaycastHit raycastHit;
+        if (Physics.Raycast(raycastTransform.position, raycastTransform.TransformDirection(Vector3.forward), out raycastHit))
+        {
+            if(Input.GetKeyDown(KeyCode.E) && raycastHit.transform.gameObject.CompareTag(""))
+            {
+                
+            }
+        }
     }
 }

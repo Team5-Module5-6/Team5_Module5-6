@@ -326,10 +326,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
+  - {fileID: 2929486681791674835}
   - {fileID: 5063834011500414583}
   - {fileID: 1701424966773226885}
-  currentWeapon: 0
-  attackTime: 1
+  currentWeapon: 1
+  attackTime: 0.5
   isAttacking: 0
 --- !u!1 &2001628452682828023
 GameObject:
