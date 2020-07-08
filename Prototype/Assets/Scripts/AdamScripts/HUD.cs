@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class HUD : MonoBehaviour
@@ -10,8 +11,12 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI weapon;
     public TextMeshProUGUI ammo;
     public GameObject inventory;
+    public Transform camera;
+    public Slider enemyHealthPopUp;
 
     private int equippedWeapon;
+    private float enemyMaxHealth;
+    private float enemyHealth;
 
     void Update()
     {
@@ -39,6 +44,25 @@ public class HUD : MonoBehaviour
         else
         {
             inventory.SetActive(false);
+        }
+
+        RaycastHit raycastHit;
+        if (Physics.Raycast(camera.position + camera.TransformDirection(Vector3.forward) * 0.5f, camera.TransformDirection(Vector3.forward), out raycastHit))
+        {
+            if (raycastHit.transform.gameObject.CompareTag("Enemy"))
+            {
+                //enemyMaxHealth = raycastHit.transform.gameObject.GetComponent<EnemyStats>().maxHealth;
+                enemyHealth = raycastHit.transform.gameObject.GetComponent<EnemyStats>().health;
+
+                enemyHealthPopUp.transform.gameObject.SetActive(true);
+
+                //enemyHealthPopUp.maxValue = enemyMaxHealth;
+                enemyHealthPopUp.value = enemyHealth;
+            }
+            else
+            {
+                enemyHealthPopUp.transform.gameObject.SetActive(false);
+            }
         }
     }
 }
