@@ -342,7 +342,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-42234
+  m_Name: pb_Mesh-1374
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1746,6 +1746,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item slot
       objectReference: {fileID: 0}
+    - target: {fileID: 7107934335983497891, guid: 0ba4d9d26aa812d43afe58bf894ec46e,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: f6b9ec7da3a4bed4597f87512bc4cfb0, type: 3}
     - target: {fileID: 7968547199116375847, guid: 0ba4d9d26aa812d43afe58bf894ec46e,
         type: 3}
       propertyPath: m_IsActive
@@ -1888,6 +1893,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item slot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7107934335983497891, guid: 0ba4d9d26aa812d43afe58bf894ec46e,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: f6b9ec7da3a4bed4597f87512bc4cfb0, type: 3}
     - target: {fileID: 7968547199116375847, guid: 0ba4d9d26aa812d43afe58bf894ec46e,
         type: 3}
       propertyPath: m_IsActive
@@ -5246,7 +5256,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-42086
+  m_Name: pb_Mesh-1226
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
