@@ -99,7 +99,7 @@ public class EnemyShooting : MonoBehaviour
                 if (isLoaded)
                 {
                     //Play animation/effects
-                    Instantiate(gunFlashEffect, gunTip.position, Quaternion.identity);
+                    Instantiate(gunFlashEffect, gunTip.position, gunTip.rotation);
 
                     float hitChanceRNG = UnityEngine.Random.Range(0, 100); //Determines if the player got hit
                     //Debug.Log(hitChanceRNG);

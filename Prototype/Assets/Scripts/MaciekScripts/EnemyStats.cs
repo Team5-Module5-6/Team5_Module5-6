@@ -23,6 +23,7 @@ public class EnemyStats : MonoBehaviour
     public float speed;
     [Tooltip("Distance at which the enemy will start to move towards the player")]
     public float triggerDistance;
+    private int maxHealth;
 
     [Header("Shooting variables")]
     public int ammunition;
@@ -85,6 +86,7 @@ public class EnemyStats : MonoBehaviour
 
         //Set variables
         starStoneID = waveHandlerScript.starStoneID;
+        maxHealth = health;
         //enemySizeY = enemyMeshRenderer.bounds.size.y; //Doesn't work for some reason will look into it later
 
         switch (enemyID) //Used to adjust the spawn points of poison puddles to make sure theu are spawn below the enemy instead of inside of them
