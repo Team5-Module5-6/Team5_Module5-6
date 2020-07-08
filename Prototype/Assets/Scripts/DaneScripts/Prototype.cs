@@ -22,7 +22,7 @@ public class Prototype : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        laserBeam.enabled = false;
 
         if (Input.GetMouseButton(0))
         {
