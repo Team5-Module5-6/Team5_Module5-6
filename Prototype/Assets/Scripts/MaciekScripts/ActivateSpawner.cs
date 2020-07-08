@@ -18,6 +18,7 @@ public class ActivateSpawner : MonoBehaviour
 
     //Scripts
     private SpawnerV2 spawnerScript;
+    private WaveHandler waveHandlerScript;
 
     //Images
     public Image generatorPopUp;
@@ -30,6 +31,7 @@ public class ActivateSpawner : MonoBehaviour
     {
         generatorLayerMask = LayerMask.GetMask("Generator");
         spawnerScript = FindObjectOfType<SpawnerV2>();
+        waveHandlerScript = FindObjectOfType<WaveHandler>();
     }
 
     void Update()
@@ -50,6 +52,11 @@ public class ActivateSpawner : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && spawnerScript.isSpawnerOn == false)
             {
                 spawnerScript.SpawnerToggle();
+            }
+
+            if (Input.GetKeyDown(KeyCode.G) && spawnerScript.isSpawnerOn == false)
+            {
+                waveHandlerScript.ChangeStarStone();
             }
         }
         else if (generatorPopUp.IsActive())

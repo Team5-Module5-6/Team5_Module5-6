@@ -2,6 +2,7 @@
 //Module: MED5192 & MED5201
 //Last Accessed: 17/06/2020
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -82,10 +83,11 @@ public class TemperatureGauge : MonoBehaviour
     void CheckGeneratorTemperature()
     {
         spawnerScript.SpawnerToggle(); //Turns off spawner 
-        currentTemp = 0; //Resets the temperature
 
         if (currentTemp >= maxTemp)
         {
+            Debug.Log("Char controller disabled");
+            waveHandlerScript.PlayerLose();
             //Something happens that makes the player lose
         }
 
@@ -93,5 +95,6 @@ public class TemperatureGauge : MonoBehaviour
         {
             waveHandlerScript.AdvanceToNextWave();
         }
+        currentTemp = 0; //Resets the temperature
     }
 }

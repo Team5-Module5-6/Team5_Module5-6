@@ -15,11 +15,12 @@ public class EnemyShooting : MonoBehaviour
     private EnemyStats enemyStatsScript;
     private PlayerStats playerStatsScript;
     private PlayerMovement playerMovementScript;
+    private WaveHandler waveHandlerScript;
 
     //Script variables
     [HideInInspector]
     public bool playerInSight;
-    public int starStoneID = 0;
+    private int starStoneID = 0;
     private float range;
     private int hitChance;
     private float rateOfFire;
@@ -46,8 +47,10 @@ public class EnemyShooting : MonoBehaviour
         enemyStatsScript = GetComponent<EnemyStats>();
         playerStatsScript = FindObjectOfType<PlayerStats>();
         playerMovementScript = FindObjectOfType<PlayerMovement>();
+        waveHandlerScript = FindObjectOfType<WaveHandler>();
 
         //Script variables
+        starStoneID = waveHandlerScript.starStoneID;
         range = enemyStatsScript.rangedAttackRange;
         hitChance = enemyStatsScript.chanceToHit;
         rateOfFire = enemyStatsScript.rateOfFire;
@@ -148,9 +151,9 @@ public class EnemyShooting : MonoBehaviour
 
     IEnumerator StunPlayer(float stunDuration) //Stuns the player (Only disables movement for now)
     {
-        playerMovementScript.speed = 0;
+        waveHandlerScript.ToggleCharControler();
         yield return new WaitForSeconds(stunDuration);
-        playerMovementScript.speed = tempSpeed;
+        waveHandlerScript.ToggleCharControler();
     }
 
     IEnumerator Reload()
