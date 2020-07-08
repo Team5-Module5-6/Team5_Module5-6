@@ -30,9 +30,11 @@ public class Prototype : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
+            Debug.Log(hit.transform.name);
+
             if (hit.collider)
             {
-                laserBeam.SetPosition(1, new Vector3(0, 0, hit.distance));
+                laserBeam.SetPosition(1, new Vector3(0, 0, hit.distance * 4));
 
             }
 
