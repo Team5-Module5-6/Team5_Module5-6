@@ -9,6 +9,7 @@ public class HUD : MonoBehaviour
     public WeaponSwitch weaponSwitch;
     public TextMeshProUGUI weapon;
     public TextMeshProUGUI ammo;
+    public GameObject inventory;
 
     private int equippedWeapon;
 
@@ -30,5 +31,14 @@ public class HUD : MonoBehaviour
         }
 
         ammo.text = weapons[equippedWeapon].currentAmmo.ToString() + "/" + weapons[equippedWeapon].maxAmmo.ToString();
+
+        if (Input.GetKey(KeyCode.I))
+        {
+            inventory.SetActive(true);
+        }
+        else
+        {
+            inventory.SetActive(false);
+        }
     }
 }
