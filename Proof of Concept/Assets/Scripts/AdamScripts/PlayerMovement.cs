@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+// Moves player character around scene according to keyboard input
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
