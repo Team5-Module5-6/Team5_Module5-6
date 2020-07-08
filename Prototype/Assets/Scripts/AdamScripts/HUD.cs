@@ -51,12 +51,12 @@ public class HUD : MonoBehaviour
         {
             if (raycastHit.transform.gameObject.CompareTag("Enemy"))
             {
-                //enemyMaxHealth = raycastHit.transform.gameObject.GetComponent<EnemyStats>().maxHealth;
+                enemyMaxHealth = raycastHit.transform.gameObject.GetComponent<EnemyStats>().maxHealth;
                 enemyHealth = raycastHit.transform.gameObject.GetComponent<EnemyStats>().health;
 
                 enemyHealthPopUp.transform.gameObject.SetActive(true);
 
-                //enemyHealthPopUp.maxValue = enemyMaxHealth;
+                enemyHealthPopUp.maxValue = enemyMaxHealth;
                 enemyHealthPopUp.value = enemyHealth;
             }
             else
