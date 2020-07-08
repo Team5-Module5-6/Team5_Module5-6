@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 926631219}
-  m_IndirectSpecularColor: {r: 0.085961066, g: 0.13642663, b: 0.32298732, a: 1}
+  m_IndirectSpecularColor: {r: 0.085960895, g: 0.13642636, b: 0.32298666, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4934,6 +4934,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item slot
       objectReference: {fileID: 0}
+    - target: {fileID: 2115630337879855675, guid: 0ba4d9d26aa812d43afe58bf894ec46e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7107934335983497891, guid: 0ba4d9d26aa812d43afe58bf894ec46e,
         type: 3}
       propertyPath: m_Texture
@@ -6202,7 +6207,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 53.85
+  m_fontSize: 46.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6384,7 +6389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2094192411
 RectTransform:
   m_ObjectHideFlags: 0

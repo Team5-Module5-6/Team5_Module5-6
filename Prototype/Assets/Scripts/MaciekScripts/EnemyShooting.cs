@@ -11,6 +11,11 @@ using UnityEngine;
 //Change raycast origin to enemy weapon
 public class EnemyShooting : MonoBehaviour
 {
+    //Particle Effect
+    public ParticleSystem gunFlashEffect;
+    public Transform gunTip;
+
+
     //Script references
     private EnemyStats enemyStatsScript;
     private PlayerStats playerStatsScript;
@@ -94,6 +99,8 @@ public class EnemyShooting : MonoBehaviour
                 if (isLoaded)
                 {
                     //Play animation/effects
+                    Instantiate(gunFlashEffect, gunTip.position, Quaternion.identity);
+
                     float hitChanceRNG = UnityEngine.Random.Range(0, 100); //Determines if the player got hit
                     //Debug.Log(hitChanceRNG);
                     if (hitChanceRNG <= hitChance)
