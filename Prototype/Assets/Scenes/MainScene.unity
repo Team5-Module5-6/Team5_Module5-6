@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 926631219}
-  m_IndirectSpecularColor: {r: 0.085960895, g: 0.13642636, b: 0.32298666, a: 1}
+  m_IndirectSpecularColor: {r: 0.08596061, g: 0.13642594, b: 0.32298607, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -237,7 +237,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: de00ae01d809a634181394c27feaeab8, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserBeam: {fileID: 91622510}
   damage: 1
+  starStoneID: 0
 --- !u!1 &119718487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2001628452682828023, guid: 20f43a7d19854a24394d8855933c6cc4,
@@ -3306,6 +3307,8 @@ MonoBehaviour:
   weapon: {fileID: 1551974614}
   ammo: {fileID: 1108108978}
   inventory: {fileID: 1281758822}
+  camera: {fileID: 0}
+  enemyHealthPopUp: {fileID: 0}
 --- !u!1001 &1245628206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6217,7 +6220,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 46.65
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

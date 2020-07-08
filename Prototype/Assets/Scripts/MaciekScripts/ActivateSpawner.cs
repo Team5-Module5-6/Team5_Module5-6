@@ -19,6 +19,7 @@ public class ActivateSpawner : MonoBehaviour
     //Scripts
     private SpawnerV2 spawnerScript;
     private WaveHandler waveHandlerScript;
+    private Prototype prototypeScript;//Dane
 
     //Images
     public Image generatorPopUp;
@@ -32,6 +33,7 @@ public class ActivateSpawner : MonoBehaviour
         generatorLayerMask = LayerMask.GetMask("Generator");
         spawnerScript = FindObjectOfType<SpawnerV2>();
         waveHandlerScript = FindObjectOfType<WaveHandler>();
+        prototypeScript = GameObject.Find("Prototype").GetComponent<Prototype>();//Dane
     }
 
     void Update()
@@ -57,6 +59,9 @@ public class ActivateSpawner : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.G) && spawnerScript.isSpawnerOn == false)
             {
                 waveHandlerScript.ChangeStarStone();
+                //Dane
+                //Best way to change player's stone? Maybe Temporary
+                prototypeScript.ChangeStarStone1();
             }
         }
         else if (generatorPopUp.IsActive())
