@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     // Health variables available in inspector for change
+    [Header("Health")]
     public float maxHealth;
     public float currentHealth;
 
