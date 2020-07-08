@@ -289,4 +289,4 @@ MonoBehaviour:
   generatorPart: 0
   labNote: 1
   itemName: Lab Note 1
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: f6b9ec7da3a4bed4597f87512bc4cfb0, type: 3}
