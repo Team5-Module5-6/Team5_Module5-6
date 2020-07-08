@@ -70,6 +70,7 @@ MonoBehaviour:
   maxHealth: 0
   currentHealth: 0
   healthUI: {fileID: 0}
+  waveHandler: {fileID: 0}
 --- !u!114 &2001628450755543382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666b8551532d07d44964f76070ddcf98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpDistance: 5
+  inventory: {fileID: 0}
 --- !u!1 &2001628452682828023
 GameObject:
   m_ObjectHideFlags: 0

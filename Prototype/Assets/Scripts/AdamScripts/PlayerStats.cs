@@ -10,6 +10,8 @@ public class PlayerStats : MonoBehaviour
 
     public Slider healthUI;
 
+    public WaveHandler waveHandler;
+
     private void Start()
     {
         healthUI.maxValue = maxHealth;
@@ -18,6 +20,11 @@ public class PlayerStats : MonoBehaviour
     private void Update()
     {
         healthUI.value = currentHealth;
+
+        if(currentHealth <= 0)
+        {
+            waveHandler.PlayerLose();
+        }
     }
 
     public void TakeDamage(float damage)
