@@ -23,7 +23,8 @@ public class EnemyStats : MonoBehaviour
     public float speed;
     [Tooltip("Distance at which the enemy will start to move towards the player")]
     public float triggerDistance;
-    private int maxHealth;
+    [HideInInspector]
+    public int maxHealth;
 
     [Header("Shooting variables")]
     public int ammunition;
