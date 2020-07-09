@@ -348,6 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpDistance: 5
   inventory: {fileID: 0}
+  popUp: {fileID: 0}
 --- !u!1 &2001628452682828023
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,14 +8,18 @@ public class Prototype : MonoBehaviour
     public int damage = 1;
     public int starStoneID = 0;
 
+    public float timeOnFire = 5f;
+    public bool onFire = false;
     //script reference
     private WaveHandler waveHandler;
+    public EnemyStats enemyStats;
   
     // Start is called before the first frame update
     void Start()
     {
         laserBeam = GetComponent<LineRenderer>();
         waveHandler = GameObject.Find("WaveHandler").GetComponent<WaveHandler>();
+        enemyStats = GameObject.FindObjectOfType<EnemyStats>();
         starStoneID = waveHandler.starStoneID;
     }
 
@@ -29,7 +33,6 @@ public class Prototype : MonoBehaviour
             laserBeam.enabled = true;
             LaserFire();
 
-        
         }
               
     }
@@ -79,26 +82,40 @@ public class Prototype : MonoBehaviour
         {
             case 1:
                 laserBeam.material.color = Color.red;
+                FireStone();
                 break;
 
             case 2:
                 laserBeam.material.color = Color.cyan;
+                IceStone();
                 break;
 
             case 3:
                 laserBeam.material.color = Color.green;
+                PoisonStone();
                 break;
 
             case 4:
                 laserBeam.material.color = Color.yellow;
+                ElectricityStone();
                 break;
         }
     }
 
     public void FireStone()
     {
-
+        StartCoroutine(FireEffect());
     }
+
+    IEnumerator FireEffect()
+    {
+        onFire = true;
+        enemyStats.TakeDamage(1);
+
+        yield return new WaitForSeconds(timeOnFire);
+
+        onFire = false;
+    } 
 
     public void IceStone()
     {

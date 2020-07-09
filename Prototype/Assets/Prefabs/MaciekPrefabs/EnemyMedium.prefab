@@ -106,9 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyID: 1
-  health: 1
+  health: 50
   speed: 5
   triggerDistance: 0
+  maxHealth: 0
   ammunition: 0
   rateOfFire: 1
   rangedAttackRange: 1000

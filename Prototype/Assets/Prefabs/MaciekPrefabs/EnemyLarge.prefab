@@ -450,9 +450,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyID: 2
-  health: 1
+  health: 100
   speed: 3
   triggerDistance: 0
+  maxHealth: 0
   ammunition: 0
   rateOfFire: 1
   rangedAttackRange: 1000
