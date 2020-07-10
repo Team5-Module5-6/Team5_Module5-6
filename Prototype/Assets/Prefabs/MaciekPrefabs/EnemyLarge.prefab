@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyID: 2
-  health: 100
+  health: 50
   speed: 3
   triggerDistance: 0
   maxHealth: 0

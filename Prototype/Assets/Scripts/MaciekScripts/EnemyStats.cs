@@ -19,12 +19,12 @@ public class EnemyStats : MonoBehaviour
     [Header("Basics")]
     [Tooltip("0 = EnemySmall\n1 = EnemyMedium\n2 = EnemyLarge")]
     public int enemyID;
-    public int health;
+    public float health;
     public float speed;
     [Tooltip("Distance at which the enemy will start to move towards the player")]
     public float triggerDistance;
     [HideInInspector]
-    public int maxHealth;
+    public float maxHealth;
 
     [Header("Shooting variables")]
     public int ammunition;
@@ -116,7 +116,7 @@ public class EnemyStats : MonoBehaviour
     }
 
 
-    public void TakeDamage(int damageTaken) //easiest way of doing it, just call this function and type how much damage the enemy should take
+    public void TakeDamage(float damageTaken) //easiest way of doing it, just call this function and type how much damage the enemy should take
     {
         health -= damageTaken;
         CheckHealth();

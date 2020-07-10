@@ -5,11 +5,12 @@ using UnityEngine;
 public class Prototype : MonoBehaviour
 {
     public LineRenderer laserBeam;
-    public int damage = 1;
+    public float damage = 0.001f;
     public int starStoneID = 0;
 
     public float timeOnFire = 5f;
     public bool onFire = false;
+
     //script reference
     private WaveHandler waveHandler;
     public EnemyStats enemyStats;
@@ -54,6 +55,7 @@ public class Prototype : MonoBehaviour
             if (target != null)
             {
                 target.TakeDamage(damage);
+                StarStoneSelect();
             }
         }
         else
@@ -72,63 +74,93 @@ public class Prototype : MonoBehaviour
         {
             starStoneID = 1;
         }
-        ChangeCurrentSS();
-     
+        StarStoneSelect();
+
     }
 
-    public void ChangeCurrentSS()
+    public void StarStoneSelect()
     {
         switch (starStoneID)
         {
             case 1:
                 laserBeam.material.color = Color.red;
-                FireStone();
+                StartCoroutine(FireStone());
                 break;
 
             case 2:
                 laserBeam.material.color = Color.cyan;
-                IceStone();
+                StartCoroutine(IceStone());
                 break;
 
             case 3:
                 laserBeam.material.color = Color.green;
-                PoisonStone();
+                StartCoroutine(PoisonStone());
                 break;
 
             case 4:
                 laserBeam.material.color = Color.yellow;
-                ElectricityStone();
+                StartCoroutine(ElectricityStone());
                 break;
         }
     }
 
-    public void FireStone()
-    {
-        StartCoroutine(FireEffect());
+    public void FireEffect()
+    {       
+        enemyStats.TakeDamage(damage);       
     }
 
-    IEnumerator FireEffect()
+    IEnumerator FireStone()
     {
         onFire = true;
-        enemyStats.TakeDamage(1);
+        InvokeRepeating("FireEffect", 0f, 0.2f);
+        Debug.Log("OnFire");
 
         yield return new WaitForSeconds(timeOnFire);
 
         onFire = false;
+        CancelInvoke("FireEffect");
+        Debug.Log("NotOnFire");
     } 
 
-    public void IceStone()
+    public void IceEffect()
     {
 
     }
 
-    public void PoisonStone()
+    IEnumerator IceStone()
+    {
+        InvokeRepeating("IceEffect", 0f, 0.2f);
+
+        yield return new WaitForSeconds(timeOnFire);
+
+        CancelInvoke("IceEffect");
+    }
+
+    public void PoisonEffect()
     {
 
     }
 
-    public void ElectricityStone()
+    IEnumerator PoisonStone()
+    {
+        InvokeRepeating("PoisonEffect", 0f, 0.2f);
+
+        yield return new WaitForSeconds(timeOnFire);
+
+        CancelInvoke("PoisonEffect");
+    }
+
+    public void ElectricityEffect()
     {
 
+    }
+
+    IEnumerator ElectricityStone()
+    {
+        InvokeRepeating("ElectricityEffect", 0f, 0.2f);
+
+        yield return new WaitForSeconds(timeOnFire);
+
+        CancelInvoke("ElectricityEffect");
     }
 }
