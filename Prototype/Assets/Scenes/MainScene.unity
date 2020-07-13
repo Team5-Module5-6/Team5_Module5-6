@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 926631219}
-  m_IndirectSpecularColor: {r: 0.08596061, g: 0.13642594, b: 0.32298607, a: 1}
+  m_IndirectSpecularColor: {r: 0.085961066, g: 0.13642663, b: 0.32298732, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserBeam: {fileID: 91622510}
-  damage: 1
+  damage: 2
   starStoneID: 0
   timeOnFire: 5
   onFire: 0
@@ -11345,7 +11345,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 72
+  m_fontSize: 46.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14801,6 +14801,11 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 510373949}
+    - target: {fileID: 1701424966773226887, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: damage
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1701424967056781074, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: m_Mesh
@@ -14894,7 +14899,7 @@ PrefabInstance:
     - target: {fileID: 2001628450755543386, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2001628450755543386, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
@@ -14952,6 +14957,11 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 510373949}
+    - target: {fileID: 5063834011500414577, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: damage
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5063834011695157161, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: m_Mesh
@@ -15022,6 +15032,11 @@ PrefabInstance:
       propertyPath: weaponSwitch
       value: 
       objectReference: {fileID: 1404098619}
+    - target: {fileID: 8975854184563414953, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: meleeDamage
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5063834011695157160, guid: 20f43a7d19854a24394d8855933c6cc4, type: 3}
     - {fileID: 1701424967056781077, guid: 20f43a7d19854a24394d8855933c6cc4, type: 3}
