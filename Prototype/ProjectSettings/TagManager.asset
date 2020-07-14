@@ -10,11 +10,8 @@ TagManager:
   - ammo
   - Melee
   - Generator
-  - FireStarStone
-  - IceStarStone
-  - LightningStarStone
-  - PoisonStarStone
   - Item
+  - Door
   layers:
   - Default
   - TransparentFX

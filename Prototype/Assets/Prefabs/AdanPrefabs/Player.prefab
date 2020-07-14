@@ -87,7 +87,7 @@ MonoBehaviour:
   raycastTransform: {fileID: 2001628452113440594}
   speed: 12
   gravity: -19.6
-  jumpHeight: 3
+  jumpHeight: 2
   ladderDistance: 0.8
 --- !u!114 &2001628450755543385
 MonoBehaviour:
