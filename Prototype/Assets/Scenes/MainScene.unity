@@ -384,7 +384,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1374
+  m_Name: pb_Mesh-33220
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6381,6 +6381,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lab note
       objectReference: {fileID: 0}
+    - target: {fileID: 835448421746035398, guid: f9f21aaca3e7784469fdc75db6360124,
+        type: 3}
+      propertyPath: itemName
+      value: Lab Note 1
+      objectReference: {fileID: 0}
     - target: {fileID: 835448421746035399, guid: f9f21aaca3e7784469fdc75db6360124,
         type: 3}
       propertyPath: m_Mesh
@@ -8275,7 +8280,7 @@ MonoBehaviour:
   weaponSwitch: {fileID: 1404098619}
   weapon: {fileID: 1551974614}
   ammo: {fileID: 1108108978}
-  inventory: {fileID: 0}
+  inventory: {fileID: 958079051}
   camera: {fileID: 389930778}
   enemyHealthPopUp: {fileID: 1627395066}
 --- !u!1001 &1245628206
@@ -10501,7 +10506,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1226
+  m_Name: pb_Mesh-33078
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
