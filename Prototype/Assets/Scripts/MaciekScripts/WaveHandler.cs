@@ -15,7 +15,7 @@ public class WaveHandler : MonoBehaviour
     public int starStoneID = 0;
 
     //GameObjects
-    private GameObject generator;
+    public GameObject generator;
 
     //Renderer
     private Renderer generatorRenderer;
@@ -29,8 +29,7 @@ public class WaveHandler : MonoBehaviour
     public Button gameOverButton;
 
     private void Start()
-    {
-        generator = GameObject.Find("Generator");
+    { 
         mouseLookScript = GameObject.Find("Main Camera").GetComponent<MouseLook>();
         generatorRenderer = generator.GetComponent<Renderer>();
 
