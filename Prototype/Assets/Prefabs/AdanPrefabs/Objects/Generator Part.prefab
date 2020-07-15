@@ -1401,7 +1401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084603472577cdd458bc6ad03d018a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generatorPart: 1
-  labNote: 0
-  itemName: Generator Part 1
+  current: 0
+  itemName: Generator Part
   icon: {fileID: 21300000, guid: 0d750ed34a343824691aa52de594fed2, type: 3}

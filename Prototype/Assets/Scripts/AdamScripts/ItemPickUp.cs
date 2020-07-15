@@ -6,19 +6,16 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour
 {
     public float pickUpDistance;
+    public Transform cameraTransform;
     public Inventory inventory;
     public GameObject popUp;
-    private Item itemFound;
 
-    void Start()
-    {
-        
-    }
+    private Item itemFound;
 
     void Update()
     {
         RaycastHit raycastHit;
-        if (Physics.Raycast(transform.position + transform.TransformDirection(Vector3.forward) * 0.5f, transform.TransformDirection(Vector3.forward), out raycastHit))
+        if (Physics.Raycast(cameraTransform.position + cameraTransform.TransformDirection(Vector3.forward) * 0.5f, cameraTransform.TransformDirection(Vector3.forward), out raycastHit))
         {
             if (raycastHit.transform.gameObject.CompareTag("Item") && raycastHit.distance < pickUpDistance)
             {
@@ -29,13 +26,17 @@ public class ItemPickUp : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (itemFound.generatorPart)
+                    if (itemFound.current == Item.itemType.GeneratorPart)
                     {
                         inventory.FoundPart();
                     }
-                    if (itemFound.labNote)
+                    if (itemFound.current == Item.itemType.LabNote)
                     {
                         inventory.FoundNote();
+                    }
+                    if(itemFound.current == Item.itemType.Key)
+                    {
+                        inventory.hasKey = true;
                     }
 
                     Destroy(raycastHit.transform.gameObject);

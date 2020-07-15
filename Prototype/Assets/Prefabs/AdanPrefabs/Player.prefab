@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2001628450755543386}
   - component: {fileID: 2001628450755543382}
   - component: {fileID: 2001628450755543385}
+  - component: {fileID: 6126885535181174535}
+  - component: {fileID: 7505422946339032823}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -101,6 +103,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bcd29a193bddd4ebe267b81728294c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6126885535181174535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001628450755543381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666b8551532d07d44964f76070ddcf98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpDistance: 5
+  cameraTransform: {fileID: 2001628452586328932}
+  inventory: {fileID: 0}
+  popUp: {fileID: 0}
+--- !u!114 &7505422946339032823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001628450755543381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea0325ae777f6344a782a9a07065732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxInteractDistance: 5
+  cameraTransform: {fileID: 2001628452586328932}
+  inventory: {fileID: 0}
+  popUp: {fileID: 0}
 --- !u!1 &2001628451770651862
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +257,6 @@ GameObject:
   - component: {fileID: 2001628452586328934}
   - component: {fileID: 2001628452586328933}
   - component: {fileID: 6964909684728636112}
-  - component: {fileID: 7203000410216316543}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -334,21 +367,6 @@ MonoBehaviour:
   currentWeapon: 1
   attackTime: 0.5
   isAttacking: 0
---- !u!114 &7203000410216316543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001628452586328931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 666b8551532d07d44964f76070ddcf98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickUpDistance: 5
-  inventory: {fileID: 0}
-  popUp: {fileID: 0}
 --- !u!1 &2001628452682828023
 GameObject:
   m_ObjectHideFlags: 0

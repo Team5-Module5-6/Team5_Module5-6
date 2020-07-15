@@ -7,6 +7,10 @@ public class Inventory : MonoBehaviour
 {
     public RawImage[] partIcons;
     public RawImage[] noteIcons;
+    public RawImage key;
+
+    [HideInInspector]
+    public bool hasKey;
 
     private int partsFound;
     private int notesFound;
@@ -34,6 +38,8 @@ public class Inventory : MonoBehaviour
                 noteIcons[i].gameObject.SetActive(true);
             }
         }
+
+        if (hasKey) key.gameObject.SetActive(true);
     }
 
     public void FoundPart()

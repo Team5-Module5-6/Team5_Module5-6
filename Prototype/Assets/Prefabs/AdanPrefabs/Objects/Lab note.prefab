@@ -286,7 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084603472577cdd458bc6ad03d018a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generatorPart: 0
-  labNote: 1
-  itemName: Lab Note 1
+  current: 1
+  itemName: Lab Note
   icon: {fileID: 21300000, guid: f6b9ec7da3a4bed4597f87512bc4cfb0, type: 3}

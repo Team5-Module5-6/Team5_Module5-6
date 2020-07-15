@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public bool generatorPart;
-    public bool labNote;
+    public enum itemType
+    {
+        GeneratorPart,
+        LabNote,
+        Key
+    }
+
+    [SerializeField]
+    public itemType current;
+
     public string itemName;
     public Sprite icon = null;
 }
