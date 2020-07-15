@@ -56,7 +56,7 @@ public class WeaponSwitch : MonoBehaviour
             currentWeapon = 0;
             SwitchWeapon();
             StartCoroutine(Attacking());
-            return;
+        
         }
     }
 

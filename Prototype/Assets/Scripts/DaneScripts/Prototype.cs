@@ -5,7 +5,7 @@ using UnityEngine;
 public class Prototype : MonoBehaviour
 {
     public LineRenderer laserBeam;
-    public float damage = 0.001f;
+    public float damage = 0.0001f;
     public int starStoneID = 0;
 
     public float timeOnFire = 5f;
@@ -33,6 +33,7 @@ public class Prototype : MonoBehaviour
         {
             laserBeam.enabled = true;
             LaserFire();
+            
 
         }
               
@@ -106,7 +107,7 @@ public class Prototype : MonoBehaviour
 
     public void FireEffect()
     {       
-        enemyStats.TakeDamage(damage);       
+               
     }
 
     IEnumerator FireStone()
@@ -119,6 +120,7 @@ public class Prototype : MonoBehaviour
 
         onFire = false;
         CancelInvoke("FireEffect");
+
         Debug.Log("NotOnFire");
     } 
 
