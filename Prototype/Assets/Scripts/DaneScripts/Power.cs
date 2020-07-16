@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Power : MonoBehaviour
 {
-    private EnemyHealth enemy;
+    private EnemyStats enemy;
     
     public float damage = 1f;
     public float timeOnFire = 9.9f;
@@ -24,7 +24,7 @@ public class Power : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        enemy = other.GetComponent<EnemyHealth>();
+        enemy = other.GetComponent<EnemyStats>();
         power = other.GetComponent<PlayerEffects>();
         if (enemy != null)
         {
@@ -39,15 +39,21 @@ public class Power : MonoBehaviour
         if(power.onFire == true)
         {
             Debug.Log("OnFire");
-            power.InvokeRepeating("FireDamage", 0f, 1f);
+            InvokeRepeating("FireDamage", 0.1f, 1f);
 
             yield return new WaitForSeconds(timeOnFire);
 
             Debug.Log("NotOnFire");
             power.onFire = false;
-            power.CancelInvoke("FireDamage");
+            CancelInvoke("FireDamage");
         }       
 
         
+    }
+
+    public void FireDamage()
+    {
+        Debug.Log("YEET");
+        enemy.TakeDamage(damage);
     }
 }

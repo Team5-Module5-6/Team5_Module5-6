@@ -10,13 +10,13 @@ public class PlayerEffects : MonoBehaviour
     public bool onFire = false;
 
     private Prototype protoScript;
-    private EnemyHealth enemyHealthScript;
+    private EnemyStats enemyHealthScript;
     
     // Start is called before the first frame update
     void Start()
     {
         protoScript = GameObject.FindObjectOfType<Prototype>();
-        enemyHealthScript = GameObject.FindObjectOfType<EnemyHealth>();
+        enemyHealthScript = GameObject.FindObjectOfType<EnemyStats>();
     }
 
     void Update()
@@ -30,12 +30,6 @@ public class PlayerEffects : MonoBehaviour
         effectPosition.SetActive(true);
         StartCoroutine(FireEffect());
 
-    }
-
-    public void FireDamage()
-    {
-        
-        enemyHealthScript.TakeDamage(damage);
     }
 
     IEnumerator FireEffect()

@@ -54,9 +54,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2.1264355
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.072672725, z: 0}
 --- !u!54 &6546323126494744183
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -72,7 +72,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!195 &3284237462076466104
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectPosition: {fileID: 870024978518671646}
-  timeOnFire: 5
+  timeOnFire: 10
   damage: 1
   onFire: 0
 --- !u!1 &374976540831663646
@@ -450,9 +450,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 6.0039077
+  m_Height: 1.5278823
   m_Direction: 1
-  m_Center: {x: 0.000000054806126, y: -2.0019538, z: -0.00000010961225}
+  m_Center: {x: 0.000000054806126, y: -4.2399683, z: -0.00000010961225}
 --- !u!114 &8623653709611504257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,10 +479,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!1 &4834266458012668618
 GameObject:
   m_ObjectHideFlags: 0

@@ -118,6 +118,7 @@ public class EnemyStats : MonoBehaviour
 
     public void TakeDamage(float damageTaken) //easiest way of doing it, just call this function and type how much damage the enemy should take
     {
+        Debug.Log("OW");
         health -= damageTaken;
         CheckHealth();
     }

@@ -50,7 +50,7 @@ public class Prototype : MonoBehaviour
             power = hit.transform.GetComponent<PlayerEffects>();
             if (target != null)
             {
-                target.TakeDamage(damage);
+                //target.TakeDamage(damage);
                 power.FireStone();
                 //StarStoneSelect();
             }

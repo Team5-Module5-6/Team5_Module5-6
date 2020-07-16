@@ -4610,8 +4610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1797291080}
+  - {fileID: 1613332863}
   weaponSwitch: {fileID: 0}
   weapon: {fileID: 1115576211}
   ammo: {fileID: 1287595875}
@@ -6342,6 +6342,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598413355}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1613332863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 623670885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9403eefa7bec18428b8020c8d5a6cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1639718131
 GameObject:
   m_ObjectHideFlags: 0
@@ -6890,6 +6902,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792863538}
   m_CullTransparentMesh: 0
+--- !u!114 &1797291080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 623670885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9403eefa7bec18428b8020c8d5a6cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1833043369
 GameObject:
   m_ObjectHideFlags: 0
