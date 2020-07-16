@@ -2775,6 +2775,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f43a7d19854a24394d8855933c6cc4, type: 3}
+--- !u!1 &623670886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2001628450755543381, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 623670885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &623670887 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2001628450755543384, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 623670885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &623670888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623670886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748053131822be748bc4ac22fe54cdbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycast: {fileID: 623670887}
+  generatorPopUp: {fileID: 1654786786}
+  range: 4
 --- !u!1 &679193029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3425,7 +3452,7 @@ MonoBehaviour:
   waveID: 0
   starStoneID: 0
   generator: {fileID: 4440136938453044394}
-  gameOverButton: {fileID: 0}
+  gameOverButton: {fileID: 875757428}
 --- !u!1 &945547371
 GameObject:
   m_ObjectHideFlags: 0
