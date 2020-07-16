@@ -41,7 +41,7 @@ public class Weapon : MonoBehaviour
     }
     void Shoot()
     {
-        //muzzleFlash.Play();
+        muzzleFlash.Play();
         //Reduce ammo by one each shot
         currentAmmo = currentAmmo - 1;
 
