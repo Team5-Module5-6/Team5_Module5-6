@@ -695,3 +695,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeDamage: 1
   animator: {fileID: 1531488154231240135}
+  weaponSwitch: {fileID: 0}
