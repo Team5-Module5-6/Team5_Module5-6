@@ -5,25 +5,22 @@ using UnityEngine;
 public class Prototype : MonoBehaviour
 {
     public LineRenderer laserBeam;
-    public float damage = 0.0001f;
+    public float damage = 0.001f;
     public int starStoneID = 0;
 
-    public float timeOnFire = 5f;
-    public bool onFire = false;
-
     //script reference
-    private WaveHandler waveHandler;
-    public EnemyStats enemyStats;
-  
+    //private WaveHandler waveHandler;
+    private EnemyStats target;
+    private PlayerEffects power;
+
     // Start is called before the first frame update
     void Start()
     {
         laserBeam = GetComponent<LineRenderer>();
-        waveHandler = GameObject.Find("WaveHandler").GetComponent<WaveHandler>();
-        enemyStats = GameObject.FindObjectOfType<EnemyStats>();
-        starStoneID = waveHandler.starStoneID;
+        //waveHandler = GameObject.Find("WaveHandler").GetComponent<WaveHandler>();
+        //enemyStats = GameObject.FindObjectOfType<EnemyStats>();
+        //starStoneID = waveHandler.starStoneID;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -33,10 +30,7 @@ public class Prototype : MonoBehaviour
         {
             laserBeam.enabled = true;
             LaserFire();
-            
-
-        }
-              
+        }    
     }
     public void LaserFire()
     {        
@@ -52,11 +46,13 @@ public class Prototype : MonoBehaviour
 
             }
 
-            EnemyStats target = hit.transform.GetComponent<EnemyStats>();
+            target = hit.transform.GetComponent<EnemyStats>();
+            power = hit.transform.GetComponent<PlayerEffects>();
             if (target != null)
             {
                 target.TakeDamage(damage);
-                StarStoneSelect();
+                power.FireStone();
+                //StarStoneSelect();
             }
         }
         else
@@ -85,84 +81,84 @@ public class Prototype : MonoBehaviour
         {
             case 1:
                 laserBeam.material.color = Color.red;
-                StartCoroutine(FireStone());
+                //StartCoroutine(FireStone());
                 break;
 
             case 2:
                 laserBeam.material.color = Color.cyan;
-                StartCoroutine(IceStone());
+                //StartCoroutine(IceStone());
                 break;
 
             case 3:
                 laserBeam.material.color = Color.green;
-                StartCoroutine(PoisonStone());
+                //StartCoroutine(PoisonStone());
                 break;
 
             case 4:
                 laserBeam.material.color = Color.yellow;
-                StartCoroutine(ElectricityStone());
+                //StartCoroutine(ElectricityStone());
                 break;
         }
     }
 
-    public void FireEffect()
-    {       
-               
-    }
+    //public void FireEffect()
+    //{
 
-    IEnumerator FireStone()
-    {
-        onFire = true;
-        InvokeRepeating("FireEffect", 0f, 0.2f);
-        Debug.Log("OnFire");
+    //}
 
-        yield return new WaitForSeconds(timeOnFire);
+    //IEnumerator FireStone()
+    //{
+    //    onFire = true;
+    //    InvokeRepeating("FireEffect", 0f, 0.2f);
+    //    Debug.Log("OnFire");
 
-        onFire = false;
-        CancelInvoke("FireEffect");
+    //    yield return new WaitForSeconds(timeOnFire);
 
-        Debug.Log("NotOnFire");
-    } 
+    //    onFire = false;
+    //    CancelInvoke("FireEffect");
 
-    public void IceEffect()
-    {
+    //    Debug.Log("NotOnFire");
+    //}
 
-    }
+    //public void IceEffect()
+    //{
 
-    IEnumerator IceStone()
-    {
-        InvokeRepeating("IceEffect", 0f, 0.2f);
+    //}
 
-        yield return new WaitForSeconds(timeOnFire);
+    //IEnumerator IceStone()
+    //{
+    //    InvokeRepeating("IceEffect", 0f, 0.2f);
 
-        CancelInvoke("IceEffect");
-    }
+    //    yield return new WaitForSeconds(timeOnFire);
 
-    public void PoisonEffect()
-    {
+    //    CancelInvoke("IceEffect");
+    //}
 
-    }
+    //public void PoisonEffect()
+    //{
 
-    IEnumerator PoisonStone()
-    {
-        InvokeRepeating("PoisonEffect", 0f, 0.2f);
+    //}
 
-        yield return new WaitForSeconds(timeOnFire);
+    //IEnumerator PoisonStone()
+    //{
+    //    InvokeRepeating("PoisonEffect", 0f, 0.2f);
 
-        CancelInvoke("PoisonEffect");
-    }
+    //    yield return new WaitForSeconds(timeOnFire);
 
-    public void ElectricityEffect()
-    {
+    //    CancelInvoke("PoisonEffect");
+    //}
 
-    }
+    //public void ElectricityEffect()
+    //{
 
-    IEnumerator ElectricityStone()
-    {
-        InvokeRepeating("ElectricityEffect", 0f, 0.2f);
+    //}
 
-        yield return new WaitForSeconds(timeOnFire);
+    //IEnumerator ElectricityStone()
+    //{
+    //    InvokeRepeating("ElectricityEffect", 0f, 0.2f);
 
-        CancelInvoke("ElectricityEffect");
-    }
+    //    yield return new WaitForSeconds(timeOnFire);
+
+    //    CancelInvoke("ElectricityEffect");
+    //}
 }
