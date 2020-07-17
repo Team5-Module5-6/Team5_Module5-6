@@ -30,6 +30,10 @@ public class Door : MonoBehaviour
                     }
                 }
             }
+            else
+            {
+                popUp.SetActive(false);
+            }
         }
     }
 }

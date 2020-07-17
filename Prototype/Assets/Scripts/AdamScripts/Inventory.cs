@@ -40,6 +40,7 @@ public class Inventory : MonoBehaviour
         }
 
         if (hasKey) key.gameObject.SetActive(true);
+        else key.gameObject.SetActive(false);
     }
 
     public void FoundPart()

@@ -129,7 +129,7 @@ MonoBehaviour:
   healingPerSecond: 10
   radius: 5
   durationTime: 10
-  cooldownTime: 60
+  cooldownTime: 40
   cooldownUI: {fileID: 0}
 --- !u!1 &8709126175566332636
 GameObject:

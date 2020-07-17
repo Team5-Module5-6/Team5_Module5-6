@@ -11,7 +11,7 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI weapon;
     public TextMeshProUGUI ammo;
     public GameObject inventory;
-    public Transform camera;
+    public Transform cameraTransform;
     public Slider enemyHealthPopUp;
 
     private int equippedWeapon;
@@ -47,7 +47,7 @@ public class HUD : MonoBehaviour
         }
 
         RaycastHit raycastHit;
-        if (Physics.Raycast(camera.position + camera.TransformDirection(Vector3.forward) * 0.5f, camera.TransformDirection(Vector3.forward), out raycastHit))
+        if (Physics.Raycast(cameraTransform.position + cameraTransform.TransformDirection(Vector3.forward) * 0.5f, cameraTransform.TransformDirection(Vector3.forward), out raycastHit))
         {
             if (raycastHit.transform.gameObject.CompareTag("Enemy"))
             {

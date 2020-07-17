@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99a778ae5f871640b0a0f7d741a3fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
+  maxHealth: 200
+  currentHealth: 200
   healthUI: {fileID: 0}
   waveHandler: {fileID: 0}
 --- !u!114 &2001628450755543382
