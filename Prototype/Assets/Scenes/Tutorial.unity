@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17422074, g: 0.2178724, b: 0.30008143, a: 1}
+  m_IndirectSpecularColor: {r: 0.17422031, g: 0.21787184, b: 0.30008054, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -409,6 +409,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -84.18303}
   m_SizeDelta: {x: 264.42126, y: 37.235664}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!198 &71298173 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4257167374934850577, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 874847706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &93876617
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +949,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1822
+  m_Name: pb_Mesh-3258
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3072,6 +3078,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595340735}
   m_CullTransparentMesh: 0
+--- !u!4 &613579295 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8924552664849764252, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 874847706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &637508497
 GameObject:
   m_ObjectHideFlags: 0
@@ -5034,6 +5046,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ladder Raycast
       objectReference: {fileID: 0}
+    - target: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 71298173}
     - target: {fileID: 3179727491689400813, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: m_Mesh
@@ -5054,6 +5071,11 @@ PrefabInstance:
       propertyPath: popUp
       value: 
       objectReference: {fileID: 990427080}
+    - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 71298173}
     - target: {fileID: 6220372291328666251, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: m_Mesh
@@ -5064,6 +5086,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1294436979}
+    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: weapons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1629516757}
+    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: weapons.Array.data[2]
+      value: 
+      objectReference: {fileID: 1202979055}
+    - target: {fileID: 6964909684728636112, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: weapons.Array.data[3]
+      value: 
+      objectReference: {fileID: 613579295}
     - target: {fileID: 7505422946339032823, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: popUp
@@ -7183,6 +7225,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174173950}
   m_CullTransparentMesh: 0
+--- !u!4 &1202979055 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6220372291042818073, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 874847706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1204782482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7732,7 +7780,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1832
+  m_Name: pb_Mesh-3192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8902,6 +8950,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2819430918115236231, guid: 193f6207189e6944281fb5be73f48f94,
     type: 3}
   m_PrefabInstance: {fileID: 1595880265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1629516757 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3179727491629006896, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 874847706}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1629666451
 GameObject:

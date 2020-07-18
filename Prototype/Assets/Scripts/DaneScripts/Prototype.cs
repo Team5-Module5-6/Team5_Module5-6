@@ -5,11 +5,14 @@ using UnityEngine;
 public class Prototype : MonoBehaviour
 {
     public LineRenderer laserBeam;
+    public int maxAmmo = 100;
+    public int currentAmmo;
+    public int starStoneID = 1;
     public float damage = 0.001f;
-    public int starStoneID = 0;
+    
 
     //script reference
-    //private WaveHandler waveHandler;
+    
     private EnemyStats target;
     private PlayerEffects power;
 
@@ -17,9 +20,9 @@ public class Prototype : MonoBehaviour
     void Start()
     {
         laserBeam = GetComponent<LineRenderer>();
-        //waveHandler = GameObject.Find("WaveHandler").GetComponent<WaveHandler>();
-        //enemyStats = GameObject.FindObjectOfType<EnemyStats>();
         //starStoneID = waveHandler.starStoneID;
+
+        currentAmmo = maxAmmo;
     }
     // Update is called once per frame
     void Update()
@@ -30,10 +33,18 @@ public class Prototype : MonoBehaviour
         {
             laserBeam.enabled = true;
             LaserFire();
-        }    
+        }
+
+        if (Input.GetKeyDown(KeyCode.G)) 
+        {
+            //Best way to change player's stone? Maybe Temporary
+            ChangeStarStone1();
+        }
     }
     public void LaserFire()
-    {        
+    {
+        currentAmmo = currentAmmo - 1;
+
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, transform.forward, out hit))
@@ -50,9 +61,8 @@ public class Prototype : MonoBehaviour
             power = hit.transform.GetComponent<PlayerEffects>();
             if (target != null)
             {
-                //target.TakeDamage(damage);
-                power.FireStone();
-                //StarStoneSelect();
+                target.TakeDamage(damage);
+                StarStoneSelect();
             }
         }
         else
@@ -81,84 +91,24 @@ public class Prototype : MonoBehaviour
         {
             case 1:
                 laserBeam.material.color = Color.red;
-                //StartCoroutine(FireStone());
+                StartCoroutine(power.FireEffect());
                 break;
 
             case 2:
                 laserBeam.material.color = Color.cyan;
-                //StartCoroutine(IceStone());
+                //StartCoroutine(power.IceEffect());
                 break;
 
             case 3:
                 laserBeam.material.color = Color.green;
-                //StartCoroutine(PoisonStone());
+                StartCoroutine(power.PoisonEffect());
                 break;
 
             case 4:
                 laserBeam.material.color = Color.yellow;
-                //StartCoroutine(ElectricityStone());
+                //StartCoroutine(power.ElectricityEffect());
                 break;
         }
     }
 
-    //public void FireEffect()
-    //{
-
-    //}
-
-    //IEnumerator FireStone()
-    //{
-    //    onFire = true;
-    //    InvokeRepeating("FireEffect", 0f, 0.2f);
-    //    Debug.Log("OnFire");
-
-    //    yield return new WaitForSeconds(timeOnFire);
-
-    //    onFire = false;
-    //    CancelInvoke("FireEffect");
-
-    //    Debug.Log("NotOnFire");
-    //}
-
-    //public void IceEffect()
-    //{
-
-    //}
-
-    //IEnumerator IceStone()
-    //{
-    //    InvokeRepeating("IceEffect", 0f, 0.2f);
-
-    //    yield return new WaitForSeconds(timeOnFire);
-
-    //    CancelInvoke("IceEffect");
-    //}
-
-    //public void PoisonEffect()
-    //{
-
-    //}
-
-    //IEnumerator PoisonStone()
-    //{
-    //    InvokeRepeating("PoisonEffect", 0f, 0.2f);
-
-    //    yield return new WaitForSeconds(timeOnFire);
-
-    //    CancelInvoke("PoisonEffect");
-    //}
-
-    //public void ElectricityEffect()
-    //{
-
-    //}
-
-    //IEnumerator ElectricityStone()
-    //{
-    //    InvokeRepeating("ElectricityEffect", 0f, 0.2f);
-
-    //    yield return new WaitForSeconds(timeOnFire);
-
-    //    CancelInvoke("ElectricityEffect");
-    //}
 }

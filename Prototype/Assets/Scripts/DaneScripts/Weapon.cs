@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public int maxAmmo = 5;
+    public int maxAmmo;
     public int currentAmmo;
     public int range;
-    public int damage = 0;
+    public int damage;
     public float fireRate;
 
     public ParticleSystem muzzleFlash;
