@@ -12,6 +12,8 @@ TagManager:
   - Generator
   - Item
   - Door
+  - PlayerTut
+  - EnemyDummy
   layers:
   - Default
   - TransparentFX

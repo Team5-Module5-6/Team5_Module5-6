@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class EnemyStats : MonoBehaviour
 {
@@ -74,6 +75,7 @@ public class EnemyStats : MonoBehaviour
     private int starStoneID;
     private float enemySizeY;
     private MeshRenderer enemyMeshRenderer;
+    private string sceneName;
 
     private void Start()
     {
@@ -88,6 +90,8 @@ public class EnemyStats : MonoBehaviour
         //Set variables
         starStoneID = waveHandlerScript.starStoneID;
         maxHealth = health;
+
+        sceneName = SceneManager.GetActiveScene().name;
         //enemySizeY = enemyMeshRenderer.bounds.size.y; //Doesn't work for some reason will look into it later
 
         switch (enemyID) //Used to adjust the spawn points of poison puddles to make sure theu are spawn below the enemy instead of inside of them
@@ -130,7 +134,10 @@ public class EnemyStats : MonoBehaviour
 
     void SubtractTemperature() //Cools down the generator when enemy is killed
     {
-        temperatureGaugeScript.ChangeGeneratorTemperature(-enemyTemp); 
+        if(sceneName != "Tutorial")
+        {
+            temperatureGaugeScript.ChangeGeneratorTemperature(-enemyTemp);
+        } 
     }
 
     void CheckHealth()
@@ -138,6 +145,7 @@ public class EnemyStats : MonoBehaviour
         if(health <= 0) 
         {
             //play death animation
+
             SubtractTemperature();
             Destroy(gameObject);
         }
