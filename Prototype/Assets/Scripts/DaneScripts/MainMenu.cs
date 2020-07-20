@@ -13,8 +13,9 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        difficultyMenu.SetActive(true);
-        mainMenu.SetActive(false);
+        SceneManager.LoadScene(0);
+        //difficultyMenu.SetActive(true);
+        //mainMenu.SetActive(false);
     }
 
     public void Options()
