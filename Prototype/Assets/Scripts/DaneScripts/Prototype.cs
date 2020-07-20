@@ -35,11 +35,11 @@ public class Prototype : MonoBehaviour
             LaserFire();
         }
 
-        if (Input.GetKeyDown(KeyCode.G)) 
-        {
-            //Best way to change player's stone? Maybe Temporary
-            ChangeStarStone1();
-        }
+        //if (Input.GetKeyDown(KeyCode.G)) 
+        //{
+        //    //Best way to change player's stone? Maybe Temporary
+        //    ChangeStarStone1();
+        //}
     }
     public void LaserFire()
     {
