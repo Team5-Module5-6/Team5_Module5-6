@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ActivateSpawner : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class ActivateSpawner : MonoBehaviour
 
     //Variables
     public float range;
+    private string sceneName;
 
 
     void Start()
@@ -34,6 +36,7 @@ public class ActivateSpawner : MonoBehaviour
         spawnerScript = FindObjectOfType<SpawnerV2>();
         waveHandlerScript = FindObjectOfType<WaveHandler>();
         prototypeScript = GameObject.Find("Prototype").GetComponent<Prototype>();//Dane
+        sceneName = SceneManager.GetActiveScene().name;
     }
 
     void Update()
@@ -53,7 +56,10 @@ public class ActivateSpawner : MonoBehaviour
           
             if (Input.GetKeyDown(KeyCode.E) && spawnerScript.isSpawnerOn == false)
             {
-                spawnerScript.SpawnerToggle();
+                if(sceneName != "Tutorial")
+                {
+                    spawnerScript.SpawnerToggle();
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.G) && spawnerScript.isSpawnerOn == false)
