@@ -81,7 +81,7 @@ public class Prototype : MonoBehaviour
         {
             starStoneID = 1;
         }
-        StarStoneSelect();
+        //StarStoneSelect();
 
     }
 
