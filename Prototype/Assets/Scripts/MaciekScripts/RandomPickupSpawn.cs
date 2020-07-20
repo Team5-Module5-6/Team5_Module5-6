@@ -32,11 +32,10 @@ public class RandomPickupSpawn : MonoBehaviour
             }
 
         }
-
-        foreach(int i in RNG)
-        {
-            Debug.Log(i);
-        }
+        //foreach(int i in RNG)
+        //{
+        //    Debug.Log(i);
+        //}
     }
 
     void SpawnPickups()
