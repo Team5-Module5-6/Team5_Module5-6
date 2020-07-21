@@ -67,7 +67,7 @@ public class ActivateSpawner : MonoBehaviour
                 waveHandlerScript.ChangeStarStone();
                 //Dane
                 //Best way to change player's stone? Maybe Temporary
-                prototypeScript.ChangeStarStone1();
+                prototypeScript.StarStoneSelect();
             }
         }
         else if (generatorPopUp.IsActive())
