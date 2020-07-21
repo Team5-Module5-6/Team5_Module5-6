@@ -6,21 +6,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 //Change raycast origin to enemy weapon
 public class EnemyShooting : MonoBehaviour
 {
+    //SS effects player feedback
+    private Text ssEffectsText;
+    private Image ssEffectsPopup;
+
     //Particle Effect
     public ParticleSystem gunFlashEffect;
     public Transform gunTip;
-
 
     //Script references
     private EnemyStats enemyStatsScript;
     private PlayerStats playerStatsScript;
     private PlayerMovement playerMovementScript;
     private WaveHandler waveHandlerScript;
+    private HoldSSEffectInfo ssPupupInfoScript;
 
     //Script variables
     [HideInInspector]
@@ -53,6 +58,7 @@ public class EnemyShooting : MonoBehaviour
         playerStatsScript = FindObjectOfType<PlayerStats>();
         playerMovementScript = FindObjectOfType<PlayerMovement>();
         waveHandlerScript = FindObjectOfType<WaveHandler>();
+        ssPupupInfoScript = FindObjectOfType<HoldSSEffectInfo>();
 
         //Script variables
         starStoneID = waveHandlerScript.starStoneID;
@@ -74,6 +80,10 @@ public class EnemyShooting : MonoBehaviour
 
         //Electric StarStone
         stunDuration = enemyStatsScript.stunDuration;
+
+        //SS popup
+        ssEffectsText = ssPupupInfoScript.ssEffectsText;
+        ssEffectsPopup = ssPupupInfoScript.ssEffectsPopup;
     }
 
     void FixedUpdate()
@@ -109,7 +119,7 @@ public class EnemyShooting : MonoBehaviour
                         switch (starStoneID)
                         {
                             case 1: // Fire starstone
-                                StartCoroutine(DamageOverTime(ticksOfDamageOverTime, damageOverTimeInterval, damageOverTime));
+                                StartCoroutine(DamageOverTime(ticksOfDamageOverTime, damageOverTimeInterval, damageOverTime));                                
                                 break;
 
                             case 2: //Ice starstone
@@ -121,6 +131,7 @@ public class EnemyShooting : MonoBehaviour
                                 break;
                                  
                         }
+                        StartCoroutine(SSEffectFeedback(starStoneID));
                         //Debug.Log("I shot you");
                     }
                     else
@@ -168,5 +179,30 @@ public class EnemyShooting : MonoBehaviour
         yield return new WaitForSeconds(1 / rateOfFire); //Very bad way of determing rate of fire lmao
         isLoaded = true;
         //Debug.Log("Coroutine completed");
+    }
+
+    IEnumerator SSEffectFeedback(int id)
+    {
+        float duration = 0;
+        switch (id)
+        {
+            case 1: // Fire starstone
+                duration = damageOverTimeInterval * ticksOfDamageOverTime;
+                ssEffectsText.text = "You're on fire";
+                break;
+
+            case 2: //Ice starstone
+                duration = slowDuration;
+                ssEffectsText.text = "You're slowed";
+                break;
+
+            case 4: //Electric starstone
+                duration = stunDuration;
+                ssEffectsText.text = "You're stunned";
+                break;
+        }
+        ssEffectsPopup.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        ssEffectsPopup.gameObject.SetActive(false);
     }
 }

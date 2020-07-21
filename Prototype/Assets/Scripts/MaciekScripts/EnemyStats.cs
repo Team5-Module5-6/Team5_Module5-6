@@ -41,6 +41,8 @@ public class EnemyStats : MonoBehaviour
     public float meleeAttackRange;
     [Tooltip("Attacks per second")]
     public float meleeAttackRate;
+    [Tooltip("Damage the Enemy takes when colliding with player")]
+    public float collisionWithPlayerDamage;
 
     [Header("Fire StarStone variables (ID=1)")]
     [Header("StarStone effects variables")]
@@ -57,6 +59,7 @@ public class EnemyStats : MonoBehaviour
     [Header("Poison StarStone variables (ID=3)")]
     public GameObject poisonPuddleObject;
     public float poisonDropInterval;
+    public float poisonDespawnTime;
     public float poisonDamageOverTime;
     public float poisonDamageOverTimeInterval;
     public int poisonTicksOfDamageOverTime;
@@ -113,7 +116,7 @@ public class EnemyStats : MonoBehaviour
         //Call functions
         GetTemperature();
 
-        if(starStoneID == 3) //The way I think this is supposed to work is that the starstone type is chosen once every wave at random and the same starstone is used until the wave is finished
+        if(starStoneID == 3 && sceneName != "Tutorial") //The way I think this is supposed to work is that the starstone type is chosen once every wave at random and the same starstone is used until the wave is finished
         {
             StartCoroutine(SpawnPoisonPuddles());
         }
@@ -165,7 +168,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (collision.gameObject.tag == "ObjectPlayerProjectiles")
         {
-            TakeDamage(1);
+            TakeDamage(collisionWithPlayerDamage);
         }
     }
 }

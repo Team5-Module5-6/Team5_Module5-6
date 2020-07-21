@@ -377,13 +377,16 @@ MonoBehaviour:
   meleeDamage: 0
   meleeAttackRange: 0
   meleeAttackRate: 0
+  collisionWithPlayerDamage: 0
   damageOverTime: 0
   damageOverTimeInterval: 0
   ticksOfDamageOverTime: 0
   slowPercentage: 0
   slowDuration: 0
-  poisonPuddleObject: {fileID: 0}
+  poisonPuddleObject: {fileID: 5967431151940440493, guid: 8af692fb6691f8e4b9e03dc4deff7d8e,
+    type: 3}
   poisonDropInterval: 0
+  poisonDespawnTime: 0
   poisonDamageOverTime: 0
   poisonDamageOverTimeInterval: 0
   poisonTicksOfDamageOverTime: 0

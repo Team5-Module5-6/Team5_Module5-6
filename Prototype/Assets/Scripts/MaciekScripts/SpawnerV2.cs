@@ -48,7 +48,8 @@ public class SpawnerV2 : MonoBehaviour
     {
         [HideInInspector]
         public string elementName = "Wave"; //Changes the name of the name element
-        public int[] enemySpawnRatio; 
+        public int[] enemySpawnRatio;
+        public bool spawnBoss;
     }
 
     void Start()
@@ -92,7 +93,12 @@ public class SpawnerV2 : MonoBehaviour
         {
             Debug.Log(e.Message);
         }
-        
+
+        if (numberOfWaves[waveID].spawnBoss)
+        {
+            SpawnBoss();
+        }
+
     }
 
     //The idea behind the spawner is that the spawn chances are in sections on a numberline from 0.0 to 1.0, a random number is generated and the spawn chance of first enemy in the array is added to a variable that hold accumulated spawn chance
@@ -164,6 +170,13 @@ public class SpawnerV2 : MonoBehaviour
     {
         int spawnLocationRNG = Mathf.RoundToInt(Random.Range(0, spawnPoints.Length)); 
         spawnOrigin = spawnPoints[spawnLocationRNG];
+    }
+
+    void SpawnBoss()
+    {
+        DetermineSpawnOrigin();
+        Instantiate(enemies[3], spawnOrigin, Quaternion.identity);
+
     }
 
     public void SpawnerToggle() //Changes between ON and OFF state

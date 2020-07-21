@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1336593585447212606}
   - component: {fileID: 6953438886934469686}
   - component: {fileID: 601462543492162126}
-  - component: {fileID: 1808806005316104084}
+  - component: {fileID: 5250980145372540612}
   m_Layer: 0
   m_Name: puddle
   m_TagString: Untagged
@@ -95,7 +95,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1808806005316104084
+--- !u!114 &5250980145372540612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,6 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2778835317574716725}
+  - component: {fileID: 2638366194824044923}
   m_Layer: 0
   m_Name: PoisonPuddle
   m_TagString: Untagged
@@ -138,3 +139,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2638366194824044923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5967431151940440493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61a45ae57d948142bb59ffb20be392f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
