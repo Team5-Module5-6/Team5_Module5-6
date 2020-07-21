@@ -20,6 +20,8 @@ public class Door : MonoBehaviour
                 popUp.SetActive(true);
                 popUp.GetComponentInChildren<TextMeshProUGUI>().text = "Door Locked    (Need Key)";
 
+                Debug.Log(popUp.GetComponentInChildren<TextMeshProUGUI>().gameObject.name);
+
                 if (inventory.hasKey)
                 {
                     popUp.GetComponentInChildren<TextMeshProUGUI>().text = "Press E to Open Door";
