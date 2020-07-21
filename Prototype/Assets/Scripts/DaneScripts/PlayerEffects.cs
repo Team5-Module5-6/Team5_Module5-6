@@ -9,27 +9,14 @@ public class PlayerEffects : MonoBehaviour
     public float timeOnFire;
     public bool onFire = false;
 
-    [Header("Ice StarStone Variables")]
-    //public GameObject iceEffect;
-    public float timeFrozen;
-    public float defaultSpeed;//must equal normal speed for this enemy type
-    public float frozenSpeed;//speed when under effect of ice star stone
-    public bool frozen = false;
-
     [Header("Poison StarStone Variables")]
-    //public GameObject poisonEffect;
+    public GameObject poisonEffect;
     public float timePoisoned;
     public bool poisoned = false;
-    
-    [Header("Poison StarStone Variables")]
-    //public GameObject electricEffect;
-    public float timeStunned = 10;
-    public bool stunned = false;
 
     private Prototype protoScript;
     private EnemyStats enemyStatsScript;
     private Weapon weaponScript;
-    private EnemyMovement enemyMovementScript;
     
     // Start is called before the first frame update
     void Start()
@@ -37,9 +24,19 @@ public class PlayerEffects : MonoBehaviour
         protoScript = GameObject.FindObjectOfType<Prototype>();
         enemyStatsScript = GameObject.FindObjectOfType<EnemyStats>();
         weaponScript = GameObject.FindObjectOfType<Weapon>();
-        enemyMovementScript = GameObject.FindObjectOfType<EnemyMovement>();
-        
-        frozenSpeed = defaultSpeed / 2;
+    }
+
+    void Update()
+    {
+       
+    }
+
+    public void FireStone()
+    {
+        onFire = true;
+        fireEffect.SetActive(true);
+        StartCoroutine(FireEffect());
+
     }
 
     public IEnumerator FireEffect()
@@ -57,15 +54,15 @@ public class PlayerEffects : MonoBehaviour
         }
     }
 
-    public IEnumerator IceEffect()
+    public void IceStone()
     {
-        frozen = true;
-        protoScript.IceStone();
 
-        yield return new WaitForSeconds(timeFrozen);
+    }
 
-        frozen = false;
-        protoScript.IceStone();
+    public void PoisonStone()
+    {
+        poisoned = true;
+       
     }
 
     public IEnumerator PoisonEffect()
@@ -75,25 +72,19 @@ public class PlayerEffects : MonoBehaviour
 
         if (poisoned == true)
         {
-            //poisonEffect.SetActive(true);
+            poisonEffect.SetActive(true);
 
             yield return new WaitForSeconds(timePoisoned);
 
             poisoned = false;
             weaponScript.damage = 1;
-            //poisonEffect.SetActive(false);
+            poisonEffect.SetActive(false);
         }
 
     }
 
-    public IEnumerator ElectricityEffect()
+    public void ElectricityStone()
     {
-        stunned = true;
-        enemyMovementScript.GetComponent<EnemyMovement>().enabled = false;
 
-        yield return new WaitForSeconds(timeStunned);
-
-        stunned = false;
-        enemyMovementScript.enabled = true;
     }
 }
