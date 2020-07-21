@@ -7,20 +7,20 @@ public class Prototype : MonoBehaviour
     public LineRenderer laserBeam;
     public int maxAmmo = 100;
     public int currentAmmo;
-    public int starStoneID = 1;
     public float damage = 0.001f;
     
-
     //script reference
     
     private EnemyStats target;
     private PlayerEffects power;
+    private WaveHandler waveHandlerScript;
 
     // Start is called before the first frame update
     void Start()
     {
         laserBeam = GetComponent<LineRenderer>();
-        //starStoneID = waveHandler.starStoneID;
+
+        waveHandlerScript = GameObject.FindObjectOfType<WaveHandler>();
 
         currentAmmo = maxAmmo;
     }
@@ -35,11 +35,11 @@ public class Prototype : MonoBehaviour
             LaserFire();
         }
 
-        if (Input.GetKeyDown(KeyCode.G)) 
-        {
-            //Best way to change player's stone? Maybe Temporary
-            ChangeStarStone1();
-        }
+        //if (Input.GetKeyDown(KeyCode.G))
+        //{
+        //    //Best way to change player's stone? Maybe Temporary
+        //    ChangeStarStone1();
+        //}
     }
     public void LaserFire()
     {
@@ -61,8 +61,11 @@ public class Prototype : MonoBehaviour
             power = hit.transform.GetComponent<PlayerEffects>();
             if (target != null)
             {
-                target.TakeDamage(damage);
+                //target.TakeDamage(damage);
                 StarStoneSelect();
+                //StartCoroutine(power.ElectricityEffect());
+                //StartCoroutine(power.PoisonEffect());
+                //StartCoroutine(power.IceEffect());
             }
         }
         else
@@ -71,23 +74,23 @@ public class Prototype : MonoBehaviour
         }
     }
 
-    public void ChangeStarStone1()
-    {
-        if (starStoneID >= 0 && starStoneID <= 3)
-        {
-            starStoneID++;
-        }
-        else
-        {
-            starStoneID = 1;
-        }
-        //StarStoneSelect();
+    //public void ChangeStarStone1()
+    //{
+    //    if (starStoneID >= 0 && starStoneID <= 3)
+    //    {
+    //        starStoneID++;
+    //    }
+    //    else
+    //    {
+    //        starStoneID = 1;
+    //    }
+    //    StarStoneSelect();
 
-    }
+    //}
 
     public void StarStoneSelect()
     {
-        switch (starStoneID)
+        switch (waveHandlerScript.starStoneID)
         {
             case 1:
                 laserBeam.material.color = Color.red;
@@ -96,7 +99,8 @@ public class Prototype : MonoBehaviour
 
             case 2:
                 laserBeam.material.color = Color.cyan;
-                //StartCoroutine(power.IceEffect());
+                StartCoroutine(power.IceEffect());
+
                 break;
 
             case 3:
@@ -106,8 +110,20 @@ public class Prototype : MonoBehaviour
 
             case 4:
                 laserBeam.material.color = Color.yellow;
-                //StartCoroutine(power.ElectricityEffect());
+                StartCoroutine(power.ElectricityEffect());
                 break;
+        }
+    }
+
+    public void IceStone()
+    {
+        if(power.frozen == true)
+        {
+            target.speed = power.frozenSpeed;
+        }
+        else if(power.frozen == false)
+        {
+            target.speed = power.defaultSpeed;
         }
     }
 

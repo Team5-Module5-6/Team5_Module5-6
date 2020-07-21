@@ -590,6 +590,7 @@ MonoBehaviour:
   meleeDamage: 0
   meleeAttackRange: 0
   meleeAttackRate: 0
+  collisionWithPlayerDamage: 0
   damageOverTime: 0
   damageOverTimeInterval: 0
   ticksOfDamageOverTime: 0
@@ -598,6 +599,7 @@ MonoBehaviour:
   poisonPuddleObject: {fileID: 5967431151940440493, guid: 8af692fb6691f8e4b9e03dc4deff7d8e,
     type: 3}
   poisonDropInterval: 3
+  poisonDespawnTime: 0
   poisonDamageOverTime: 0
   poisonDamageOverTimeInterval: 0
   poisonTicksOfDamageOverTime: 0
@@ -696,10 +698,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73cf2e2d62ff3b5489350f3b5b895dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectPosition: {fileID: 2053345125098352077}
+  fireEffect: {fileID: 0}
   timeOnFire: 10
-  damage: 1
   onFire: 0
+  timeFrozen: 10
+  defaultSpeed: 3
+  frozenSpeed: 0
+  frozen: 0
+  timePoisoned: 0
+  poisoned: 0
+  timeStunned: 10
+  stunned: 0
 --- !u!1 &7332225811765624182
 GameObject:
   m_ObjectHideFlags: 0

@@ -513,9 +513,14 @@ MonoBehaviour:
   fireEffect: {fileID: 0}
   timeOnFire: 10
   onFire: 0
-  poisonEffect: {fileID: 0}
+  timeFrozen: 10
+  defaultSpeed: 8
+  frozenSpeed: 0
+  frozen: 0
   timePoisoned: 0
   poisoned: 0
+  timeStunned: 10
+  stunned: 0
 --- !u!1 &4456128091047216185
 GameObject:
   m_ObjectHideFlags: 0
