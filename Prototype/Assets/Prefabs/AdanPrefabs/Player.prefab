@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2001628450755543383}
   raycastTransform: {fileID: 2001628452113440594}
-  speed: 12
+  speed: 9
   gravity: -19.6
   jumpHeight: 2
   ladderDistance: 0.8
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666b8551532d07d44964f76070ddcf98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpDistance: 5
+  pickUpDistance: 3
   cameraTransform: {fileID: 2001628452586328932}
   inventory: {fileID: 0}
   popUp: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0325ae777f6344a782a9a07065732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxInteractDistance: 5
+  maxInteractDistance: 3
   cameraTransform: {fileID: 2001628452586328932}
   inventory: {fileID: 0}
   popUp: {fileID: 0}

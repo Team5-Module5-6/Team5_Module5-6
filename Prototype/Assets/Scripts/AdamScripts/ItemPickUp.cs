@@ -42,10 +42,6 @@ public class ItemPickUp : MonoBehaviour
                     Destroy(raycastHit.transform.gameObject);
                 }
             }
-            else
-            {
-                popUp.SetActive(false);
-            }
         }
         
     }
