@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2001628450755543383}
   - component: {fileID: 2001628450755543386}
   - component: {fileID: 2001628450755543382}
-  - component: {fileID: 2001628450755543385}
   - component: {fileID: 6126885535181174535}
   - component: {fileID: 7505422946339032823}
   m_Layer: 0
@@ -91,18 +90,6 @@ MonoBehaviour:
   gravity: -19.6
   jumpHeight: 2
   ladderDistance: 0.8
---- !u!114 &2001628450755543385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001628450755543381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11bcd29a193bddd4ebe267b81728294c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6126885535181174535
 MonoBehaviour:
   m_ObjectHideFlags: 0
