@@ -1631,7 +1631,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-79742
+  m_Name: pb_Mesh-1536
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3779,7 +3779,6 @@ MonoBehaviour:
   ammo: {fileID: 1108108978}
   inventory: {fileID: 958079051}
   cameraTransform: {fileID: 0}
-  enemyHealthPopUp: {fileID: 1627395066}
 --- !u!1001 &1245628206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4147,7 +4146,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-79806
+  m_Name: pb_Mesh-1530
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

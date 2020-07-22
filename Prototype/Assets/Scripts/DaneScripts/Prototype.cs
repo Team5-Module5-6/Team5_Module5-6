@@ -8,6 +8,7 @@ public class Prototype : MonoBehaviour
     public LineRenderer laserBeam;
     public int maxAmmo = 100;
     public int currentAmmo;
+    public int starStoneID;
     public float damage = 0.001f;
     private string sceneName; //Maciek
     
@@ -25,6 +26,8 @@ public class Prototype : MonoBehaviour
         waveHandlerScript = GameObject.FindObjectOfType<WaveHandler>();
 
         currentAmmo = maxAmmo;
+
+        starStoneID = waveHandlerScript.starStoneID;
 
         sceneName = SceneManager.GetActiveScene().name; //Maciek
     }
@@ -78,25 +81,25 @@ public class Prototype : MonoBehaviour
         }
     }
 
-    //public void ChangeStarStone1()
-    //{
-    //    if (starStoneID >= 0 && starStoneID <= 3)
-    //    {
-    //        starStoneID++;
-    //    }
-    //    else
-    //    {
-    //        starStoneID = 1;
-    //    }
-    //    StarStoneSelect();
+    public void ChangeStarStone1()
+    {
+        if (starStoneID >= 0 && starStoneID <= 3)
+        {
+            starStoneID++;
+        }
+        else
+        {
+            starStoneID = 1;
+        }
+        
 
-    //}
+    }
 
     public void StarStoneSelect()
     {
-        if (sceneName != "Tutorial")// Maciek, this breaks tutorial when I change SS in the generator so I'll disable it for tutorial
-        {
-            switch (waveHandlerScript.starStoneID)
+        //if (sceneName != "Tutorial")// Maciek, this breaks tutorial when I change SS in the generator so I'll disable it for tutorial
+        //{
+            switch (starStoneID)
             {
                 case 1:
                     laserBeam.material.color = Color.red;                                      
@@ -119,7 +122,7 @@ public class Prototype : MonoBehaviour
                     StartCoroutine(power.ElectricityEffect());
                     break;
             }
-        }
+        //}
     }
 
     public void FireDamage()
