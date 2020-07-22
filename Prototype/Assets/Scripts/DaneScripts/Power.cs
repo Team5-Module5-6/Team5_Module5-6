@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Power : MonoBehaviour
 {
-    private EnemyStats enemy;
+   
     
     public float damage = 1f;
     public float timeOnFire = 9.9f;
 
+    private EnemyStats enemy;
     private PlayerEffects power;
+    private Prototype protoScript;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        protoScript = GameObject.FindObjectOfType<Prototype>();
     }
 
     // Update is called once per frame
@@ -39,13 +42,13 @@ public class Power : MonoBehaviour
         if(power.onFire == true)
         {
             Debug.Log("OnFire");
-            InvokeRepeating("FireDamage", 0.1f, 1f);
+            protoScript.InvokeRepeating("FireDamage", 0.1f, 1f);
 
             yield return new WaitForSeconds(timeOnFire);
 
             Debug.Log("NotOnFire");
             power.onFire = false;
-            CancelInvoke("FireDamage");
+            protoScript.CancelInvoke("FireDamage");
         }       
 
         

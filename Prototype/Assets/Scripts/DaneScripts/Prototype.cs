@@ -115,7 +115,13 @@ public class Prototype : MonoBehaviour
         }
     }
 
-    public void IceStone()
+    public void FireDamage()
+    {
+        Debug.Log("YEET");
+        target.TakeDamage(power.fireDamage);
+    }
+
+    public void SlowEnemy()
     {
         if(power.frozen == true)
         {
@@ -126,5 +132,7 @@ public class Prototype : MonoBehaviour
             target.speed = power.defaultSpeed;
         }
     }
+
+
 
 }

@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73cf2e2d62ff3b5489350f3b5b895dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireEffect: {fileID: 0}
+  fireEffect: {fileID: 1102497041324350518}
   timeOnFire: 10
   onFire: 0
   timeFrozen: 10

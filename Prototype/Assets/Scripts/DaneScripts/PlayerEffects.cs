@@ -7,6 +7,7 @@ public class PlayerEffects : MonoBehaviour
     [Header("Fire StarStone Variables")]
     public GameObject fireEffect;
     public float timeOnFire;
+    public float fireDamage = 1f;
     public bool onFire = false;
 
     [Header("Ice StarStone Variables")]
@@ -60,12 +61,12 @@ public class PlayerEffects : MonoBehaviour
     public IEnumerator IceEffect()
     {
         frozen = true;
-        protoScript.IceStone();
+        protoScript.SlowEnemy();
 
         yield return new WaitForSeconds(timeFrozen);
 
         frozen = false;
-        protoScript.IceStone();
+        protoScript.SlowEnemy();
     }
 
     public IEnumerator PoisonEffect()
