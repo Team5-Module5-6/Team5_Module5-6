@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Prototype : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Prototype : MonoBehaviour
     public int maxAmmo = 100;
     public int currentAmmo;
     public float damage = 0.001f;
+    private string sceneName; //Maciek
     
     //script reference
     
@@ -23,6 +25,8 @@ public class Prototype : MonoBehaviour
         waveHandlerScript = GameObject.FindObjectOfType<WaveHandler>();
 
         currentAmmo = maxAmmo;
+
+        sceneName = SceneManager.GetActiveScene().name; //Maciek
     }
     // Update is called once per frame
     void Update()
@@ -90,28 +94,31 @@ public class Prototype : MonoBehaviour
 
     public void StarStoneSelect()
     {
-        switch (waveHandlerScript.starStoneID)
+        if (sceneName != "Tutorial")// Maciek, this breaks tutorial when I change SS in the generator so I'll disable it for tutorial
         {
-            case 1:
-                laserBeam.material.color = Color.red;
-                StartCoroutine(power.FireEffect());
-                break;
+            switch (waveHandlerScript.starStoneID)
+            {
+                case 1:
+                    laserBeam.material.color = Color.red;                                      
+                    StartCoroutine(power.FireEffect());                    
+                    break;
 
-            case 2:
-                laserBeam.material.color = Color.cyan;
-                StartCoroutine(power.IceEffect());
+                case 2:
+                    laserBeam.material.color = Color.cyan;
+                    StartCoroutine(power.IceEffect());
 
-                break;
+                    break;
 
-            case 3:
-                laserBeam.material.color = Color.green;
-                StartCoroutine(power.PoisonEffect());
-                break;
+                case 3:
+                    laserBeam.material.color = Color.green;
+                    StartCoroutine(power.PoisonEffect());
+                    break;
 
-            case 4:
-                laserBeam.material.color = Color.yellow;
-                StartCoroutine(power.ElectricityEffect());
-                break;
+                case 4:
+                    laserBeam.material.color = Color.yellow;
+                    StartCoroutine(power.ElectricityEffect());
+                    break;
+            }
         }
     }
 

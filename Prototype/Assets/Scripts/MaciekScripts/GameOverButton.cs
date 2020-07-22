@@ -7,6 +7,6 @@ public class GameOverButton : MonoBehaviour
 {
     public void GoToMenuScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

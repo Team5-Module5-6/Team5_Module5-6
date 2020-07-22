@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
-public class Difficulty : MonoBehaviour
+public static class Difficulty
 {
-    // Start is called before the first frame update
-    void Start()
+    public static float difficultyMultiplier
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        get
+        {
+            return difficultyMultiplier;
+        }
+        set
+        {
+            difficultyMultiplier = value;
+        }
+    } 
 }
