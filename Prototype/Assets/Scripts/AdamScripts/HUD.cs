@@ -6,7 +6,6 @@ using TMPro;
 
 public class HUD : MonoBehaviour
 {
-    public Weapon[] weapons;
     public WeaponSwitch weaponSwitch;
     public TextMeshProUGUI weapon;
     public TextMeshProUGUI ammo;
@@ -17,6 +16,16 @@ public class HUD : MonoBehaviour
     private int equippedWeapon;
     private float enemyMaxHealth;
     private float enemyHealth;
+    [SerializeField]
+    private List<Weapon> weapons = new List<Weapon>();
+
+    private void Start()
+    {
+        for (int i = 0; i < weaponSwitch.weapons.Length; i++)
+        {
+            weapons.Add(weaponSwitch.weapons[i].GetComponent<Weapon>());
+        }
+    }
 
     void Update()
     {
@@ -36,9 +45,13 @@ public class HUD : MonoBehaviour
                 weapon.text = "Shotgun";
                 ammo.gameObject.SetActive(true);
                 break;
+            case 3:
+                weapon.text = "Prototype";
+                ammo.gameObject.SetActive(false);
+                break;
         }
 
-        ammo.text = weapons[equippedWeapon].currentAmmo.ToString() + "/" + weapons[equippedWeapon].maxAmmo.ToString();
+        ammo.text = weapons[equippedWeapon].currentMag.ToString() + "/" + weapons[equippedWeapon].maxMag.ToString();
 
         if (Input.GetKey(KeyCode.I))
         {
