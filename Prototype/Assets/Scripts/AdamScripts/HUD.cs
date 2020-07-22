@@ -12,7 +12,7 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI ammo;
     public GameObject inventory;
     public Transform cameraTransform;
-    //public Slider enemyHealthPopUp;
+    public Slider enemyHealthPopUp;
 
     private int equippedWeapon;
     private float enemyMaxHealth;
@@ -25,10 +25,16 @@ public class HUD : MonoBehaviour
         switch (equippedWeapon)
         {
             case 0:
-                weapon.text = "Pistol";
+                weapon.text = "Melee";
+                ammo.gameObject.SetActive(false);
                 break;
             case 1:
+                weapon.text = "Pistol";
+                ammo.gameObject.SetActive(true);
+                break;
+            case 2:
                 weapon.text = "Shotgun";
+                ammo.gameObject.SetActive(true);
                 break;
         }
 
@@ -42,7 +48,7 @@ public class HUD : MonoBehaviour
         {
             inventory.SetActive(false);
         }
-        /*
+        
         RaycastHit raycastHit;
         if (Physics.Raycast(cameraTransform.position + cameraTransform.TransformDirection(Vector3.forward) * 0.5f, cameraTransform.TransformDirection(Vector3.forward), out raycastHit))
         {
@@ -61,6 +67,5 @@ public class HUD : MonoBehaviour
                 enemyHealthPopUp.transform.gameObject.SetActive(false);
             }
         }
-        */
     }
 }

@@ -700,6 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireEffect: {fileID: 2053345125098352077}
   timeOnFire: 10
+  fireDamage: 1
   onFire: 0
   timeFrozen: 10
   defaultSpeed: 3
