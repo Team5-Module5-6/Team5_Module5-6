@@ -36,18 +36,13 @@ public class Prototype : MonoBehaviour
     {
         laserBeam.enabled = false;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && currentAmmo > 0)
         {
             laserBeam.enabled = true;
             LaserFire();
         }
-
-        //if (Input.GetKeyDown(KeyCode.G))
-        //{
-        //    //Best way to change player's stone? Maybe Temporary
-        //    ChangeStarStone1();
-        //}
     }
+
     public void LaserFire()
     {
         currentAmmo = currentAmmo - 1;
@@ -91,7 +86,7 @@ public class Prototype : MonoBehaviour
         {
             starStoneID = 1;
         }
-        
+
 
     }
 

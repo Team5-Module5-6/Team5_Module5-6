@@ -11026,6 +11026,16 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 899507961}
+    - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: maxMag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6220372291328666251, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: m_Mesh
