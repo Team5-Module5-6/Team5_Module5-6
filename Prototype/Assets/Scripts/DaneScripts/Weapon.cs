@@ -6,6 +6,10 @@ public class Weapon : MonoBehaviour
 {
     public int maxAmmo;
     public int currentAmmo;
+    public int maxMag;
+    public int currentMag;
+    public int reloadAmount; 
+
     public int range;
     public int damage;
     public float fireRate;
@@ -15,12 +19,14 @@ public class Weapon : MonoBehaviour
     void Start()
     {
         currentAmmo = maxAmmo;
+        currentMag = maxMag;
+        
     }
     // Update is called once per frame
     void Update()
     {
         //Left mouse button pressed, ammo is more than 0
-        if (Input.GetMouseButtonDown(0) && (currentAmmo > 0))
+        if (Input.GetMouseButtonDown(0) && (currentMag > 0))
         {
             //Rapidfire
             if (fireRate == 1)
@@ -34,16 +40,23 @@ public class Weapon : MonoBehaviour
             }           
         }
         //Stop shooting
-        else if (Input.GetMouseButtonUp(0) || currentAmmo <= 0)
+        else if (Input.GetMouseButtonUp(0) || currentMag <= 0)
         {
             CancelInvoke("Shoot");
-        }          
+        }
+
+        reloadAmount = maxMag - currentMag;
+
+        if (Input.GetKeyDown(KeyCode.R) && currentMag < maxMag)
+        {
+            Reload(reloadAmount);
+        }
     }
     void Shoot()
     {
         muzzleFlash.Play();
         //Reduce ammo by one each shot
-        currentAmmo = currentAmmo - 1;
+        currentMag = currentMag - 1;
 
         RaycastHit hit;
         if(Physics.Raycast(transform.position, transform.forward, out hit, range))
@@ -56,6 +69,13 @@ public class Weapon : MonoBehaviour
                 target.TakeDamage(damage);
             }
         }
+    }
+
+    void Reload(int reloadAmount)
+    {
+        currentAmmo -= reloadAmount;
+
+        currentMag = currentMag + reloadAmount;
     }
 
     public void AmmoUp(int collectedAmmo)

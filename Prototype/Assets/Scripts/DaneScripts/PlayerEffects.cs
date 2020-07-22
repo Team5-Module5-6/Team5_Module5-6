@@ -90,11 +90,11 @@ public class PlayerEffects : MonoBehaviour
     public IEnumerator ElectricityEffect()
     {
         stunned = true;
-        enemyMovementScript.GetComponent<EnemyMovement>().enabled = false;
+        protoScript.StunEnemy();
 
         yield return new WaitForSeconds(timeStunned);
 
         stunned = false;
-        enemyMovementScript.enabled = true;
+        protoScript.StunEnemy();
     }
 }

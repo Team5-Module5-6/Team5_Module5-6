@@ -150,14 +150,13 @@ public class EnemyShooting : MonoBehaviour
         }
     }
 
-    IEnumerator DamageOverTime( int numberOfDamageTicks, float timeInterval, float damagePerTick) //Deals damage over time to the player
+    IEnumerator DamageOverTime(int numberOfDamageTicks, float timeInterval, float damagePerTick) //Deals damage over time to the player
     {
         for(int i = 0; i < numberOfDamageTicks; i++)
         {
             yield return new WaitForSeconds(timeInterval);
             playerStatsScript.TakeDamage(damagePerTick);
         }
-
     }
 
     IEnumerator PlayerSlow(float xslowPercentage, float xslowDuration) //Slows player
