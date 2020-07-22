@@ -143,6 +143,16 @@ public class Prototype : MonoBehaviour
         }
     }
 
-
+    public void StunEnemy()
+    {
+        if (power.stunned == true)
+        {
+            target.GetComponent<EnemyMovement>().enabled = false;
+        }
+        else if (power.stunned == false)
+        {
+            target.GetComponent<EnemyMovement>().enabled = true;
+        }
+    }
 
 }

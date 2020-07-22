@@ -28,10 +28,8 @@ public class Power : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         enemy = other.GetComponent<EnemyStats>();
-        power = other.GetComponent<PlayerEffects>();
         if (enemy != null)
         {
-            power.onFire = true;
             StartCoroutine(FireEffect());
         }
 
@@ -47,16 +45,9 @@ public class Power : MonoBehaviour
             yield return new WaitForSeconds(timeOnFire);
 
             Debug.Log("NotOnFire");
-            power.onFire = false;
             protoScript.CancelInvoke("FireDamage");
         }       
 
         
-    }
-
-    public void FireDamage()
-    {
-        Debug.Log("YEET");
-        enemy.TakeDamage(damage);
     }
 }
