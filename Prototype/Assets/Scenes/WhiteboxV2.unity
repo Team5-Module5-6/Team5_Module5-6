@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 46.65
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5493,7 +5493,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-56036
+  m_Name: pb_Mesh-73556
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6489,7 +6489,6 @@ MonoBehaviour:
   inventory: {fileID: 40737401}
   cameraTransform: {fileID: 1589108644}
   enemyHealthPopUp: {fileID: 1522582266}
-  weapons: []
 --- !u!114 &1168654780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10383,7 +10382,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-56042
+  m_Name: pb_Mesh-73562
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

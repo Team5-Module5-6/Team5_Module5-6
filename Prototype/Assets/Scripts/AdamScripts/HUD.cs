@@ -16,7 +16,6 @@ public class HUD : MonoBehaviour
     private int equippedWeapon;
     private float enemyMaxHealth;
     private float enemyHealth;
-    [SerializeField]
     private List<Weapon> weapons = new List<Weapon>();
 
     private void Start()

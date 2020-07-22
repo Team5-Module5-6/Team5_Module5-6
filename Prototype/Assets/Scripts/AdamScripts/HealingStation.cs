@@ -45,7 +45,7 @@ public class HealingStation : MonoBehaviour
         {
             activeDuration -= 1 * Time.deltaTime;
 
-            if (deployed && playerHealth < 100 && distance < radius)
+            if (deployed && playerHealth < playerStats.maxHealth && distance < radius)
             {
                 playerHealth += healingPerSecond * Time.deltaTime;
                 playerStats.currentHealth = playerHealth;

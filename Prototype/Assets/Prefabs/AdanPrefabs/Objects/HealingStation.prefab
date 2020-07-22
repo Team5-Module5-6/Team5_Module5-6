@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAtachment: {fileID: 0}
   playerStats: {fileID: 0}
-  healingPerSecond: 10
+  healingPerSecond: 20
   radius: 5
   durationTime: 10
   cooldownTime: 40
