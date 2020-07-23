@@ -514,12 +514,15 @@ MonoBehaviour:
   timeOnFire: 10
   fireDamage: 1
   onFire: 0
+  iceEffect: {fileID: 0}
   timeFrozen: 10
   defaultSpeed: 8
   frozenSpeed: 0
   frozen: 0
-  timePoisoned: 0
+  poisonEffect: {fileID: 0}
+  timePoisoned: 10
   poisoned: 0
+  electricEffect: {fileID: 0}
   timeStunned: 10
   stunned: 0
 --- !u!1 &4456128091047216185

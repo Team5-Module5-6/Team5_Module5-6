@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Prototype : MonoBehaviour
 {
     public LineRenderer laserBeam;
-    public int maxAmmo = 100;
+    public int maxAmmo = 1000;
     public int currentAmmo;
     public int starStoneID;
     public float damage = 0.001f;

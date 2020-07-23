@@ -11,19 +11,19 @@ public class PlayerEffects : MonoBehaviour
     public bool onFire = false;
 
     [Header("Ice StarStone Variables")]
-    //public GameObject iceEffect;
+    public GameObject iceEffect;
     public float timeFrozen;
     public float defaultSpeed;//must equal normal speed for this enemy type
     public float frozenSpeed;//speed when under effect of ice star stone
     public bool frozen = false;
 
     [Header("Poison StarStone Variables")]
-    //public GameObject poisonEffect;
+    public GameObject poisonEffect;
     public float timePoisoned;
     public bool poisoned = false;
     
     [Header("Poison StarStone Variables")]
-    //public GameObject electricEffect;
+    public GameObject electricEffect;
     public float timeStunned = 10;
     public bool stunned = false;
 
@@ -61,11 +61,13 @@ public class PlayerEffects : MonoBehaviour
     public IEnumerator IceEffect()
     {
         frozen = true;
+        iceEffect.SetActive(true);
         protoScript.SlowEnemy();
 
         yield return new WaitForSeconds(timeFrozen);
 
         frozen = false;
+        iceEffect.SetActive(false);
         protoScript.SlowEnemy();
     }
 
@@ -76,13 +78,14 @@ public class PlayerEffects : MonoBehaviour
 
         if (poisoned == true)
         {
-            //poisonEffect.SetActive(true);
+            poisonEffect.SetActive(true);
 
             yield return new WaitForSeconds(timePoisoned);
 
             poisoned = false;
+            poisonEffect.SetActive(false);
             weaponScript.damage = 1;
-            //poisonEffect.SetActive(false);
+           
         }
 
     }
@@ -90,11 +93,13 @@ public class PlayerEffects : MonoBehaviour
     public IEnumerator ElectricityEffect()
     {
         stunned = true;
+        electricEffect.SetActive(true);
         protoScript.StunEnemy();
 
         yield return new WaitForSeconds(timeStunned);
 
         stunned = false;
+        electricEffect.SetActive(false);
         protoScript.StunEnemy();
     }
 }
