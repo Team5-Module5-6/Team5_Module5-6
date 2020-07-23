@@ -4920,7 +4920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blast: {fileID: 4905083774030976374}
-  power: 45
+  power: 65
   radius: 25
   upForce: 2.5
   cooldownTime: 10
