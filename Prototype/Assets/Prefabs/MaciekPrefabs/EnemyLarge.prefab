@@ -585,7 +585,7 @@ MonoBehaviour:
   frozenSpeed: 0
   frozen: 0
   poisonEffect: {fileID: 9123777895917258416}
-  timePoisoned: 0
+  timePoisoned: 10
   poisoned: 0
   electricEffect: {fileID: 2084076254456021925}
   timeStunned: 10
