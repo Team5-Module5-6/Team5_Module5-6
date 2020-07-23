@@ -794,7 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 15
-  enemiesSpawnPerInterval: 10
+  enemiesSpawnPerInterval: 5
   spawnInOneArea: 0
   enemies:
   - {fileID: 3511856329861969266, guid: e4fc10d44a3832742aab748328bb357c, type: 3}
@@ -803,7 +803,7 @@ MonoBehaviour:
   enemyTemperature: 020000000400000008000000
   enemyCoolingMultiplier: 2
   spawnPoints:
-  - {x: -4.5, y: 0.5, z: 8.5}
+  - {x: -4.5, y: 0.5, z: 7}
   spawnChance: []
   isSpawnerOn: 0
   numberOfWaves:
@@ -827,7 +827,7 @@ MonoBehaviour:
     spawnBoss: 0
   - elementName: Wave 7
     enemySpawnRatio: 32000000230000000f000000
-    spawnBoss: 0
+    spawnBoss: 1
 --- !u!1 &143868450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 72
+  m_fontSize: 46.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3630,7 +3630,7 @@ PrefabInstance:
     - target: {fileID: 2001628450755543384, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.94
+      value: -7.07
       objectReference: {fileID: 0}
     - target: {fileID: 2001628450755543384, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}

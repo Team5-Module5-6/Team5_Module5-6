@@ -93,12 +93,19 @@ public class SpawnerV2 : MonoBehaviour
         {
             Debug.Log(e.Message);
         }
-
-        if (numberOfWaves[waveID].spawnBoss)
+        try
         {
-            SpawnBoss();
-        }
+            if (numberOfWaves[waveID].spawnBoss)
+            {
+                SpawnBoss();
+            }
 
+        }
+        catch (Exception e)//Catches any exemptions and logs them
+        {
+            Debug.Log(e.Message);
+            SpawnerToggle(); //Turns off the spawner if an error occurs
+        }
     }
 
     //The idea behind the spawner is that the spawn chances are in sections on a numberline from 0.0 to 1.0, a random number is generated and the spawn chance of first enemy in the array is added to a variable that hold accumulated spawn chance
