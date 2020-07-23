@@ -395,12 +395,14 @@ MonoBehaviour:
   dialogue: {fileID: 972243241}
   nextScene: WhiteboxV2
   sentences:
-  - This is dummy dialog asharaibibas rrabibibas bora porra aqui eh bodibuilder porra.
-    Vai subir em arvore eh o caralho. BIRRLL !
-  - This is Dummy dialog the second, son of dummy dialog ashraibibas rrabibibas bora
-    porra.
-  - This is dummY dialog the third, last of its kind cause i dont feel like making
-    anymore will help.
+  - 'Greetings soldier, you are being transported to a corrupted temple known as
+    Temple Imperium. '
+  - A few days ago, the science division lost contact with a team of scientist working
+    on harnessing the power of the Star Stones.
+  - ' It appears as though some of the equipment malfunctioned and resulted the creation
+    of ravenous beasts that wiped out the scientists.'
+  - ' Your mission is to secure the lab, terminate any and all creatures you find
+    and stabilize the equipment.'
 --- !u!1 &421170848
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,11 +845,7 @@ MonoBehaviour:
 
 
     Your mission is to secure the lab,
-    terminate any and all creatures you find and stabilize the equipment.
-
-
-
-'
+    terminate any and all creatures you find and stabilize the equipment.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -916,12 +914,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 972243241}
-    characterCount: 463
+    characterCount: 458
     spriteCount: 0
-    spaceCount: 79
+    spaceCount: 76
     wordCount: 76
     linkCount: 0
-    lineCount: 11
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

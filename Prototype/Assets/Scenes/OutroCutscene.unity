@@ -629,12 +629,10 @@ MonoBehaviour:
   dialogue: {fileID: 515642868}
   nextScene: MenuScene
   sentences:
-  - This is dummy dialog asharaibibas rrabibibas bora porra aqui eh bodibuilder porra.
-    Vai subir em arvore eh o caralho. BIRRLL !
-  - This is Dummy dialog the second, son of dummy dialog ashraibibas rrabibibas bora
-    porra.
-  - This is dummY dialog the third, last of its kind cause i dont feel like making
-    anymore will help.
+  - Mission complete, congratulations soldier.
+  - Our radars tell us that all the creatures have been eliminated and the Star Stone
+    energy readings are stabilizing around the area.
+  - You have done very well, now return to headquarters for debriefing.
 --- !u!114 &1692197274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,7 +910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 792, y: -453.67}
+  m_AnchoredPosition: {x: 792, y: -271}
   m_SizeDelta: {x: 183.99585, y: 57.13733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1763519711
