@@ -9,6 +9,7 @@ public class RandomPickupSpawn : MonoBehaviour
 {
     public GameObject labNote;
     public GameObject generatorPart;
+    public int numOfLabNotes, numOfGeneratoprParts;
     public Vector3[] spawnPoints;
     private List<int> RNG = new List<int>();
 
@@ -43,7 +44,7 @@ public class RandomPickupSpawn : MonoBehaviour
         int labNotesCounter = 0;
         for (int i =0; i < spawnPoints.Length; i++)
         {
-            if (labNotesCounter < 2)
+            if (labNotesCounter < numOfLabNotes)
             {
                 Instantiate(labNote, spawnPoints[RNG[i]], Quaternion.identity);
             }
