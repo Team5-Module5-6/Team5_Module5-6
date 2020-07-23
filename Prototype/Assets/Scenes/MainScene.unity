@@ -11137,6 +11137,11 @@ PrefabInstance:
       propertyPath: popUp
       value: 
       objectReference: {fileID: 1058267755}
+    - target: {fileID: 8924552664849764227, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 8975854184563414953, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: weaponSwitch
