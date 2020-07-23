@@ -21,7 +21,7 @@ public class CutsceneDialogue : MonoBehaviour
     public void NextLine()
     {
         currentSentence++;
-        if(currentSentence > sentences.Count)
+        if (currentSentence == sentences.Count)
         {
             SceneManager.LoadScene(nextScene);
         }
