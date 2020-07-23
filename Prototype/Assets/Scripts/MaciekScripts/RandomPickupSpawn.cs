@@ -47,6 +47,7 @@ public class RandomPickupSpawn : MonoBehaviour
             if (labNotesCounter < numOfLabNotes)
             {
                 Instantiate(labNote, spawnPoints[RNG[i]], Quaternion.identity);
+                labNotesCounter++;
             }
             else
             {
