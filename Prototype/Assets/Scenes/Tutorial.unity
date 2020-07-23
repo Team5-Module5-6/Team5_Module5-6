@@ -6122,30 +6122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ceff1a083b729743aa9cc511471e7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &874847713 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 874847706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086987407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9403eefa7bec18428b8020c8d5a6cf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &874847714 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
-    type: 3}
-  m_PrefabInstance: {fileID: 874847706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739248784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9403eefa7bec18428b8020c8d5a6cf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &926439703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8306,14 +8282,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37cef40da992e52458cd221430fd0fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 874847714}
-  - {fileID: 874847713}
   weaponSwitch: {fileID: 874847712}
   weapon: {fileID: 1369882909}
   ammo: {fileID: 1996235490}
   inventory: {fileID: 1777619177}
   cameraTransform: {fileID: 874847711}
+  enemyHealthPopUp: {fileID: 0}
 --- !u!114 &1212988707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11417,7 +11391,7 @@ MonoBehaviour:
     popupPosition: {x: -210, y: 420, z: 0}
   - popupName: Pistol Name and Ammo
     displayNextPopup: 1
-    TextToDisplay: 'This shows your curent weapon
+    TextToDisplay: 'This shows your current weapon
 
       and its ammo.
 
@@ -11427,7 +11401,7 @@ MonoBehaviour:
     popupPosition: {x: 455, y: -55, z: 0}
   - popupName: Temperature Gauge
     displayNextPopup: 0
-    TextToDisplay: 'This is a tempeature gauge that shows generators temperature
+    TextToDisplay: 'This is a temperature gauge that shows generators temperature
 
       As
       enemies spawn, they will increase its temperature
