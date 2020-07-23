@@ -4611,7 +4611,7 @@ PrefabInstance:
     - target: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: maxMag
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
@@ -4622,6 +4622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: currentMag
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3179727491689400813, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
@@ -4656,7 +4661,7 @@ PrefabInstance:
     - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: maxMag
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
@@ -4672,6 +4677,11 @@ PrefabInstance:
         type: 3}
       propertyPath: currentMag
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: maxAmmo
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6220372291328666251, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
@@ -7120,7 +7130,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4606
+  m_Name: pb_Mesh-58926
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13060,7 +13070,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4612
+  m_Name: pb_Mesh-58932
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

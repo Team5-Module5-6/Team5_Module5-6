@@ -47,6 +47,11 @@ public class Weapon : MonoBehaviour
 
         reloadAmount = maxMag - currentMag;
 
+        if (currentAmmo < reloadAmount)
+        {
+            reloadAmount = currentAmmo;
+        }
+
         if (Input.GetKeyDown(KeyCode.R) && currentMag < maxMag)
         {
             Reload(reloadAmount);
@@ -73,9 +78,14 @@ public class Weapon : MonoBehaviour
 
     void Reload(int reloadAmount)
     {
-        currentAmmo -= reloadAmount;
+        if(currentAmmo > 0)
+        {
+            currentAmmo -= reloadAmount;
 
-        currentMag = currentMag + reloadAmount;
+            currentMag = currentMag + reloadAmount;
+        }
+        
+        
     }
 
     public void AmmoUp(int collectedAmmo)

@@ -13,9 +13,24 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
+
+        difficultyMenu.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+
+    public void Easy()
+    {
         SceneManager.LoadScene(0);
-        //difficultyMenu.SetActive(true);
-        //mainMenu.SetActive(false);
+    }
+
+    public void Normal()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Hard()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void Options()
@@ -23,6 +38,8 @@ public class MainMenu : MonoBehaviour
         optionsMenu.SetActive(true);
         mainMenu.SetActive(false);
     }
+
+    
 
     public void Return()
     {
