@@ -63,11 +63,9 @@ public class Prototype : MonoBehaviour
             power = hit.transform.GetComponent<PlayerEffects>();
             if (target != null)
             {
-                //target.TakeDamage(damage);
+                target.TakeDamage(damage);
                 StarStoneSelect();
-                //StartCoroutine(power.ElectricityEffect());
-                //StartCoroutine(power.PoisonEffect());
-                //StartCoroutine(power.IceEffect());
+                
             }
         }
         else
@@ -76,23 +74,9 @@ public class Prototype : MonoBehaviour
         }
     }
 
-    public void ChangeStarStone1()
-    {
-        if (starStoneID >= 0 && starStoneID <= 3)
-        {
-            starStoneID++;
-        }
-        else
-        {
-            starStoneID = 1;
-        }
-
-
-    }
-
     public void StarStoneSelect()
     {
-        switch (starStoneID)
+        switch (waveHandlerScript.starStoneID)
         {
             case 1:
                 laserBeam.material.color = Color.red;
@@ -118,38 +102,6 @@ public class Prototype : MonoBehaviour
 
     }
 
-    //Star stone power functions
-    //These functions are called via a script on the enemies
-    //public void FireDamage()
-    //{
-
-    //    Debug.Log("YEET");
-    //    target.TakeDamage(power.fireDamage);
-    //}
-
-    //public void SlowEnemy()
-    //{
-    //    if(power.frozen == true)
-    //    {
-    //        //Decrease enemy speed by half
-    //        target.speed = power.frozenSpeed;
-    //    }
-    //    else if(power.frozen == false)
-    //    {
-    //        target.speed = power.defaultSpeed;
-    //    }
-    //}
-
-    //public void StunEnemy()
-    //{
-    //    if (power.stunned == true)
-    //    {
-    //        target.GetComponent<EnemyMovement>().enabled = false;
-    //    }
-    //    else if (power.stunned == false)
-    //    {
-    //        target.GetComponent<EnemyMovement>().enabled = true;
-    //    }
-    //}
-
+    
+   
 }

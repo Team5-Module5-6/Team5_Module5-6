@@ -74,10 +74,6 @@ public class ActivateSpawner : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.G) && !spawnerScript.isSpawnerOn)
             {
                 waveHandlerScript.ChangeStarStone();
-
-                //Dane
-                //Best way to change player's stone? Maybe Temporary
-                prototypeScript.ChangeStarStone1();
             }
         }
         else if (generatorPopUp.IsActive())

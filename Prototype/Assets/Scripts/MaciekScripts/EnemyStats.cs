@@ -215,6 +215,7 @@ public class EnemyStats : MonoBehaviour
     }
 
     //Dane
+    //Player star stone power functions
     void FireDamage()
     {
         TakeDamage(fireDamage);
