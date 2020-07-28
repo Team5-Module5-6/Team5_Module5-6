@@ -10386,7 +10386,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576974057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364cbde47fcaff143afc8c72022082a7, type: 3}
+  m_Script: {fileID: 11500000, guid: ecee5651dfd72574c9ba6b63f595d7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 874847711}
@@ -10397,7 +10397,7 @@ MonoBehaviour:
 
     Speed: Fast
 
-    Range: Small
+    Ramge: Small
 
     Damage: Low'
   - 'Health: Medium
@@ -10414,10 +10414,12 @@ MonoBehaviour:
     Range: Large
 
     Damage: High'
-  - "Press \"E\" to spawn \nenemies."
+  - 'Press "E" to spawn
+
+    enemies'
   - 'Press "E" to exit tutorial
 
-    and go to the main menu.'
+    and go to the main menu'
 --- !u!1 &1582102199
 GameObject:
   m_ObjectHideFlags: 0

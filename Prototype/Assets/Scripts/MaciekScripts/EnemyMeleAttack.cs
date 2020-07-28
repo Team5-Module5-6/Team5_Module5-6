@@ -1,38 +1,54 @@
 ﻿//Author: Maciej Dowbor
 //Module: MED5192 & MED5201
-//Last Accessed: 17/06/2020
+//Last Accessed: 28/07/2020
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//---Script Summary---\\
+//Deals melee damage to player when in melee range
+//
+
 public class EnemyMeleAttack : MonoBehaviour
 {
+    //GameObjects
+    private GameObject player;
+
     //Transform variables
     private Transform playerTransform;
 
     //Script references
     private EnemyStats enemyStatsScript;
+    private PlayerStats playerStatsScript;
 
     //Script variables
     private float attackRange;
     private float attackRate; //Determines time in s between each attack
     private bool attackReady = true;
+    private float attackDamage;
+    private float attackRatex;
 
     void Start()
     {
+        //GameObjects
+        player = GameObject.Find("Player");
+
         //Transform
-        playerTransform = GameObject.Find("Player").transform;
+        playerTransform = player.transform;
 
         //Script references
         enemyStatsScript = GetComponent<EnemyStats>();
+        playerStatsScript = player.GetComponent<PlayerStats>();
 
         //Script variables
         attackRate = enemyStatsScript.meleeAttackRate;
         attackRange = enemyStatsScript.meleeAttackRange;
+        attackDamage = enemyStatsScript.meleeDamage;
+        attackRatex = 1 / attackRate;
     }
 
-    void Update() //Thats a very inefficient way of doing it, ima change it at some point 
+    void Update()
     {
         CheckRange();
     }
@@ -50,18 +66,18 @@ public class EnemyMeleAttack : MonoBehaviour
         }
     }
 
-    IEnumerator MeleAttackTimer()
+    IEnumerator MeleAttackTimer() //Cooldown between each attack
     {
-        yield return new WaitForSeconds(1 / attackRate); //Converts to attacks per second rather than attack every x seconds
+        yield return new WaitForSeconds(attackRatex); 
         attackReady = true;
 
     }
 
-    void MeleAttack() //Up to Adam how we want the player to take dmg
+    void MeleAttack() //Deals damage to player
     {
         //Play animation
-        //player.TakeDamage(value);
-        Debug.Log("I attacked");
+        playerStatsScript.TakeDamage(attackDamage);
+        //Debug.Log("I attacked");
 
     }
 }

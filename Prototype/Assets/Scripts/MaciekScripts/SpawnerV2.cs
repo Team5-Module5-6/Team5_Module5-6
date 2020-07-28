@@ -1,6 +1,6 @@
 ﻿//Author: Maciej Dowbor
 //Module: MED5192 & MED5201
-//Last Accessed: 24/06/2020
+//Last Accessed: 17/07/2020
 
 using System;
 using System.Collections;
@@ -8,6 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
+//---Script Summary---\\
+//Determines spawn chances of each enemy, randomly determines spawn position from given vectors, spawns a boss and enemies, toggles betwen active and inactive state, determines the temperature of spawned enemies to add to the generator,...
+//holds information that determiens spawn chances and what enemeis are spawned in each wave
+//
 
 public class SpawnerV2 : MonoBehaviour
 {
@@ -93,7 +98,8 @@ public class SpawnerV2 : MonoBehaviour
         {
             Debug.Log(e.Message);
         }
-        try
+
+        try //Spawns the boss at the start of a wave
         {
             if (numberOfWaves[waveID].spawnBoss)
             {

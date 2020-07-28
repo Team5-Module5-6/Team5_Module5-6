@@ -1,6 +1,6 @@
 ﻿//Author: Maciej Dowbor
 //Module: MED5192 & MED5201
-//Last Accessed: 17/06/2020
+//Last Accessed: 22/07/2020
 
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +8,9 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+//---Script Summary--\\
+//Holds all enemy stats in this script to make balancing easier for our designer, damage enemies, check for enemy death, activate SS effect, change generator temperature upon enemy death and collisions with player projectiles
+//
 
 public class EnemyStats : MonoBehaviour
 {
@@ -94,8 +97,10 @@ public class EnemyStats : MonoBehaviour
         starStoneID = waveHandlerScript.starStoneID;
         maxHealth = health;
 
+        //Scene name
         sceneName = SceneManager.GetActiveScene().name;
-        //enemySizeY = enemyMeshRenderer.bounds.size.y; //Doesn't work for some reason will look into it later
+        
+        //enemySizeY = enemyMeshRenderer.bounds.size.y;
 
         switch (enemyID) //Used to adjust the spawn points of poison puddles to make sure theu are spawn below the enemy instead of inside of them
         {
@@ -116,16 +121,17 @@ public class EnemyStats : MonoBehaviour
         //Call functions
         GetTemperature();
 
-        if(starStoneID == 3 && sceneName != "Tutorial") //The way I think this is supposed to work is that the starstone type is chosen once every wave at random and the same starstone is used until the wave is finished
+        //Activates poison puddle spawns if appropriate SS is active
+        if (starStoneID == 3 && sceneName != "Tutorial")
         {
             StartCoroutine(SpawnPoisonPuddles());
         }
     }
 
 
-    public void TakeDamage(float damageTaken) //easiest way of doing it, just call this function and type how much damage the enemy should take
+    public void TakeDamage(float damageTaken) //Deals damage to the enemy
     {
-        Debug.Log("OW");
+        Debug.Log("OW");//Dane
         health -= damageTaken;
         CheckHealth();
     }
@@ -143,7 +149,7 @@ public class EnemyStats : MonoBehaviour
         } 
     }
 
-    void CheckHealth()
+    void CheckHealth() //Checks if the edemy is dead
     {
         if(health <= 0) 
         {
@@ -154,7 +160,7 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnPoisonPuddles()
+    IEnumerator SpawnPoisonPuddles() //Spawns poison puddles for as long as the enemy is alive
     {
         while(health > 0)
         {
@@ -164,7 +170,7 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision) //Taking damage 
+    private void OnCollisionEnter(Collision collision) //Taking damage from player projectiles (Made it in case we want the player to have actual projectiles)
     {
         if (collision.gameObject.tag == "ObjectPlayerProjectiles")
         {
