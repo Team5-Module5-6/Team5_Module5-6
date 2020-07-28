@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fcc8310b72cd042a2fb1bbdfd44ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   timeOnFire: 9.9
 --- !u!54 &1590894980649593342
 Rigidbody:
@@ -122,7 +121,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
