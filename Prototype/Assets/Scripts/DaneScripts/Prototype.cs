@@ -10,12 +10,9 @@ public class Prototype : MonoBehaviour
     public int currentAmmo;
     public int starStoneID;
     public float damage = 0.001f;
-    private string sceneName; //Maciek
     
-    //script reference
-    
+    //script references    
     private EnemyStats target;
-    private PlayerEffects power;
     private WaveHandler waveHandlerScript;
 
     // Start is called before the first frame update
@@ -25,27 +22,26 @@ public class Prototype : MonoBehaviour
 
         waveHandlerScript = GameObject.FindObjectOfType<WaveHandler>();
 
+        //Setting variables
         currentAmmo = maxAmmo;
-
         starStoneID = waveHandlerScript.starStoneID;
-
-        sceneName = SceneManager.GetActiveScene().name; //Maciek
     }
+
     // Update is called once per frame
     void Update()
     {
-        laserBeam.enabled = false;
+        laserBeam.enabled = false;//Hide the laser
 
-        if (Input.GetMouseButton(0) && currentAmmo > 0)
+        if (Input.GetMouseButton(0) && currentAmmo > 0)//Left mouse button and ammo is not empty
         {
-            laserBeam.enabled = true;
+            laserBeam.enabled = true;//Show the laser
             LaserFire();
         }
     }
 
     public void LaserFire()
-    {
-        currentAmmo = currentAmmo - 1;
+    {       
+        currentAmmo = currentAmmo - 1; //Depleat ammo when firing
 
         RaycastHit hit;
 
@@ -53,29 +49,28 @@ public class Prototype : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            if (hit.collider)
+            if (hit.collider)//If something is hit by the laser
             {
-                laserBeam.SetPosition(1, new Vector3(0, 0, hit.distance * 4));
-
+                laserBeam.SetPosition(1, new Vector3(0, 0, hit.distance * 4)); //Position laser tip at the position of the hit object
             }
-
-            target = hit.transform.GetComponent<EnemyStats>();
-            power = hit.transform.GetComponent<PlayerEffects>();
-            if (target != null)
+            target = hit.transform.GetComponent<EnemyStats>(); //Assign targets (enemy objects)
+            if (target != null)//Only if hit object is an enemy
             {
-                target.TakeDamage(damage);
-                StarStoneSelect();
-                
+                target.TakeDamage(damage); //Deal damage to the enemy
+                StarStoneSelect(); //Carry out function based on current equipped star stone
             }
         }
         else
         {
-            laserBeam.SetPosition(1, new Vector3(0, 0, 5000));
+            laserBeam.SetPosition(1, new Vector3(0, 0, 5000)); //Set laser distane when not hitting anything
         }
     }
 
     public void StarStoneSelect()
     {
+        //Change colour of laser and activate SS power based on the current SS ID
+        //All power functions located in "EnemyStats" script
+        //This method makes the functions easier to manage and makes sure they affet the right enemies at the right time 
         switch (waveHandlerScript.starStoneID)
         {
             case 1:
@@ -86,7 +81,6 @@ public class Prototype : MonoBehaviour
             case 2:
                 laserBeam.material.color = Color.cyan;
                 StartCoroutine(target.IceEffect());
-
                 break;
 
             case 3:
@@ -101,7 +95,4 @@ public class Prototype : MonoBehaviour
         }
 
     }
-
-    
-   
 }
