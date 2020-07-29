@@ -7,7 +7,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//WORK IN PROGRESS :^) It's really scuffed right now xD
+
+//---Script Summary---\\
+//Changes generator temperature, resizes temperature gauge, updates current temperature and checks if the temperature reached max / min temperature 
+//
+
 public class TemperatureGauge : MonoBehaviour
 {
     //Rect tansforms
@@ -88,7 +92,6 @@ public class TemperatureGauge : MonoBehaviour
         {
             Debug.Log("Char controller disabled");
             waveHandlerScript.PlayerLose();
-            //Something happens that makes the player lose
         }
 
         if(currentTemp <= 0)

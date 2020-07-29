@@ -4,97 +4,111 @@ using UnityEngine;
 
 public class PlayerEffects : MonoBehaviour
 {
-    [Header("Fire StarStone Variables")]
-    public GameObject fireEffect;
-    public float timeOnFire;
-    public float fireDamage = 1f;
-    public bool onFire = false;
+    //[Header("Fire StarStone Variables")]
+    //public GameObject fireEffect;
+    //public float timeOnFire;
+    //public float fireDamage = 0.01f;
+  
 
-    [Header("Ice StarStone Variables")]
+    //[Header("Ice StarStone Variables")]
     //public GameObject iceEffect;
-    public float timeFrozen;
-    public float defaultSpeed;//must equal normal speed for this enemy type
-    public float frozenSpeed;//speed when under effect of ice star stone
-    public bool frozen = false;
+    //public float timeFrozen;
+    //public float defaultSpeed;//must equal normal speed for this enemy type
+    //public float frozenSpeed;//speed when under effect of ice star stone
+    //public bool frozen = false;
 
-    [Header("Poison StarStone Variables")]
+    //[Header("Poison StarStone Variables")]
     //public GameObject poisonEffect;
-    public float timePoisoned;
-    public bool poisoned = false;
+    //public float timePoisoned;
+    //public bool poisoned = false;
     
-    [Header("Poison StarStone Variables")]
+    //[Header("Poison StarStone Variables")]
     //public GameObject electricEffect;
-    public float timeStunned = 10;
-    public bool stunned = false;
+    //public float timeStunned = 10;
+    //public bool stunned = false;
 
-    private Prototype protoScript;
-    private EnemyStats enemyStatsScript;
-    private Weapon weaponScript;
-    private EnemyMovement enemyMovementScript;
+    ////Script References
+    //private Prototype protoScript;
+    //private EnemyStats enemyStatsScript;
+    //private Weapon weaponScript;
+    //private EnemyMovement enemyMovementScript;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        protoScript = GameObject.FindObjectOfType<Prototype>();
-        enemyStatsScript = GameObject.FindObjectOfType<EnemyStats>();
-        weaponScript = GameObject.FindObjectOfType<Weapon>();
-        enemyMovementScript = GameObject.FindObjectOfType<EnemyMovement>();
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    protoScript = GameObject.FindObjectOfType<Prototype>();
+    //    enemyStatsScript = GameObject.FindObjectOfType<EnemyStats>();
+    //    weaponScript = GameObject.FindObjectOfType<Weapon>();
+    //    enemyMovementScript = GameObject.FindObjectOfType<EnemyMovement>();
         
-        frozenSpeed = defaultSpeed / 2;
-    }
+    //    frozenSpeed = defaultSpeed / 2;
+    //}
 
-    public IEnumerator FireEffect()
-    {
-        onFire = true;
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Fire")
+    //    {
+    //        enemyStatsScript.TakeDamage(fireDamage);
+    //    }
+    //}
 
-        if (onFire == true)
-        {
-            fireEffect.SetActive(true);
+    //public IEnumerator FireEffect()
+    //{
+    //    enemyStatsScript.onFire = true;
 
-            yield return new WaitForSeconds(timeOnFire);
+    //    if (enemyStatsScript.onFire == true)
+    //    {
+    //        fireEffect.SetActive(true);
 
-            onFire = false;
-            fireEffect.SetActive(false);
-        }
-    }
+    //        yield return new WaitForSeconds(timeOnFire);
 
-    public IEnumerator IceEffect()
-    {
-        frozen = true;
-        protoScript.SlowEnemy();
+    //        enemyStatsScript.onFire = false;
+    //        fireEffect.SetActive(false);
+    //    }
+    //}
 
-        yield return new WaitForSeconds(timeFrozen);
+    //public IEnumerator IceEffect()
+    //{
+    //    frozen = true;
+    //    iceEffect.SetActive(true);
+    //    protoScript.SlowEnemy();
 
-        frozen = false;
-        protoScript.SlowEnemy();
-    }
+    //    yield return new WaitForSeconds(timeFrozen);
 
-    public IEnumerator PoisonEffect()
-    {
-        poisoned = true;
-        weaponScript.damage = 10;
+    //    frozen = false;
+    //    iceEffect.SetActive(false);
+    //    protoScript.SlowEnemy();
+    //}
 
-        if (poisoned == true)
-        {
-            //poisonEffect.SetActive(true);
+    //public IEnumerator PoisonEffect()
+    //{
+    //    poisoned = true;
+    //    weaponScript.damage = 10;
 
-            yield return new WaitForSeconds(timePoisoned);
+    //    if (poisoned == true)
+    //    {
+    //        poisonEffect.SetActive(true);
 
-            poisoned = false;
-            weaponScript.damage = 1;
-            //poisonEffect.SetActive(false);
-        }
+    //        yield return new WaitForSeconds(timePoisoned);
 
-    }
+    //        poisoned = false;
+    //        poisonEffect.SetActive(false);
+    //        weaponScript.damage = 1;
+           
+    //    }
 
-    public IEnumerator ElectricityEffect()
-    {
-        stunned = true;
-        protoScript.StunEnemy();
+    //}
 
-        yield return new WaitForSeconds(timeStunned);
+    //public IEnumerator ElectricityEffect()
+    //{
+    //    stunned = true;
+    //    electricEffect.SetActive(true);
+    //    protoScript.StunEnemy();
 
-        stunned = false;
-        protoScript.StunEnemy();
-    }
+    //    yield return new WaitForSeconds(timeStunned);
+
+    //    stunned = false;
+    //    electricEffect.SetActive(false);
+    //    protoScript.StunEnemy();
+    //}
 }

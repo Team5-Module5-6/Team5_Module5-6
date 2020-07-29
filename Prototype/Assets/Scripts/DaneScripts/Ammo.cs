@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-    public int collectedAmmo = 1;
+    public int collectedAmmo = 10;
  
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -20,7 +21,7 @@ public class Ammo : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Weapon ammo = other.GetComponent<Weapon>();
-        if(ammo != null && ammo.currentAmmo < 100)
+        if(ammo != null && ammo.currentAmmo < ammo.maxAmmo)
         {
             ammo.AmmoUp(collectedAmmo);
             

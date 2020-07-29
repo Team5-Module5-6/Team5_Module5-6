@@ -15,6 +15,7 @@ TagManager:
   - PlayerTut
   - EnemyDummy
   - SSEffectPopup
+  - Fire
   layers:
   - Default
   - TransparentFX

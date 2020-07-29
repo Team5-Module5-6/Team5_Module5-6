@@ -1,6 +1,6 @@
 ﻿//Author: Maciej Dowbor
 //Module: MED5192 & MED5201
-//Last Accessed: 17/06/2020
+//Last Accessed: 13/07/2020
 
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +8,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-//Get rid of functions in fixed update and figure out a way to only call movement when needed
+//---Script Summary---\\
+//Rotates enemies to look at the player and makes enemies move towards the player under certain conditions
+//
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -50,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
     {
         //Debug.Log("mvment script.PlayerInSight: " + enemyShootingScript.playerInSight);
 
-        if (Vector3.Distance(transform.position, playerTransform.position) <= triggerDistance || enemyShootingScript.playerInSight == false) //Checks if the player is within trigger distance or if anything is blocking enemies view of the player
+        if (Vector3.Distance(transform.position, playerTransform.position) <= triggerDistance || !enemyShootingScript.playerInSight) //Checks if the player is within trigger distance or if anything is blocking enemies view of the player
         {
             navigationAgent.SetDestination(playerTransform.position); 
         }

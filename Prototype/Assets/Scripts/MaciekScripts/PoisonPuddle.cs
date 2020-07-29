@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//---Script Summary---\\
+//Displays popup to inform player that they're poisoned, deal poison damage and slow the player on collision with the poison puddle
+//
 public class PoisonPuddle : MonoBehaviour
 {
     //SS effects feedback
@@ -52,7 +55,7 @@ public class PoisonPuddle : MonoBehaviour
         duration = poisonDamageOverTimeInterval * poisonTicksOfDamageOverTime;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) //Detects collision with the player and calls coroutines
     {
         if (collision.gameObject.name == "Player")
         {
@@ -62,7 +65,7 @@ public class PoisonPuddle : MonoBehaviour
         }
     }
 
-    IEnumerator DamageOverTime(int numberOfDamageTicks, float timeInterval, float damagePerTick)
+    IEnumerator DamageOverTime(int numberOfDamageTicks, float timeInterval, float damagePerTick) //Deals damage over time to player
     {
         for (int i = 0; i < numberOfDamageTicks; i++)
         {
@@ -72,14 +75,14 @@ public class PoisonPuddle : MonoBehaviour
     
     }
     
-    IEnumerator PlayerSlow(float xslowPercentage, float xslowDuration)
+    IEnumerator PlayerSlow(float xslowPercentage, float xslowDuration) //Slows the player down
     {
         playerMovementScript.speed *= xslowPercentage;
         yield return new WaitForSeconds(xslowDuration);
         playerMovementScript.speed = tempSpeed;
     }
 
-    IEnumerator SSEffectFeedback()
+    IEnumerator SSEffectFeedback() //Displays a popup under health bar that the player is poisoned
     {
         ssEffectsText.text = "You're poisoned";
         ssEffectsPopup.gameObject.SetActive(true);

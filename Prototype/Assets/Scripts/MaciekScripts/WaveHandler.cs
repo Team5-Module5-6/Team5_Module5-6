@@ -1,11 +1,15 @@
 ﻿//Author: Maciej Dowbor
 //Module: MED5192 & MED5201
-//Last Accessed: 29/06/2020
+//Last Accessed: 19/07/2020
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+//---Script Summary---\\
+//Holds wave and star stone information that is used in other scripts, lose state, wave progression, star stone change and changes generator colour
+//
 
 public class WaveHandler : MonoBehaviour
 {
@@ -26,20 +30,24 @@ public class WaveHandler : MonoBehaviour
     //Script references
     private MouseLook mouseLookScript;
 
+    //Button
     public Button gameOverButton;
 
     private void Start()
     { 
+        //Script references
         mouseLookScript = GameObject.Find("Main Camera").GetComponent<MouseLook>();
         generatorRenderer = generator.GetComponent<Renderer>();
 
         //Char controller
         playerCharController = GameObject.Find("Player").GetComponent<CharacterController>();
+
+        //UI element
         gameOverButton.gameObject.SetActive(false);
     }
 
 
-    public void KillAllEnemies() //Just deletes them for now, will make the enemies take damage 
+    public void KillAllEnemies() //Destroys enemies
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject i in enemies) Destroy(i);
@@ -50,9 +58,9 @@ public class WaveHandler : MonoBehaviour
         waveID++;
     }
 
-    public void ChangeStarStone()
+    public void ChangeStarStone() //Changes current star stone effect
     {
-        if(starStoneID >= 0 && starStoneID <= 3)
+        if(starStoneID >= 0 && starStoneID <= 3) 
         {
             starStoneID++;
         }
@@ -63,7 +71,7 @@ public class WaveHandler : MonoBehaviour
         ChangeGeneratorColour();
     }
 
-    void ChangeGeneratorColour()
+    void ChangeGeneratorColour() //Changes generator colour (player feedback)
     {
         switch (starStoneID)
         {
@@ -85,16 +93,16 @@ public class WaveHandler : MonoBehaviour
         }
     }
 
-    public void ToggleCharControler()
+    public void ToggleCharControler() //Disables char controler, used for defeat state
     {
         playerCharController.enabled = !playerCharController.enabled;
     }
 
-    public void PlayerLose()
+    public void PlayerLose() //Disables Player movement and enables mouse controls, displays defeat button that takes the player to the main menu
     {
         ToggleCharControler();
         Cursor.lockState = CursorLockMode.None;
-        mouseLookScript.mouseSensitivity = 0;
+        mouseLookScript.mouseSensitivity = 0; //disables camera rotation
         gameOverButton.gameObject.SetActive(true);
     }
 }

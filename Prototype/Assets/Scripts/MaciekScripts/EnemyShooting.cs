@@ -1,15 +1,17 @@
 ﻿//Author: Maciej Dowbor
 //Module: MED5192 & MED5201
-//Last Accessed: 25/06/2020
+//Last Accessed: 20/07/2020
 
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-//Change raycast origin to enemy weapon
+//---Script Summary---\\
+//Checks if player is in sight, shoots player, activates star stone effects on player and displays ss effects popup to inform player that they're for e.g. slowed
+//
 public class EnemyShooting : MonoBehaviour
 {
     //SS effects player feedback
@@ -38,6 +40,7 @@ public class EnemyShooting : MonoBehaviour
     private bool isLoaded = true;
     private float rangedDamage;
     private float tempSpeed;
+    private float rateOfFireCD;
 
     //Fire SS variables
     private float damageOverTime;
@@ -68,6 +71,7 @@ public class EnemyShooting : MonoBehaviour
         rangedDamage = enemyStatsScript.rangedDamage;
         yRayOffset = enemyStatsScript.yRayOffset;
         tempSpeed = playerMovementScript.speed;
+        rateOfFireCD = 1 / rateOfFire;
 
         //Fire StarStone
         damageOverTime = enemyStatsScript.damageOverTime;
@@ -91,7 +95,7 @@ public class EnemyShooting : MonoBehaviour
         ShootProjectile();
     }
 
-    void ShootProjectile()
+    void ShootProjectile() //Damages player and determines if the player is in front of the enemy, combined both into one as the script only runs to the if(isloaded) and shouldn't have big impact if it's ran at the same rate as checking if player's in sight
     {
         Vector3 rayOrigin = transform.position; //Determines where the ray is shot from, later when we have enemies with weapons, the rays will be shot from them
         rayOrigin.y += yRayOffset; //Adjusts ray height (temporary fix untill we get enemies with weapons)
@@ -99,6 +103,8 @@ public class EnemyShooting : MonoBehaviour
         Ray sight = new Ray(rayOrigin, transform.forward); //Creates a ray that shoots in the direction the enemy is facing
         RaycastHit objHit; //Gets information on what got hit by the raycast
         //Debug.DrawRay(rayOrigin, transform.forward, Color.blue);
+
+
         if (Physics.Raycast(sight, out objHit, range)) 
         {
             if (objHit.transform.gameObject.tag == "Player") {
@@ -106,6 +112,7 @@ public class EnemyShooting : MonoBehaviour
                 //Debug.Log("I can see you");
                 playerInSight = true;
                 //Debug.Log("Is loaded: " + isLoaded);
+
                 if (isLoaded)
                 {
                     //Play animation/effects
@@ -113,6 +120,7 @@ public class EnemyShooting : MonoBehaviour
 
                     float hitChanceRNG = UnityEngine.Random.Range(0, 100); //Determines if the player got hit
                     //Debug.Log(hitChanceRNG);
+
                     if (hitChanceRNG <= hitChance)
                     {
                         playerStatsScript.TakeDamage(rangedDamage);
@@ -131,6 +139,7 @@ public class EnemyShooting : MonoBehaviour
                                 break;
                                  
                         }
+
                         StartCoroutine(SSEffectFeedback(starStoneID));
                         //Debug.Log("I shot you");
                     }
@@ -138,8 +147,10 @@ public class EnemyShooting : MonoBehaviour
                     {
                         //Debug.Log("I missed");
                     }
+
                     isLoaded = false;
                     StartCoroutine(Reload()); //Starts a coroutine to reload the gun
+
                 }
             }
             else
@@ -166,7 +177,7 @@ public class EnemyShooting : MonoBehaviour
         playerMovementScript.speed = tempSpeed;
     }
 
-    IEnumerator StunPlayer(float stunDuration) //Stuns the player (Only disables movement for now)
+    IEnumerator StunPlayer(float stunDuration) //Stuns the player (Only disables movement as disabling player shooting would make the game impossible to play)
     {
         waveHandlerScript.ToggleCharControler();
         yield return new WaitForSeconds(stunDuration);
@@ -175,12 +186,12 @@ public class EnemyShooting : MonoBehaviour
 
     IEnumerator Reload()
     {
-        yield return new WaitForSeconds(1 / rateOfFire); //Very bad way of determing rate of fire lmao
+        yield return new WaitForSeconds(rateOfFireCD);
         isLoaded = true;
-        //Debug.Log("Coroutine completed");
+        //Debug.Log("Reload coroutine completed");
     }
 
-    IEnumerator SSEffectFeedback(int id)
+    IEnumerator SSEffectFeedback(int id) //Sets popup text, determines popup duration and enables the popup for the duriation of star stone effect (player feedback)
     {
         float duration = 0;
         switch (id)

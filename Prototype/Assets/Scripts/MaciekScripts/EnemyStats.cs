@@ -1,6 +1,6 @@
-﻿//Author: Maciej Dowbor
+﻿//Authors: Maciej Dowbor, Dane Oddy
 //Module: MED5192 & MED5201
-//Last Accessed: 17/06/2020
+//Last Accessed: 27/07/2020
 
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +8,9 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+//---Script Summary--\\
+//Holds all enemy stats in this script to make balancing easier for our designer, damage enemies, check for enemy death, activate SS effect, change generator temperature upon enemy death and collisions with player projectiles
+//
 
 public class EnemyStats : MonoBehaviour
 {
@@ -15,6 +18,8 @@ public class EnemyStats : MonoBehaviour
     private SpawnerV2 spawnerScript;
     private TemperatureGauge temperatureGaugeScript;
     private WaveHandler waveHandlerScript;
+    private Weapon weaponScript;
+    private EnemyMovement enemyMovementScript;    
 
     //Script variables
     [Header("Basics")]
@@ -74,6 +79,29 @@ public class EnemyStats : MonoBehaviour
     [Tooltip("Adjusts y coordinate to shoot rays at players height(Temporary fix until enemies will have weapons that will rotate towards the player)")]
     public float yRayOffset;
 
+    //Dane
+    [Header("StarStone Debuff Variables")]
+    public GameObject fireEffect;
+    public float timeOnFire;
+    public float fireDamage = 0.01f;
+    public bool onFire = false;
+
+    public GameObject iceEffect;
+    public float timeFrozen;
+    public float defaultSpeed;//must equal normal speed for this enemy type
+    public float frozenSpeed;//speed when under effect of ice star stone
+    public bool frozen = false;
+
+    public GameObject poisonEffect;
+    public float timePoisoned;
+    public int poisonedDamage;
+    public bool poisoned = false;
+
+    public GameObject electricEffect;
+    public float timeStunned = 10;
+    public bool stunned = false;
+    //Dane
+
     private float enemyTemp;
     private int starStoneID;
     private float enemySizeY;
@@ -86,16 +114,22 @@ public class EnemyStats : MonoBehaviour
         spawnerScript = FindObjectOfType<SpawnerV2>();
         temperatureGaugeScript = FindObjectOfType<TemperatureGauge>();
         waveHandlerScript = FindObjectOfType<WaveHandler>();
-
+        weaponScript = FindObjectOfType<Weapon>();
+        enemyMovementScript = gameObject.GetComponent<EnemyMovement>();
+        
         //Mesh Rendered
         enemyMeshRenderer = gameObject.GetComponentInChildren<MeshRenderer>();
-
+     
         //Set variables
         starStoneID = waveHandlerScript.starStoneID;
         maxHealth = health;
+        frozenSpeed = defaultSpeed / 2;
+        poisonedDamage = weaponScript.damage * 2;
 
+        //Scene name
         sceneName = SceneManager.GetActiveScene().name;
-        //enemySizeY = enemyMeshRenderer.bounds.size.y; //Doesn't work for some reason will look into it later
+        
+        //enemySizeY = enemyMeshRenderer.bounds.size.y;
 
         switch (enemyID) //Used to adjust the spawn points of poison puddles to make sure theu are spawn below the enemy instead of inside of them
         {
@@ -109,25 +143,29 @@ public class EnemyStats : MonoBehaviour
 
             case 2:
                 enemySizeY = 2;
-                break;
-                
+                break;               
         }
-
         //Call functions
         GetTemperature();
 
-        if(starStoneID == 3 && sceneName != "Tutorial") //The way I think this is supposed to work is that the starstone type is chosen once every wave at random and the same starstone is used until the wave is finished
+        //Activates poison puddle spawns if appropriate SS is active
+        if (starStoneID == 3 && sceneName != "Tutorial")
         {
             StartCoroutine(SpawnPoisonPuddles());
         }
     }
 
-
-    public void TakeDamage(float damageTaken) //easiest way of doing it, just call this function and type how much damage the enemy should take
+    public void TakeDamage(float damageTaken) //Deals damage to the enemy
     {
-        Debug.Log("OW");
+        Debug.Log("damage dealt");
         health -= damageTaken;
         CheckHealth();
+
+        if(poisoned == true)//Dane
+        {
+            health -= damageTaken * 1.25f;
+            CheckHealth();
+        }
     }
 
     void GetTemperature() //Gets temperature value of coresponding enemy type set in the spawner
@@ -143,7 +181,7 @@ public class EnemyStats : MonoBehaviour
         } 
     }
 
-    void CheckHealth()
+    void CheckHealth() //Checks if the edemy is dead
     {
         if(health <= 0) 
         {
@@ -154,7 +192,7 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnPoisonPuddles()
+    IEnumerator SpawnPoisonPuddles() //Spawns poison puddles for as long as the enemy is alive
     {
         while(health > 0)
         {
@@ -164,11 +202,100 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision) //Taking damage 
+    private void OnTriggerEnter(Collider collision) //Taking damage from player projectiles (Made it in case we want the player to have actual projectiles)
     {
-        if (collision.gameObject.tag == "ObjectPlayerProjectiles")
+        if (collision.gameObject.tag == "Fire" && onFire == true)
         {
-            TakeDamage(collisionWithPlayerDamage);
+            InvokeRepeating("FireDamage", 0.1f, 1f);
+        }
+        else if (onFire == false)
+        {
+            CancelInvoke("FireDamage");
         }
     }
+
+    //Dane
+    //Player star stone power functions
+    void FireDamage()
+    {
+        TakeDamage(fireDamage);
+    }
+
+    void SlowEnemy()
+    {
+        if (frozen == true)
+        {       
+            speed = frozenSpeed; //Decrease enemy speed by half
+        }
+        else if (frozen == false)
+        {
+            speed = defaultSpeed;
+        }
+    }
+
+    void StunEnemy()
+    {
+        if (stunned == true)
+        {
+            enemyMovementScript.enabled = false;
+        }
+        else if (stunned == false)
+        {
+            enemyMovementScript.enabled = true;
+        }
+    }
+
+    //Set enemy on fire for specified time
+    public IEnumerator FireEffect()
+    {
+        onFire = true;    
+        fireEffect.SetActive(true);
+
+        yield return new WaitForSeconds(timeOnFire);
+
+        onFire = false;
+        fireEffect.SetActive(false);        
+    }
+
+    //Freeze enemy for specified time
+    public IEnumerator IceEffect()
+    {
+        frozen = true;
+        iceEffect.SetActive(true);
+        SlowEnemy();
+
+        yield return new WaitForSeconds(timeFrozen);
+
+        frozen = false;
+        iceEffect.SetActive(false);
+        SlowEnemy();
+    }
+
+    //Poison enemy for specified time
+    public IEnumerator PoisonEffect()
+    {
+        //Refer to TakeDamage function 
+        poisoned = true;
+        poisonEffect.SetActive(true);
+
+        yield return new WaitForSeconds(timePoisoned);
+
+        poisoned = false;
+        poisonEffect.SetActive(false);
+    }
+
+    //Stun enemy for specified time
+    public IEnumerator ElectricityEffect()
+    {
+        stunned = true;
+        electricEffect.SetActive(true);
+        StunEnemy();
+
+        yield return new WaitForSeconds(timeStunned);
+
+        stunned = false;
+        electricEffect.SetActive(false);
+        StunEnemy();
+    }
+    //Dane
 }
