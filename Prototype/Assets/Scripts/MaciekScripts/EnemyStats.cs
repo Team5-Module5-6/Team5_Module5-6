@@ -12,6 +12,7 @@ using UnityEngine.SceneManagement;
 //Holds all enemy stats in this script to make balancing easier for our designer, damage enemies, check for enemy death, activate SS effect, change generator temperature upon enemy death and collisions with player projectiles
 //
 
+//*Everything that is not labeled \\Dane is done by Maciek*
 public class EnemyStats : MonoBehaviour
 {
     //Script references
@@ -78,6 +79,12 @@ public class EnemyStats : MonoBehaviour
     [Header("other")]
     [Tooltip("Adjusts y coordinate to shoot rays at players height(Temporary fix until enemies will have weapons that will rotate towards the player)")]
     public float yRayOffset;
+    private float enemyTemp;
+    private int starStoneID;
+    private float enemySizeY;
+    private MeshRenderer enemyMeshRenderer;
+    private string sceneName;
+
 
     //Dane
     [Header("StarStone Debuff Variables")]
@@ -102,11 +109,7 @@ public class EnemyStats : MonoBehaviour
     public bool stunned = false;
     //Dane
 
-    private float enemyTemp;
-    private int starStoneID;
-    private float enemySizeY;
-    private MeshRenderer enemyMeshRenderer;
-    private string sceneName;
+    
 
     private void Start()
     {
@@ -123,8 +126,8 @@ public class EnemyStats : MonoBehaviour
         //Set variables
         starStoneID = waveHandlerScript.starStoneID;
         maxHealth = health;
-        frozenSpeed = defaultSpeed / 2;
-        poisonedDamage = weaponScript.damage * 2;
+        frozenSpeed = defaultSpeed / 2; //Dane
+        poisonedDamage = weaponScript.damage * 2; //Dane
 
         //Scene name
         sceneName = SceneManager.GetActiveScene().name;
@@ -164,7 +167,7 @@ public class EnemyStats : MonoBehaviour
         if(poisoned == true)//Dane
         {
             health -= damageTaken * 1.25f;
-            CheckHealth();
+            CheckHealth(); 
         }
     }
 
@@ -181,7 +184,7 @@ public class EnemyStats : MonoBehaviour
         } 
     }
 
-    void CheckHealth() //Checks if the edemy is dead
+    void CheckHealth() //Checks if the enemy is dead
     {
         if(health <= 0) 
         {
@@ -202,8 +205,30 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision) //Taking damage from player projectiles (Made it in case we want the player to have actual projectiles)
+    private void OnCollisionEnter(Collision collision) //Taking damage from player projectiles (Made it in case we want the player to have actual projectiles)
     {
+        //if(collision.gameObject.tag == "ObjectPlayerProjectiles")
+        //{
+        //
+        //}
+        if (collision.gameObject.tag == "Player")
+        {
+            TakeDamage(collisionWithPlayerDamage);
+        }
+    }
+
+
+
+
+
+
+
+
+
+    //Dane
+    private void OnTriggerEnter(Collider collision) 
+    {
+        //Dane
         if (collision.gameObject.tag == "Fire" && onFire == true)
         {
             InvokeRepeating("FireDamage", 0.1f, 1f);
@@ -214,7 +239,6 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    //Dane
     //Player star stone power functions
     void FireDamage()
     {
