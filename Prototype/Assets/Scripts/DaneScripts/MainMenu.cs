@@ -6,15 +6,17 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
-
-    public GameObject optionsMenu;
-    
+    public GameObject optionsMenu;    
     public GameObject difficultyMenu;
+
+    void Start()
+    {
+        optionsMenu.SetActive(false);
+    }
 
     public void Play()
     {
-
-        difficultyMenu.SetActive(true);
+        difficultyMenu.SetActive(true);//Go to difficulty selection
         mainMenu.SetActive(false);
     }
 
@@ -37,13 +39,6 @@ public class MainMenu : MonoBehaviour
     {
         optionsMenu.SetActive(true);
         mainMenu.SetActive(false);
-    }
-
-    
-
-    public void Return()
-    {
-        mainMenu.SetActive(true);
     }
 
     public void Exit()
