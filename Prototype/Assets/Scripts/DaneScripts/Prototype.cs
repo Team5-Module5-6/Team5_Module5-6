@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class Prototype : MonoBehaviour
 {
     public LineRenderer laserBeam;
-    public int maxAmmo = 1000;
+    public int maxAmmo = 100;
     public int currentAmmo;
     public int starStoneID;
-    public float damage = 0.001f;
+    public float damage;
     
     //script references    
     private EnemyStats target;
@@ -30,12 +30,15 @@ public class Prototype : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        laserBeam.enabled = false;//Hide the laser
-
-        if (Input.GetMouseButton(0) && currentAmmo > 0)//Left mouse button and ammo is not empty
+        if (Input.GetMouseButtonDown(0) && currentAmmo > 0)//Left mouse button and ammo is not empty
         {
             laserBeam.enabled = true;//Show the laser
-            LaserFire();
+            InvokeRepeating("LaserFire", 0f, 0.2f);//Adjust damage rate here(2nd float)
+        }
+        else if (Input.GetMouseButtonUp(0) || currentAmmo <= 0)
+        {
+            laserBeam.enabled = false; //Hide the laser
+            CancelInvoke("LaserFire");//Stop firing
         }
     }
 

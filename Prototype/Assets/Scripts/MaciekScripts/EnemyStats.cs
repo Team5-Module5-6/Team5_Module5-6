@@ -101,7 +101,7 @@ public class EnemyStats : MonoBehaviour
 
     public GameObject poisonEffect;
     public float timePoisoned;
-    public int poisonedDamage;
+    public float poisonedDamage;//damage is multipled by this amount when poisoned
     public bool poisoned = false;
 
     public GameObject electricEffect;
@@ -109,7 +109,6 @@ public class EnemyStats : MonoBehaviour
     public bool stunned = false;
     //Dane
 
-    
 
     private void Start()
     {
@@ -166,8 +165,7 @@ public class EnemyStats : MonoBehaviour
 
         if(poisoned == true)//Dane
         {
-            health -= damageTaken * 1.25f;
-            CheckHealth(); 
+            health -= damageTaken * poisonedDamage;
         }
     }
 
@@ -216,13 +214,6 @@ public class EnemyStats : MonoBehaviour
             TakeDamage(collisionWithPlayerDamage);
         }
     }
-
-
-
-
-
-
-
 
 
     //Dane

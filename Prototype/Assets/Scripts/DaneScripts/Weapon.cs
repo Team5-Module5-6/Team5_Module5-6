@@ -8,7 +8,6 @@ public class Weapon : MonoBehaviour
     public float fireRate;
     public int range;
     public int damage;
-    public int doubleDamage;
 
     [Header("Ammo Variables")]
     public int maxAmmo;
@@ -23,15 +22,13 @@ public class Weapon : MonoBehaviour
     {
         currentAmmo = maxAmmo;
         currentMag = maxMag;
-
-        doubleDamage = damage * 2;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Left mouse button pressed, ammo is more than 0
-        if (Input.GetMouseButtonDown(0) && (currentMag > 0))
+        if (Input.GetMouseButtonDown(0) && currentMag > 0)
         {
             //Rapidfire
             if (fireRate == 1)

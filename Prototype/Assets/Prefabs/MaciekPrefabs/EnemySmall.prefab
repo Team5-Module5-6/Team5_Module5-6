@@ -424,7 +424,6 @@ GameObject:
   - component: {fileID: 1134675160297090632}
   - component: {fileID: 8435715174646064132}
   - component: {fileID: 4900448128573380436}
-  - component: {fileID: 503911525338436153}
   m_Layer: 0
   m_Name: EnemySmall
   m_TagString: Enemy
@@ -557,7 +556,7 @@ MonoBehaviour:
   frozen: 0
   poisonEffect: {fileID: 7577678685932002399}
   timePoisoned: 10
-  poisonedDamage: 0
+  poisonedDamage: 1.1
   poisoned: 0
   electricEffect: {fileID: 2165584179578518586}
   timeStunned: 10
@@ -641,18 +640,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &503911525338436153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3511856329861969266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73cf2e2d62ff3b5489350f3b5b895dbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3868145805452954020
 GameObject:
   m_ObjectHideFlags: 0
