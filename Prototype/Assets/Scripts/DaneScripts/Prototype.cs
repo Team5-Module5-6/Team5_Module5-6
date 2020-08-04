@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+/// <summary>
+/// All functions related to the basic prototype weapon functions
+/// Fire laser on right click, reload when near generator, call SS power when firing
+/// </summary>
+
 
 public class Prototype : MonoBehaviour
 {
@@ -10,6 +15,7 @@ public class Prototype : MonoBehaviour
     public int currentAmmo;
     public int starStoneID;
     public float damage;
+    public float chargeRate;//per second
     
     //script references    
     private EnemyStats target;
@@ -42,7 +48,7 @@ public class Prototype : MonoBehaviour
         }
     }
 
-    public void LaserFire()
+    void LaserFire()
     {       
         currentAmmo = currentAmmo - 1; //Depleat ammo when firing
 
@@ -97,5 +103,23 @@ public class Prototype : MonoBehaviour
                 break;
         }
 
+    }
+
+    void Charge()//Increase ammo
+    {
+        currentAmmo++;
+
+        if (currentAmmo == maxAmmo)
+        {
+            CancelInvoke("Charge");
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Generator" && currentAmmo < maxAmmo)
+        {
+            InvokeRepeating("Charge", 0.1f, chargeRate);//Recharge when in proximity of generator
+        }
     }
 }
