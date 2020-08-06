@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/// <summary>
+/// All functions and variables related to primary and secondary weapon
+/// One script for all weapons makes it easy for the designer to understand
+/// </summary>
 
 public class Weapon : MonoBehaviour
 {
@@ -8,39 +12,38 @@ public class Weapon : MonoBehaviour
     public float fireRate;
     public int range;
     public int damage;
-    public int doubleDamage;
+    public int weaponType;//1= rapidfire, 0= single shots
 
     [Header("Ammo Variables")]
     public int maxAmmo;
-    public int currentAmmo;
+    public int currentAmmo;//ammo available
     public int maxMag;
-    public int currentMag;
-    public int reloadAmount; 
+    public int currentMag;//ammo that is loaded
+    public int reloadAmount;//amount of ammo per reload 
 
     public ParticleSystem muzzleFlash;
 
     void Start()
     {
+        //Set variable defaults
         currentAmmo = maxAmmo;
         currentMag = maxMag;
-
-        doubleDamage = damage * 2;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Left mouse button pressed, ammo is more than 0
-        if (Input.GetMouseButtonDown(0) && (currentMag > 0))
+        if (Input.GetMouseButtonDown(0) && currentMag > 0)
         {
             //Rapidfire
-            if (fireRate == 1)
+            if (weaponType == 1)
             {
-                InvokeRepeating("Shoot", 0f, 0.2f);//(Define fire rate here)
+                InvokeRepeating("Shoot", 0f, fireRate);//(Define fire rate here)
             }
 
             //Single shots
-            else if (fireRate == 0)
+            else if (weaponType == 0)
             {
                 Shoot();
             }           

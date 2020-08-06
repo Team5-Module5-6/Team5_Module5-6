@@ -1,32 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/// <summary>
+/// Ammo box picking up and functioning
+/// </summary>
 
 public class Ammo : MonoBehaviour
 {
-    public int collectedAmmo = 10;
- 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int collectedAmmo = 10;//Ammount of ammo added to player's current ammo
 
     void OnTriggerEnter(Collider other)
     {
         Weapon ammo = other.GetComponent<Weapon>();
-        if(ammo != null && ammo.currentAmmo < ammo.maxAmmo)
+        if(ammo != null && ammo.currentAmmo < ammo.maxAmmo)//If collided with player/weapon and ammo is below max
         {
-            ammo.AmmoUp(collectedAmmo);
+            ammo.AmmoUp(collectedAmmo);//Increase ammo via weapon script
             
-            
-            Destroy(gameObject);
+            Destroy(gameObject);//Pick up ammo box
         }
     }
 }

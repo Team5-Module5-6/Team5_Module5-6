@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+/// <summary>
+/// All functions related to the basic prototype weapon functions
+/// Fire laser on right click, reload when near generator, call SS power when firing
+/// </summary>
+
 
 public class Prototype : MonoBehaviour
 {
     public LineRenderer laserBeam;
-    public int maxAmmo = 1000;
+    public int maxAmmo = 100;
     public int currentAmmo;
     public int starStoneID;
-    public float damage = 0.001f;
+    public float damage;
+    public float chargeRate;//per second
     
     //script references    
     private EnemyStats target;
@@ -30,16 +36,19 @@ public class Prototype : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        laserBeam.enabled = false;//Hide the laser
-
-        if (Input.GetMouseButton(0) && currentAmmo > 0)//Left mouse button and ammo is not empty
+        if (Input.GetMouseButtonDown(0) && currentAmmo > 0)//Left mouse button and ammo is not empty
         {
             laserBeam.enabled = true;//Show the laser
-            LaserFire();
+            InvokeRepeating("LaserFire", 0f, 0.2f);//Adjust damage rate here(2nd float)
+        }
+        else if (Input.GetMouseButtonUp(0) || currentAmmo <= 0)
+        {
+            laserBeam.enabled = false; //Hide the laser
+            CancelInvoke("LaserFire");//Stop firing
         }
     }
 
-    public void LaserFire()
+    void LaserFire()
     {       
         currentAmmo = currentAmmo - 1; //Depleat ammo when firing
 
@@ -94,5 +103,23 @@ public class Prototype : MonoBehaviour
                 break;
         }
 
+    }
+
+    void Charge()//Increase ammo
+    {
+        currentAmmo++;
+
+        if (currentAmmo == maxAmmo)
+        {
+            CancelInvoke("Charge");
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Generator" && currentAmmo < maxAmmo)
+        {
+            InvokeRepeating("Charge", 0.1f, chargeRate);//Recharge when in proximity of generator
+        }
     }
 }

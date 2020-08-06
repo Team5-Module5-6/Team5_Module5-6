@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+/// <summary>
+/// This script contains all of the functions of the options menu 
+/// </summary>
 
 public class OptionsMenu : MonoBehaviour
 {
