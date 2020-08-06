@@ -15,6 +15,7 @@ public class Prototype : MonoBehaviour
     public int currentAmmo;
     public int starStoneID;
     public float damage;
+    [Tooltip("Per Second")]
     public float chargeRate;//per second
     
     //script references    

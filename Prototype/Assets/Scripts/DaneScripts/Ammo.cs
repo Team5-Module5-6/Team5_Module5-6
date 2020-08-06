@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
+    [Tooltip("Amount added to player ammo")]
     public int collectedAmmo = 10;//Ammount of ammo added to player's current ammo
 
     void OnTriggerEnter(Collider other)

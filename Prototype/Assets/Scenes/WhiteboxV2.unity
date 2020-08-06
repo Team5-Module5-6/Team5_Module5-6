@@ -3580,6 +3580,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341193397}
   m_CullTransparentMesh: 0
+--- !u!82 &344831743 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7445429942237660637, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 623670885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &358402810
 GameObject:
   m_ObjectHideFlags: 0
@@ -5602,6 +5608,11 @@ PrefabInstance:
       propertyPath: waveHandler
       value: 
       objectReference: {fileID: 934311246}
+    - target: {fileID: 2093437059943663776, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2929486681791674831, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: m_Mesh
@@ -5635,7 +5646,7 @@ PrefabInstance:
     - target: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: damage
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
@@ -5657,6 +5668,21 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: fire
+      value: 
+      objectReference: {fileID: 1175844408}
+    - target: {fileID: 3179727491629006902, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: reload
+      value: 
+      objectReference: {fileID: 344831743}
     - target: {fileID: 3179727491689400813, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: m_Mesh
@@ -5710,7 +5736,7 @@ PrefabInstance:
     - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: damage
-      value: 50
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
@@ -5727,6 +5753,21 @@ PrefabInstance:
       propertyPath: maxAmmo
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: range
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: fire
+      value: 
+      objectReference: {fileID: 1175844408}
+    - target: {fileID: 6220372291042818075, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: reload
+      value: 
+      objectReference: {fileID: 344831743}
     - target: {fileID: 6220372291328666251, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: m_Mesh
@@ -5782,6 +5823,11 @@ PrefabInstance:
       propertyPath: weaponSwitch
       value: 
       objectReference: {fileID: 1589108645}
+    - target: {fileID: 7445429942237660637, guid: 20f43a7d19854a24394d8855933c6cc4,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7505422946339032823, guid: 20f43a7d19854a24394d8855933c6cc4,
         type: 3}
       propertyPath: inventory
@@ -9803,7 +9849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pistol
+  m_text: Rifle
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9872,7 +9918,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1115576211}
-    characterCount: 6
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -10799,6 +10845,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &1175844408 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2093437059943663776, guid: 20f43a7d19854a24394d8855933c6cc4,
+    type: 3}
+  m_PrefabInstance: {fileID: 623670885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1180800667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220372291042818073, guid: 20f43a7d19854a24394d8855933c6cc4,

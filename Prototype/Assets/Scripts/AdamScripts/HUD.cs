@@ -37,11 +37,11 @@ public class HUD : MonoBehaviour
                 ammo.gameObject.SetActive(false);
                 break;
             case 1:
-                weapon.text = "Pistol";
+                weapon.text = "Rifle";
                 ammo.gameObject.SetActive(true);
                 break;
             case 2:
-                weapon.text = "Shotgun";
+                weapon.text = "Pistol";
                 ammo.gameObject.SetActive(true);
                 break;
             case 3:

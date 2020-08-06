@@ -12,16 +12,22 @@ public class Weapon : MonoBehaviour
     public float fireRate;
     public int range;
     public int damage;
+    [Tooltip("0 = Single shots, 1 = Rapidfire")]
     public int weaponType;//1= rapidfire, 0= single shots
 
     [Header("Ammo Variables")]
     public int maxAmmo;
+    [Tooltip("Unloaded ammo")]
     public int currentAmmo;//ammo available
     public int maxMag;
+    [Tooltip("Loaded ammo")]
     public int currentMag;//ammo that is loaded
+    [Tooltip("Amount of ammo per reload")]
     public int reloadAmount;//amount of ammo per reload 
 
     public ParticleSystem muzzleFlash;
+    public AudioSource fire;
+    public AudioSource reload;
 
     void Start()
     {
@@ -74,6 +80,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         muzzleFlash.Play();
+        fire.Play();
 
         //Reduce ammo by one each shot
         currentMag = currentMag - 1;
@@ -96,6 +103,7 @@ public class Weapon : MonoBehaviour
     //Ammo and reloading
     void Reload(int reloadAmount)
     {
+        reload.Play();
         //Insert the required ammount from the player's total ammo into their magazine 
         //This ensures the ammo reloaded is always relative to the player's total ammo
         if(currentAmmo > 0)

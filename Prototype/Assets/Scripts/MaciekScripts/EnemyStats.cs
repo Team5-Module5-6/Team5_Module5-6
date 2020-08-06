@@ -90,17 +90,20 @@ public class EnemyStats : MonoBehaviour
     [Header("StarStone Debuff Variables")]
     public GameObject fireEffect;
     public float timeOnFire;
-    public float fireDamage = 0.01f;
+    [Tooltip("Damage by fire per second")]
+    public float fireDamage;
     public bool onFire = false;
 
     public GameObject iceEffect;
     public float timeFrozen;
     public float defaultSpeed;//must equal normal speed for this enemy type
+    [Tooltip("Half of default")]
     public float frozenSpeed;//speed when under effect of ice star stone
     public bool frozen = false;
 
     public GameObject poisonEffect;
     public float timePoisoned;
+    [Tooltip("Multiplies damage by this amount")]
     public float poisonedDamage;//damage is multipled by this amount when poisoned
     public bool poisoned = false;
 
